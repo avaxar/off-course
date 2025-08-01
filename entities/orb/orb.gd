@@ -8,10 +8,6 @@ extends RigidBody2D
 @export var preferred_radius: float = 48.0
 
 
-func _ready() -> void:
-	pass
-
-
 func _process(_delta: float) -> void:
 	$CollisionShape.shape.radius = radius
 

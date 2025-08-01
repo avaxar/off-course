@@ -31,6 +31,11 @@ latch={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Solids"
+2d_physics/layer_2="Danger"
+
 [physics]
 
 common/physics_ticks_per_second=120

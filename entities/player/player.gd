@@ -55,12 +55,6 @@ func draw_trajectories() -> void:
 	gravitated_trajectory_line.points = map_trajectory(true)
 
 
-func _on_body_entered(body: Node) -> void:
-	print(body)
-	# if not dead and body is Orb and body.active:
-	# 	die.emit()
-
-
 signal die
 func _on_die() -> void:
 	print("Dead!")
@@ -70,3 +64,8 @@ func _on_die() -> void:
 	$Sprites/Back.hide()
 	$Sprites/Lupin.hide()
 	$Sprites/Front.play("pop")
+
+
+func _on_danger_body_enter(_body: Node2D) -> void:
+	if not dead:
+		die.emit()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://csntg42ps0ogc"]
+[gd_scene load_steps=27 format=3 uid="uid://csntg42ps0ogc"]
 
 [ext_resource type="PackedScene" uid="uid://biotlhx7rd3hp" path="res://entities/orb/orb.tscn" id="1_symyc"]
 [ext_resource type="Script" uid="uid://c22tsr6r03flk" path="res://entities/player/player.gd" id="2_abrql"]
@@ -153,7 +153,10 @@ animations = [{
 "speed": 12.0
 }]
 
-[node name="Player" instance=ExtResource("1_symyc")]
+[sub_resource type="CircleShape2D" id="CircleShape2D_8fjmc"]
+radius = 8.0
+
+[node name="Player" groups=["player"] instance=ExtResource("1_symyc")]
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("2_abrql")
@@ -180,9 +183,10 @@ sprite_frames = SubResource("SpriteFrames_eyb6c")
 animation = &"pop"
 autoplay = "default"
 
-[node name="TrajectoryProbe" parent="." index="3" instance=ExtResource("1_symyc")]
+[node name="TrajectoryProbe" parent="." index="3" groups=["player"] instance=ExtResource("1_symyc")]
 visible = false
 collision_layer = 0
+collision_mask = 0
 freeze = true
 active = false
 radius = 8.0
@@ -194,5 +198,12 @@ width = 1.0
 width = 1.0
 default_color = Color(1, 0, 0, 1)
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="DangerArea" type="Area2D" parent="." index="6"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape" type="CollisionShape2D" parent="DangerArea" index="0"]
+shape = SubResource("CircleShape2D_8fjmc")
+
 [connection signal="die" from="." to="." method="_on_die"]
+[connection signal="body_entered" from="DangerArea" to="." method="_on_danger_body_enter"]
