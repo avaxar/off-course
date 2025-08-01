@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://biotlhx7rd3hp"]
+
+[ext_resource type="Script" uid="uid://cju4qvsx3hlfj" path="res://entities/orb/orb.gd" id="1_4ogyp"]
+[ext_resource type="Texture2D" uid="uid://bcp02lf8w74i6" path="res://icon.svg" id="2_h8qx5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cbh67"]
+radius = 8.0
+
+[node name="Orb" type="RigidBody2D" groups=["orbs"]]
+gravity_scale = 0.0
+lock_rotation = true
+continuous_cd = 2
+script = ExtResource("1_4ogyp")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cbh67")
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(0.130859, 0.130859)
+texture = ExtResource("2_h8qx5")

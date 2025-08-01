@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://blfhjbd4bjqmp"]
+
+[ext_resource type="PackedScene" uid="uid://biotlhx7rd3hp" path="res://entities/orb/orb.tscn" id="1_53q0u"]
+[ext_resource type="PackedScene" uid="uid://csntg42ps0ogc" path="res://entities/player/player.tscn" id="2_pjrb6"]
+
+[sub_resource type="TileSet" id="TileSet_53q0u"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("2_pjrb6")]
+unique_name_in_owner = true
+position = Vector2(172, 112)
+linear_velocity = Vector2(-100, 0)
+
+[node name="Orbs" type="Node2D" parent="."]
+
+[node name="Orb" parent="Orbs" instance=ExtResource("1_53q0u")]
+position = Vector2(88, 194)
+freeze = true
+
+[node name="Orb2" parent="Orbs" instance=ExtResource("1_53q0u")]
+position = Vector2(227, 59)
+freeze = true
+
+[node name="Orb3" parent="Orbs" instance=ExtResource("1_53q0u")]
+position = Vector2(360, 198)
+freeze = true
+
+[node name="Map" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_53q0u")
