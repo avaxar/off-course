@@ -1,29 +1,29 @@
 [gd_scene load_steps=5 format=4 uid="uid://blfhjbd4bjqmp"]
 
-[ext_resource type="PackedScene" uid="uid://biotlhx7rd3hp" path="res://entities/orb/orb.tscn" id="1_53q0u"]
-[ext_resource type="PackedScene" uid="uid://csntg42ps0ogc" path="res://entities/player/player.tscn" id="2_pjrb6"]
-[ext_resource type="TileSet" uid="uid://ibgnx2ymucbq" path="res://main/tile_set.tres" id="3_xwkvk"]
-[ext_resource type="PackedScene" uid="uid://dqaihh17n1f12" path="res://entities/camera/camera.tscn" id="4_c651c"]
+[ext_resource type="PackedScene" uid="uid://csntg42ps0ogc" path="res://entities/player/player.tscn" id="1_yi3jx"]
+[ext_resource type="PackedScene" uid="uid://biotlhx7rd3hp" path="res://entities/orb/orb.tscn" id="2_foxie"]
+[ext_resource type="TileSet" uid="uid://ibgnx2ymucbq" path="res://levels/tileset.tres" id="3_7d3si"]
+[ext_resource type="PackedScene" uid="uid://dqaihh17n1f12" path="res://entities/camera/camera.tscn" id="4_jum3j"]
 
-[node name="Main" type="Node2D"]
+[node name="Level" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("2_pjrb6")]
+[node name="Player" parent="." instance=ExtResource("1_yi3jx")]
 position = Vector2(352, 144)
 linear_velocity = Vector2(-100, 0)
 
 [node name="Orbs" type="Node2D" parent="."]
 
-[node name="Orb" parent="Orbs" instance=ExtResource("1_53q0u")]
+[node name="Orb" parent="Orbs" instance=ExtResource("2_foxie")]
 position = Vector2(120, 184)
 freeze = true
 intensity = 1.25
 
-[node name="Orb2" parent="Orbs" instance=ExtResource("1_53q0u")]
+[node name="Orb2" parent="Orbs" instance=ExtResource("2_foxie")]
 position = Vector2(120, 8)
 freeze = true
 intensity = 1.25
 
-[node name="Orb3" parent="Orbs" instance=ExtResource("1_53q0u")]
+[node name="Orb3" parent="Orbs" instance=ExtResource("2_foxie")]
 position = Vector2(368, 184)
 freeze = true
 intensity = 1.25
@@ -31,9 +31,9 @@ intensity = 1.25
 [node name="Map" type="TileMapLayer" parent="."]
 unique_name_in_owner = true
 tile_map_data = PackedByteArray("AAAdABAAAgAcAAcAAAAcABAAAgAWAAUAAAAbABAAAgAWAAUAAAAaABAAAgAWAAUAAAAZABAAAgAWAAUAAAAYABAAAgAWAAUAAAAXABAAAgAWAAUAAAAWABAAAgAWAAUAAAAVABAAAgAWAAUAAAAUABAAAgAWAAUAAAATABAAAgAWAAUAAAASABAAAgAWAAUAAAARABAAAgAWAAUAAAAQABAAAgAWAAUAAAAPABAAAgAWAAUAAAAOABAAAgAWAAUAAAANABAAAgAWAAUAAAAMABAAAgAWAAUAAAALABAAAgAWAAUAAAAKABAAAgAWAAUAAAAJABAAAgAWAAUAAAAIABAAAgAWAAUAAAAHABAAAgAWAAUAAAAGABAAAgAWAAUAAAAFABAAAgAWAAUAAAAdAA8AAgAcAAYAAAAdAA4AAgAcAAYAAAAdAA0AAgAcAAYAAAAdAAQAAgAcAAUAAAAdAAUAAgAcAAYAAAAdAAYAAgAcAAYAAAAdAAcAAgAcAAYAAAAdAAgAAgAcAAYAAAAcAAQAAgAbAAUAAAAdAAkAAgAcAAYAAAAUAAQAAgAbAAUAAAAVAAQAAgAcAAUAAAAWAAQAAgAWAAYAAAAXAAQAAgAWAAYAAAAXAAUAAgAWAAYAAAAYAAQAAgAaAAUAAAAYAAUAAgAaAAYAAAAZAAQAAgAbAAUAAAASAAQAAgAbAAUAAAATAAQAAgAbAAUAAAAVAAUAAgAcAAYAAAAVAAYAAgAVAAcAAAAWAAUAAgAWAAYAAAAYAAYAAgAXAAcAAAAaAAQAAgAWAAcAAAAbAAQAAgAWAAcAAAAdAAoAAgAVAAYAAAAdAAsAAgAVAAYAAAAdAAwAAgAVAAYAAAAFAA8AAgARAAEAAAAGAA8AAgARAAEAAAAHAA8AAgARAAEAAAAIAA8AAgARAAEAAAAJAA8AAgARAAEAAAAKAA8AAgARAAEAAAALAA8AAgARAAEAAAAMAA8AAgARAAEAAAANAA8AAgARAAEAAAAOAA8AAgARAAEAAAAPAA8AAgARAAEAAAAQAA8AAgARAAEAAAARAA8AAgARAAEAAAASAA8AAgARAAEAAAATAA8AAgARAAEAAAAUAA8AAgARAAEAAAAVAA8AAgARAAEAAAAWAA8AAgARAAEAAAAXAA8AAgARAAEAAAAYAA8AAgARAAEAAAAZAA8AAgARAAEAAAAaAA8AAgARAAEAAAAbAA8AAgARAAEAAAAcAA8AAgARAAEAAAAcAA4AAgAQAAIAAAAcAA0AAgAQAAIAAAAcAAwAAgAQAAIAAAAcAAsAAgAQAAIAAAAcAAoAAgAQAAIAAAAcAAkAAgAQAAIAAAAcAAgAAgAQAAIAAAAcAAcAAgAQAAIAAAAcAAYAAgAQAAIAAAAbAAUAAgARAAIAAAAaAAUAAgARAAIAAAA=")
-tile_set = ExtResource("3_xwkvk")
+tile_set = ExtResource("3_7d3si")
 
-[node name="Camera" parent="." instance=ExtResource("4_c651c")]
+[node name="Camera" parent="." instance=ExtResource("4_jum3j")]
 position = Vector2(240, 135)
 limit_left = 0
 limit_right = 480
