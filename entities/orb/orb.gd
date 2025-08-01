@@ -2,19 +2,24 @@ class_name Orb
 extends RigidBody2D
 
 @export var active: bool = true
+@export var radius: float = 12.0
 @export var intensity: float = 1.0
 @export var correction_radius: float = 64.0
 @export var preferred_radius: float = 32.0
 
+
 func _ready() -> void:
 	pass
 
+
 func _process(_delta: float) -> void:
-	pass
+	$CollisionShape.shape.radius = radius
+
 
 func _physics_process(_delta: float) -> void:
 	if active:
 		apply_force(gravitate())
+
 
 func gravitate(exclusions: Array = []) -> Vector2:
 	var force := Vector2(0.0, 0.0)
@@ -54,3 +59,13 @@ func gravitate(exclusions: Array = []) -> Vector2:
 		force += -force_vec * safety_strength
 	
 	return force
+
+
+func check_collisions(exclusions: Array = [], margin: float = 0.5) -> bool:
+	for orb: Orb in get_tree().get_nodes_in_group("orbs"):
+		if orb == self or not orb.active or orb in exclusions:
+			continue
+		if (orb.global_position - global_position).length() <= radius + orb.radius + margin:
+			return true
+	
+	return false

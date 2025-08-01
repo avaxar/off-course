@@ -1,10 +1,14 @@
-[gd_scene load_steps=25 format=3 uid="uid://csntg42ps0ogc"]
+[gd_scene load_steps=26 format=3 uid="uid://csntg42ps0ogc"]
 
 [ext_resource type="PackedScene" uid="uid://biotlhx7rd3hp" path="res://entities/orb/orb.tscn" id="1_symyc"]
 [ext_resource type="Script" uid="uid://c22tsr6r03flk" path="res://entities/player/player.gd" id="2_abrql"]
 [ext_resource type="Texture2D" uid="uid://8d6ive5cjagj" path="res://entities/player/bubble_back.png" id="3_bls4j"]
 [ext_resource type="Texture2D" uid="uid://bjsh7303ticie" path="res://entities/player/lupin.png" id="4_8fjmc"]
 [ext_resource type="Texture2D" uid="uid://dj45pvpacwsv7" path="res://entities/player/bubble_front.png" id="4_fkugw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fkugw"]
+resource_local_to_scene = true
+radius = 12.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eyb6c"]
 atlas = ExtResource("4_8fjmc")
@@ -140,6 +144,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mtric")
+}, {
+"duration": 1.0,
+"texture": null
 }],
 "loop": false,
 "name": &"pop",
@@ -147,11 +154,17 @@ animations = [{
 }]
 
 [node name="Player" instance=ExtResource("1_symyc")]
+contact_monitor = true
+max_contacts_reported = 1
 script = ExtResource("2_abrql")
 trajectory_steps = 200
 trajectory_step_size = 0.0166667
+radius = 8.0
 
-[node name="Icon" parent="." index="1"]
+[node name="CollisionShape" parent="." index="0"]
+shape = SubResource("CircleShape2D_fkugw")
+
+[node name="Sprite" parent="." index="1"]
 visible = false
 
 [node name="Sprites" type="Node2D" parent="." index="2"]
@@ -164,6 +177,7 @@ sprite_frames = SubResource("SpriteFrames_ghoj8")
 
 [node name="Front" type="AnimatedSprite2D" parent="Sprites" index="2"]
 sprite_frames = SubResource("SpriteFrames_eyb6c")
+animation = &"pop"
 autoplay = "default"
 
 [node name="TrajectoryProbe" parent="." index="3" instance=ExtResource("1_symyc")]
@@ -171,11 +185,14 @@ visible = false
 collision_layer = 0
 freeze = true
 active = false
+radius = 8.0
 
 [node name="TrajectoryLine" type="Line2D" parent="." index="4"]
 width = 1.0
 
 [node name="GravitatedTrajectoryLine" type="Line2D" parent="." index="5"]
-points = PackedVector2Array(-32, 7)
 width = 1.0
 default_color = Color(1, 0, 0, 1)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="die" from="." to="." method="_on_die"]
