@@ -1,7 +1,103 @@
-[gd_scene format=3 uid="uid://bk48wlfkg1p11"]
+[gd_scene load_steps=11 format=3 uid="uid://bk48wlfkg1p11"]
+
+[ext_resource type="Texture2D" uid="uid://bs00ee1483cge" path="res://entities/button/button.png" id="1_4tlb3"]
+[ext_resource type="Script" uid="uid://w4302nqg2dtr" path="res://entities/button/button.gd" id="1_7gf2j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7gf2j"]
+atlas = ExtResource("1_4tlb3")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bgj0"]
+atlas = ExtResource("1_4tlb3")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tdykk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7gf2j")
+}],
+"loop": true,
+"name": &"pressed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6bgj0")
+}],
+"loop": true,
+"name": &"unpressed",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x1tbq"]
+size = Vector2(16, 16)
+
+[sub_resource type="Animation" id="Animation_bnhup"]
+resource_name = "press"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"pressed"]
+}
+
+[sub_resource type="Animation" id="Animation_xjlp8"]
+resource_name = "unpressed"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"unpressed"]
+}
+
+[sub_resource type="Animation" id="Animation_ugkm6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"unpressed"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xmavd"]
+_data = {
+&"RESET": SubResource("Animation_ugkm6"),
+&"press": SubResource("Animation_bnhup"),
+&"unpressed": SubResource("Animation_xjlp8")
+}
 
 [node name="button" type="Area2D"]
+script = ExtResource("1_7gf2j")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_tdykk")
+animation = &"unpressed"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_x1tbq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_xmavd")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

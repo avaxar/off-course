@@ -5,5 +5,5 @@ func _process(delta):
 	pass
 
 func open():
-	$AnimationPlayer.play("open")
-	$AnimationPlayer.play("collision")
+	$DoorPlayer.play("open") 
+	$CollisionPlayer.play("Disable")
