@@ -4,8 +4,8 @@ extends RigidBody2D
 @export var active: bool = true
 @export var radius: float = 12.0
 @export var intensity: float = 1.0
-@export var correction_radius: float = 64.0
-@export var preferred_radius: float = 32.0
+@export var correction_radius: float = 128.0
+@export var preferred_radius: float = 48.0
 
 
 func _ready() -> void:
