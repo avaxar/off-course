@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8qnnv3f04csq"
-path="res://.godot/imported/amoguskickedout.png-441ad70a9265822d5c8bf89123b02fec.ctex"
+uid="uid://hngbtkwv62al"
+path="res://.godot/imported/astronaut_2.png-19d001284d4749b3ea9fe9f237567845.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/parallax/space_objects/amoguskickedout.png"
-dest_files=["res://.godot/imported/amoguskickedout.png-441ad70a9265822d5c8bf89123b02fec.ctex"]
+source_file="res://entities/parallax/space_objects/astronaut_2.png"
+dest_files=["res://.godot/imported/astronaut_2.png-19d001284d4749b3ea9fe9f237567845.ctex"]
 
 [params]
 

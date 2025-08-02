@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bs84rppf28srv"
-path="res://.godot/imported/spacelupin.png-89635671dd5912a0a01bf2c08b9c59ed.ctex"
+uid="uid://cgy77imfsock8"
+path="res://.godot/imported/space_cracked_ball.png-be66dd95597dbae09cc647d26dc16779.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/parallax/space_objects/spacelupin.png"
-dest_files=["res://.godot/imported/spacelupin.png-89635671dd5912a0a01bf2c08b9c59ed.ctex"]
+source_file="res://entities/parallax/space_objects/space_cracked_ball.png"
+dest_files=["res://.godot/imported/space_cracked_ball.png-be66dd95597dbae09cc647d26dc16779.ctex"]
 
 [params]
 

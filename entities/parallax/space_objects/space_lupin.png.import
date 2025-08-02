@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yelsk2xcfpxn"
-path="res://.godot/imported/rock1.png-a9e4be8fd2991c45f5a6cf89326a2089.ctex"
+uid="uid://bs84rppf28srv"
+path="res://.godot/imported/space_lupin.png-45ce83ad775997557bbe7f05be01bd12.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/parallax/space_objects/rock1.png"
-dest_files=["res://.godot/imported/rock1.png-a9e4be8fd2991c45f5a6cf89326a2089.ctex"]
+source_file="res://entities/parallax/space_objects/space_lupin.png"
+dest_files=["res://.godot/imported/space_lupin.png-45ce83ad775997557bbe7f05be01bd12.ctex"]
 
 [params]
 

@@ -2,23 +2,25 @@
 
 [ext_resource type="Texture2D" uid="uid://dra1rxrusxmq2" path="res://entities/parallax/space.png" id="1_tekbh"]
 [ext_resource type="Script" uid="uid://dk55pwegngvpu" path="res://entities/parallax/parallax.gd" id="1_u8x40"]
-[ext_resource type="Texture2D" uid="uid://yelsk2xcfpxn" path="res://entities/parallax/space_objects/rock1.png" id="3_vwirp"]
-[ext_resource type="Texture2D" uid="uid://dun0qua7jieoh" path="res://entities/parallax/space_objects/rock2.png" id="4_kl16b"]
-[ext_resource type="Texture2D" uid="uid://cgy77imfsock8" path="res://entities/parallax/space_objects/spacecrackedball.png" id="5_0of0k"]
-[ext_resource type="Texture2D" uid="uid://ch74st1lhbo4y" path="res://entities/parallax/space_objects/astronautbig.png" id="6_4c8o1"]
+[ext_resource type="Texture2D" uid="uid://yelsk2xcfpxn" path="res://entities/parallax/space_objects/rock_1.png" id="3_vwirp"]
+[ext_resource type="Texture2D" uid="uid://dun0qua7jieoh" path="res://entities/parallax/space_objects/rock_2.png" id="4_kl16b"]
+[ext_resource type="Texture2D" uid="uid://cgy77imfsock8" path="res://entities/parallax/space_objects/space_cracked_ball.png" id="5_0of0k"]
+[ext_resource type="Texture2D" uid="uid://ch74st1lhbo4y" path="res://entities/parallax/space_objects/astronaut_big.png" id="6_4c8o1"]
 [ext_resource type="Texture2D" uid="uid://d1kngw8ij7vfg" path="res://entities/parallax/space_objects/satellite.png" id="6_n63x3"]
-[ext_resource type="Texture2D" uid="uid://bs84rppf28srv" path="res://entities/parallax/space_objects/spacelupin.png" id="7_4c8o1"]
-[ext_resource type="Texture2D" uid="uid://hngbtkwv62al" path="res://entities/parallax/space_objects/astronaut2.png" id="7_ovqdm"]
-[ext_resource type="Texture2D" uid="uid://b8qnnv3f04csq" path="res://entities/parallax/space_objects/amoguskickedout.png" id="8_6tvhf"]
+[ext_resource type="Texture2D" uid="uid://bs84rppf28srv" path="res://entities/parallax/space_objects/space_lupin.png" id="7_4c8o1"]
+[ext_resource type="Texture2D" uid="uid://hngbtkwv62al" path="res://entities/parallax/space_objects/astronaut_2.png" id="7_ovqdm"]
+[ext_resource type="Texture2D" uid="uid://b8qnnv3f04csq" path="res://entities/parallax/space_objects/amogus_kicked_out.png" id="8_6tvhf"]
 [ext_resource type="Texture2D" uid="uid://d2csrqi1ekh85" path="res://entities/parallax/space_objects/moron.png" id="8_vwirp"]
 
 [node name="Parallax" type="Node2D"]
+z_index = -10
 script = ExtResource("1_u8x40")
 
 [node name="Space" type="Node2D" parent="."]
+z_index = -100
 
-[node name="Sprite2D" type="Sprite2D" parent="Space"]
-position = Vector2(240, 135)
+[node name="Space" type="Sprite2D" parent="Space"]
+position = Vector2(240, 136)
 texture = ExtResource("1_tekbh")
 
 [node name="Rocks2" type="Node2D" parent="."]

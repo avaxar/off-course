@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ch74st1lhbo4y"
-path="res://.godot/imported/astronautbig.png-e91e19816dbc2014ddba99709b4c9ae6.ctex"
+uid="uid://yelsk2xcfpxn"
+path="res://.godot/imported/rock_1.png-f13ae0d9d0a7113be802cfdc16f9ea11.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/parallax/space_objects/astronautbig.png"
-dest_files=["res://.godot/imported/astronautbig.png-e91e19816dbc2014ddba99709b4c9ae6.ctex"]
+source_file="res://entities/parallax/space_objects/rock_1.png"
+dest_files=["res://.godot/imported/rock_1.png-f13ae0d9d0a7113be802cfdc16f9ea11.ctex"]
 
 [params]
 

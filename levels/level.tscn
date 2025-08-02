@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://delaxhx1j17tb"]
+[gd_scene load_steps=9 format=4 uid="uid://delaxhx1j17tb"]
 
 [ext_resource type="TileSet" uid="uid://ibgnx2ymucbq" path="res://levels/tileset.tres" id="1_80vhd"]
 [ext_resource type="Script" uid="uid://do2or4ovxyerg" path="res://levels/level.gd" id="1_gjl0y"]
 [ext_resource type="PackedScene" uid="uid://dqaihh17n1f12" path="res://entities/camera/camera.tscn" id="2_hjsbj"]
 [ext_resource type="PackedScene" uid="uid://c3fqkueu71rf2" path="res://entities/door/door.tscn" id="2_safpt"]
+[ext_resource type="PackedScene" uid="uid://ber2ukf0x5uaw" path="res://entities/parallax/parallax.tscn" id="2_vnv7o"]
 [ext_resource type="PackedScene" uid="uid://bk48wlfkg1p11" path="res://entities/button/button.tscn" id="3_gjl0y"]
 [ext_resource type="PackedScene" uid="uid://biotlhx7rd3hp" path="res://entities/orb/orb.tscn" id="4_vnv7o"]
 
@@ -12,6 +13,11 @@ size = Vector2(96, 96)
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_gjl0y")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -10
+
+[node name="Parallax" parent="CanvasLayer" instance=ExtResource("2_vnv7o")]
 
 [node name="Background" type="TileMapLayer" parent="."]
 tile_set = ExtResource("1_80vhd")

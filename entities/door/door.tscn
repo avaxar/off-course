@@ -1,8 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://c3fqkueu71rf2"]
+[gd_scene load_steps=15 format=3 uid="uid://c3fqkueu71rf2"]
 
 [ext_resource type="Script" uid="uid://cilxaib8y71fq" path="res://entities/door/door.gd" id="2_bfv6c"]
 [ext_resource type="Texture2D" uid="uid://b765m6u4jqnr" path="res://entities/door/door.png" id="2_dsbe1"]
 [ext_resource type="Texture2D" uid="uid://djfor7opcbqdj" path="res://entities/door/smoke.png" id="3_dsbe1"]
+[ext_resource type="AudioStream" uid="uid://djrta6gr8ogi1" path="res://entities/door/door_open.wav" id="4_uq1c4"]
+[ext_resource type="AudioStream" uid="uid://bnykmmmjgp5nv" path="res://entities/door/door_close.wav" id="5_r5xgf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6sqah"]
 atlas = ExtResource("2_dsbe1")
@@ -69,6 +71,30 @@ tracks/2/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DoorOpen:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("DoorClose:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_mjxdi"]
 resource_name = "close"
@@ -80,7 +106,7 @@ tracks/0/path = NodePath("DoorUp:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(-0.0333333, 0.133333, 0.6, 1.5),
+"times": PackedFloat32Array(-0.0333333, 0.133333, 0.433333, 1.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(0, -80), Vector2(0, -75), Vector2(0, -75), Vector2(0, -48)]
@@ -92,7 +118,7 @@ tracks/1/path = NodePath("DoorDown:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(-0.0333333, 0.133333, 0.6, 1.5),
+"times": PackedFloat32Array(-0.0333333, 0.133333, 0.433333, 1.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 80), Vector2(0, 75), Vector2(0, 75), Vector2(0, 48)]
@@ -109,10 +135,22 @@ tracks/2/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DoorClose:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.433333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_r5xgf"]
 resource_name = "open"
-length = 2.0
+length = 2.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -120,7 +158,7 @@ tracks/0/path = NodePath("DoorUp:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.133333, 1, 2),
+"times": PackedFloat32Array(0.5, 0.65, 1.5, 2.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(0, -48), Vector2(0, -54), Vector2(0, -54), Vector2(0, -80)]
@@ -132,7 +170,7 @@ tracks/1/path = NodePath("DoorDown:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.133333, 1, 2),
+"times": PackedFloat32Array(0.5, 0.65, 1.5, 2.5),
 "transitions": PackedFloat32Array(1, 7.99998, 1, 1),
 "update": 0,
 "values": [Vector2(0, 48), Vector2(0, 54), Vector2(0, 54), Vector2(0, 80)]
@@ -145,6 +183,18 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DoorOpen:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -218,3 +268,9 @@ gravity = Vector2(0, 0)
 initial_velocity_min = 20.0
 initial_velocity_max = 20.61
 color_ramp = SubResource("Gradient_dsbe1")
+
+[node name="DoorOpen" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_uq1c4")
+
+[node name="DoorClose" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_r5xgf")
