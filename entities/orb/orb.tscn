@@ -7,10 +7,6 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_h8qx5"]
 bounce = 1.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_cbh67"]
-resource_local_to_scene = true
-radius = 12.0
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_ulscp"]
 atlas = ExtResource("2_h8qx5")
 region = Rect2(0, 0, 32, 32)
@@ -75,19 +71,22 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_cbh67"]
+resource_local_to_scene = true
+
 [node name="Orb" type="RigidBody2D" groups=["orbs"]]
 physics_material_override = SubResource("PhysicsMaterial_h8qx5")
 gravity_scale = 0.0
 lock_rotation = true
 script = ExtResource("1_4ogyp")
 
-[node name="CollisionShape" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_cbh67")
-
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_e34t8")
 autoplay = "default"
 frame_progress = 0.442961
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cbh67")
 
 [node name="BounceAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_ulscp")

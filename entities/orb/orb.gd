@@ -2,7 +2,7 @@ class_name Orb
 extends RigidBody2D
 
 @export var active: bool = true
-@export var radius: float = 12.0
+@export var radius: float = 10.0
 @export var intensity: float = 1.0
 @export var correction_radius: float = 128.0
 @export var preferred_radius: float = 48.0
