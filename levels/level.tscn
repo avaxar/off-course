@@ -24,6 +24,10 @@ material = null
 tile_set = ExtResource("1_80vhd")
 metadata/_edit_lock_ = true
 
+[node name="Background2" type="TileMapLayer" parent="."]
+tile_set = ExtResource("1_80vhd")
+metadata/_edit_lock_ = true
+
 [node name="Objects" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
 
