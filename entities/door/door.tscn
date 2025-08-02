@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://cilxaib8y71fq" path="res://entities/door/door.gd" id="2_bfv6c"]
 [ext_resource type="Texture2D" uid="uid://b765m6u4jqnr" path="res://entities/door/door.png" id="2_dsbe1"]
 [ext_resource type="Texture2D" uid="uid://djfor7opcbqdj" path="res://entities/door/smoke.png" id="3_dsbe1"]
-[ext_resource type="AudioStream" uid="uid://djrta6gr8ogi1" path="res://entities/door/door_open.wav" id="4_uq1c4"]
-[ext_resource type="AudioStream" uid="uid://bnykmmmjgp5nv" path="res://entities/door/door_close.wav" id="5_r5xgf"]
+[ext_resource type="AudioStream" uid="uid://csxxecmfxib1u" path="res://entities/door/Door_No Jingle.wav" id="4_uq1c4"]
+[ext_resource type="AudioStream" uid="uid://bf3yys8ipr5ud" path="res://entities/door/door_close.wav" id="5_r5xgf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6sqah"]
 atlas = ExtResource("2_dsbe1")
@@ -74,7 +74,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("DoorOpen:playing")
+tracks/3/path = NodePath("DoorClose:playing")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -86,7 +86,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("DoorClose:playing")
+tracks/4/path = NodePath("DoorOpen:playing")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -142,7 +142,7 @@ tracks/3/path = NodePath("DoorClose:playing")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.433333),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -229,6 +229,7 @@ z_index = -1
 position = Vector2(0, 48)
 sprite_frames = SubResource("SpriteFrames_6sqah")
 animation = &"closed"
+frame_progress = 0.27911
 offset = Vector2(0, -24)
 
 [node name="DoorPlayer" type="AnimationPlayer" parent="."]

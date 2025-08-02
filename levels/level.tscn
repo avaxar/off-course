@@ -18,6 +18,7 @@ script = ExtResource("1_gjl0y")
 layer = -10
 
 [node name="Parallax" parent="CanvasLayer" instance=ExtResource("2_vnv7o")]
+material = null
 
 [node name="Background" type="TileMapLayer" parent="."]
 tile_set = ExtResource("1_80vhd")
