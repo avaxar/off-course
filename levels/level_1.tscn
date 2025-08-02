@@ -4,12 +4,12 @@
 
 [node name="Level2" instance=ExtResource("1_vn7o3")]
 
-[node name="Camera" parent="." index="4"]
+[node name="Camera" parent="." index="3"]
 position = Vector2(239, 140)
 limit_left = -99999
 limit_top = -99999
 limit_right = 99999
 limit_bottom = 99999
 
-[node name="FinishArea" parent="." index="7"]
+[node name="FinishArea" parent="." index="6"]
 position = Vector2(661, -149)
