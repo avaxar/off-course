@@ -18,6 +18,8 @@ var dead := false
 
 
 func _ready() -> void:
+	$Sprites/Lupin.modulate = Color()
+
 	for trajlines in [latched_trajlines, unlatched_trajlines]:
 		for i in range(trajectory_line_steps, trajectory_steps, trajectory_line_steps * 2):
 			var line := Line2D.new()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://csntg42ps0ogc"]
+[gd_scene load_steps=33 format=3 uid="uid://csntg42ps0ogc"]
 
 [ext_resource type="PackedScene" uid="uid://biotlhx7rd3hp" path="res://entities/orb/orb.tscn" id="1_symyc"]
 [ext_resource type="Script" uid="uid://c22tsr6r03flk" path="res://entities/player/player.gd" id="2_abrql"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://8d6ive5cjagj" path="res://entities/player/bubble_back.png" id="3_bls4j"]
 [ext_resource type="Texture2D" uid="uid://bjsh7303ticie" path="res://entities/player/lupin.png" id="4_8fjmc"]
 [ext_resource type="Texture2D" uid="uid://dj45pvpacwsv7" path="res://entities/player/bubble_front.png" id="4_fkugw"]
+[ext_resource type="Texture2D" uid="uid://dcrcecryobrox" path="res://entities/player/lupin_the_3rd.png" id="6_26q78"]
 [ext_resource type="AudioStream" uid="uid://c28lsegwqbdun" path="res://entities/player/death.wav" id="7_qiwj3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fkugw"]
@@ -24,6 +25,14 @@ region = Rect2(0, 0, 32, 32)
 atlas = ExtResource("4_8fjmc")
 region = Rect2(32, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghoj8"]
+atlas = ExtResource("6_26q78")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1t22"]
+atlas = ExtResource("6_26q78")
+region = Rect2(32, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_ghoj8"]
 animations = [{
 "frames": [{
@@ -35,6 +44,17 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ghoj8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1t22")
+}],
+"loop": true,
+"name": &"third",
 "speed": 5.0
 }]
 
@@ -176,11 +196,11 @@ unlatching_boost = 1.1
 unlatching_time = 2.0
 radius = 8.0
 
-[node name="CollisionShape" parent="." index="0"]
-shape = SubResource("CircleShape2D_fkugw")
-
-[node name="Sprite" parent="." index="1"]
+[node name="Sprite" parent="." index="0"]
 visible = false
+
+[node name="CollisionShape" parent="." index="1"]
+shape = SubResource("CircleShape2D_fkugw")
 
 [node name="Sprites" type="Node2D" parent="." index="2"]
 material = SubResource("ShaderMaterial_qiwj3")
