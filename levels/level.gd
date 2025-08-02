@@ -3,11 +3,11 @@ extends Node2D
 
 @export var next_scene: PackedScene
 
-@onready var camera: Camera = $Camera
 @onready var entrance: Door = $EntranceDoor
 @onready var entrance_timer: Timer = $EntranceDoor/Timer
 @onready var player_spawn := $PlayerSpawn
 @onready var player_velocity := $PlayerSpawn/Velocity
+@onready var camera: Camera = $PlayerSpawn/Camera
 
 var player: Player
 

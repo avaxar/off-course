@@ -42,12 +42,6 @@ tile_map_data = PackedByteArray("AAABABAAAgAWAAUAAAACABAAAgAWAAUAAAADABAAAgAWAAU
 tile_set = ExtResource("1_80vhd")
 metadata/_edit_lock_ = true
 
-[node name="Camera" parent="." instance=ExtResource("2_hjsbj")]
-limit_left = 0
-limit_top = 0
-limit_right = 480
-limit_bottom = 270
-
 [node name="EntranceDoor" parent="." instance=ExtResource("2_safpt")]
 position = Vector2(9, 208)
 
@@ -57,6 +51,8 @@ one_shot = true
 
 [node name="PlayerSpawn" type="Marker2D" parent="."]
 position = Vector2(-52, 210)
+
+[node name="Camera" parent="PlayerSpawn" instance=ExtResource("2_hjsbj")]
 
 [node name="Velocity" type="Marker2D" parent="PlayerSpawn"]
 position = Vector2(142, 0)
