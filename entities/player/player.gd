@@ -6,7 +6,7 @@ extends Orb
 @export var trajectory_step_size: float = 1.0 / 60.0
 @export var trajectory_line_steps: int = 4
 @export var unlatched_gravitation: float = 0.15
-@export var unlatching_boost: float = 1.25
+@export var unlatching_boost: float = 1.1
 @export var unlatching_time: float = 2.0
 
 @onready var trajectory_probe: Orb = $TrajectoryProbe

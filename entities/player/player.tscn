@@ -172,7 +172,7 @@ trajectory_steps = 96
 trajectory_step_size = 0.0166667
 trajectory_line_steps = 4
 unlatched_gravitation = 0.15
-unlatching_boost = 1.25
+unlatching_boost = 1.1
 unlatching_time = 2.0
 radius = 8.0
 
