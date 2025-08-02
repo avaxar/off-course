@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://csntg42ps0ogc"]
+[gd_scene load_steps=30 format=3 uid="uid://csntg42ps0ogc"]
 
 [ext_resource type="PackedScene" uid="uid://biotlhx7rd3hp" path="res://entities/orb/orb.tscn" id="1_symyc"]
 [ext_resource type="Script" uid="uid://c22tsr6r03flk" path="res://entities/player/player.gd" id="2_abrql"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://8d6ive5cjagj" path="res://entities/player/bubble_back.png" id="3_bls4j"]
 [ext_resource type="Texture2D" uid="uid://bjsh7303ticie" path="res://entities/player/lupin.png" id="4_8fjmc"]
 [ext_resource type="Texture2D" uid="uid://dj45pvpacwsv7" path="res://entities/player/bubble_front.png" id="4_fkugw"]
+[ext_resource type="AudioStream" uid="uid://c28lsegwqbdun" path="res://entities/player/death.wav" id="7_qiwj3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fkugw"]
 resource_local_to_scene = true
@@ -171,6 +172,8 @@ trajectory_steps = 96
 trajectory_step_size = 0.0166667
 trajectory_line_steps = 4
 unlatched_gravitation = 0.15
+unlatching_boost = 1.25
+unlatching_time = 2.0
 radius = 8.0
 
 [node name="CollisionShape" parent="." index="0"]
@@ -201,7 +204,6 @@ autoplay = "default"
 visible = false
 collision_layer = 0
 collision_mask = 0
-freeze = true
 active = false
 radius = 8.0
 
@@ -212,5 +214,9 @@ collision_mask = 2
 [node name="CollisionShape" type="CollisionShape2D" parent="DangerArea" index="0"]
 shape = SubResource("CircleShape2D_8fjmc")
 
+[node name="DeathAudio" type="AudioStreamPlayer2D" parent="." index="5"]
+stream = ExtResource("7_qiwj3")
+
 [connection signal="die" from="." to="." method="_on_die"]
 [connection signal="body_entered" from="DangerArea" to="." method="_on_danger_body_enter"]
+[connection signal="finished" from="DeathAudio" to="." method="_on_death_audio_finished"]

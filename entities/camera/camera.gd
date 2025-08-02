@@ -1,8 +1,8 @@
 class_name Camera
 extends Camera2D
 
-@export var focus_radius: float = 96.0
-@export var correction_factor: float = 0.95
+@export var focus_radius: float = 64.0
+@export var correction_factor: float = 0.975
 
 
 func move(delta: float, player: Player) -> void:

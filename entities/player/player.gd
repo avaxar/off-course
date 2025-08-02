@@ -6,6 +6,8 @@ extends Orb
 @export var trajectory_step_size: float = 1.0 / 60.0
 @export var trajectory_line_steps: int = 4
 @export var unlatched_gravitation: float = 0.15
+@export var unlatching_boost: float = 1.25
+@export var unlatching_time: float = 2.0
 
 @onready var trajectory_probe: Orb = $TrajectoryProbe
 
@@ -23,15 +25,24 @@ func _ready() -> void:
 			trajlines.append(line)
 
 
+var time := 0.0
+var latch_time := 0.0
 func _process(delta: float) -> void:
+	time += delta
 	super(delta)
 	handle_rotation(delta)
 
-	latched = not dead and Input.is_action_pressed("latch")
 	draw_trajectories()
 
-	if not dead and check_collisions([trajectory_probe]):
-		die.emit()
+	if not dead:
+		if check_collisions([trajectory_probe]):
+			die.emit()
+		if Input.is_action_just_pressed("latch"):
+			latch_time = time
+		if Input.is_action_just_released("latch"):
+			linear_velocity *= get_unlatch_boost()
+
+	latched = not dead and Input.is_action_pressed("latch")
 
 
 func handle_rotation(delta: float) -> void:
@@ -39,14 +50,34 @@ func handle_rotation(delta: float) -> void:
 	$Sprites.rotation = lerp_angle($Sprites.rotation, rot, rotation_factor * delta)
 
 
+func get_unlatch_boost() -> float:
+	if not latched:
+		return 1.0
+
+	var time_latched := clampf(time - latch_time, 0.0, unlatching_time)
+	var boost := lerpf(1.0, unlatching_boost, time_latched / unlatching_time)
+	return boost ** 2
+
+
+static func calc_latch(force: Vector2, velocity: Vector2, latching: bool, unlatched_grav: float) -> Vector2:
+	if latching:
+		return force
+	else:
+		var dotted := force.normalized().dot(velocity.normalized())
+		if dotted > 0:
+			return force * unlatched_grav * dotted
+		else:
+			return Vector2(0.0, 0.0)
+
+
 func gravitate(exclusions: Array = []) -> Vector2:
-	return super(exclusions + [trajectory_probe]) * (1.0 if latched else unlatched_gravitation)
+	return calc_latch(super(exclusions + [trajectory_probe]), linear_velocity, latched, unlatched_gravitation)
 
 
 func map_trajectory(latching: bool) -> PackedVector2Array:
 	trajectory_probe.position = Vector2(0.0, 0.0)
 	trajectory_probe.mass = mass
-	trajectory_probe.linear_velocity = linear_velocity
+	trajectory_probe.linear_velocity = linear_velocity * (1.0 if latching else get_unlatch_boost())
 	trajectory_probe.radius = radius
 
 	var path: PackedVector2Array = [Vector2(0.0, 0.0)]
@@ -54,7 +85,8 @@ func map_trajectory(latching: bool) -> PackedVector2Array:
 		trajectory_probe.position += trajectory_probe.linear_velocity * trajectory_step_size
 
 		var accel := trajectory_probe.gravitate([self]) / trajectory_probe.mass
-		trajectory_probe.linear_velocity += accel * trajectory_step_size * (1.0 if latching else unlatched_gravitation)
+		trajectory_probe.linear_velocity += calc_latch(accel, trajectory_probe.linear_velocity,
+													   latching, unlatched_gravitation) * trajectory_step_size
 
 		if trajectory_probe.check_collisions([self], 1.0):
 			break
@@ -101,7 +133,13 @@ func do_death() -> void:
 	$Sprites/Lupin.hide()
 	$Sprites/Front.play("pop")
 
+	$DeathAudio.play()
+
 
 func _on_danger_body_enter(_body: Node2D) -> void:
 	if not dead:
 		die.emit()
+
+
+func _on_death_audio_finished() -> void:
+	queue_free()

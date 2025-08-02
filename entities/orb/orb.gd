@@ -26,12 +26,16 @@ func _on_body_shape_entered(_body_rid: RID, body: Node, _body_shape_index: int, 
 
 
 func bounce(normal: Vector2, incidence: Vector2) -> void:
+	$BounceAudio.play()
 	if normal.dot(incidence) < 0.0:
 		linear_velocity = incidence.bounce(normal)
 		position += linear_velocity / 120.0
 
 
 func gravitate(exclusions: Array = []) -> Vector2:
+	if freeze:
+		return Vector2(0.0, 0.0)
+
 	var force := Vector2(0.0, 0.0)
 	for orb: Orb in get_tree().get_nodes_in_group("orbs"):
 		if orb == self or not orb.active or orb in exclusions:
