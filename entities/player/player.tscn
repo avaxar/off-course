@@ -167,8 +167,9 @@ contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("2_abrql")
 rotation_factor = 0.95
-trajectory_steps = 64
+trajectory_steps = 96
 trajectory_step_size = 0.0166667
+trajectory_line_steps = 4
 unlatched_gravitation = 0.15
 radius = 8.0
 
@@ -204,14 +205,7 @@ freeze = true
 active = false
 radius = 8.0
 
-[node name="TrajectoryLine" type="Line2D" parent="." index="4"]
-width = 1.0
-
-[node name="GravitatedTrajectoryLine" type="Line2D" parent="." index="5"]
-width = 1.0
-default_color = Color(1, 0, 0, 1)
-
-[node name="DangerArea" type="Area2D" parent="." index="6"]
+[node name="DangerArea" type="Area2D" parent="." index="4"]
 collision_layer = 2
 collision_mask = 2
 

@@ -21,13 +21,14 @@ func _physics_process(_delta: float) -> void:
 
 
 func _on_body_shape_entered(_body_rid: RID, body: Node, _body_shape_index: int, _local_shape_index: int) -> void:
-	if body is TileMapLayer or body is Door:
+	if body is TileMapLayer or body is StaticBody2D:
 		bounce(linear_velocity.normalized(), last_velocity)
 
 
 func bounce(normal: Vector2, incidence: Vector2) -> void:
-	linear_velocity = incidence.bounce(normal)
-	position += linear_velocity / 120.0
+	if normal.dot(incidence) < 0.0:
+		linear_velocity = incidence.bounce(normal)
+		position += linear_velocity / 120.0
 
 
 func gravitate(exclusions: Array = []) -> Vector2:
