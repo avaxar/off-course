@@ -167,6 +167,7 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 script = ExtResource("2_bfv6c")
 
 [node name="DoorUp" type="AnimatedSprite2D" parent="."]
+z_index = -1
 position = Vector2(0, -48)
 rotation = -3.14159
 sprite_frames = SubResource("SpriteFrames_6sqah")
@@ -174,6 +175,7 @@ animation = &"closed"
 offset = Vector2(0, -24)
 
 [node name="DoorDown" type="AnimatedSprite2D" parent="."]
+z_index = -1
 position = Vector2(0, 48)
 sprite_frames = SubResource("SpriteFrames_6sqah")
 animation = &"closed"
