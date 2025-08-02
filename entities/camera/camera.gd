@@ -9,7 +9,8 @@ func move(delta: float, player: Player) -> void:
 	var interest := get_interest(player)
 	if interest != null:
 		var correction := interest.global_position - global_position
-		global_position += min(correction * correction_factor * delta, correction)
+		var dv := correction * correction_factor * delta
+		global_position += correction if dv.length() > correction.length() else dv
 
 
 func get_interest(player: Player) -> Node2D:
