@@ -1,6 +1,9 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://ibgnx2ymucbq"]
+[gd_resource type="TileSet" load_steps=4 format=3 uid="uid://ibgnx2ymucbq"]
 
 [ext_resource type="Texture2D" uid="uid://cu38sehor2tfu" path="res://levels/tileset.png" id="1_bt6on"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_be4ft"]
+bounce = 1.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c651c"]
 texture = ExtResource("1_bt6on")
@@ -126,6 +129,7 @@ texture = ExtResource("1_bt6on")
 
 [resource]
 physics_layer_0/collision_layer = 1
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_be4ft")
 physics_layer_1/collision_layer = 2
 physics_layer_1/collision_mask = 2
 sources/2 = SubResource("TileSetAtlasSource_c651c")

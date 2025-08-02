@@ -1,13 +1,13 @@
 extends Camera2D
 
 @export var focus_radius: float = 96.0
-@export var correction_speed: float = 0.95
+@export var correction_factor: float = 0.95
 
 
 func _process(delta: float) -> void:
 	var interest := get_interest()
 	var correction := interest.global_position - global_position
-	global_position += correction * correction_speed * delta
+	global_position += correction * correction_factor * delta
 
 
 func get_interest() -> Node2D:
