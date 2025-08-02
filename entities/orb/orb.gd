@@ -6,6 +6,7 @@ extends RigidBody2D
 @export var intensity: float = 1.0
 @export var correction_radius: float = 128.0
 @export var preferred_radius: float = 48.0
+@export var influence_radius: float = 256.0
 
 
 func _process(_delta: float) -> void:
@@ -35,13 +36,17 @@ func gravitate(exclusions: Array = []) -> Vector2:
 		if orb == self or not orb.active or orb in exclusions:
 			continue
 
-		var g := 1000000.0 * orb.intensity
-
-		# Newton's universal gravitation
+		var g := 2000000.0 * orb.intensity
 		var distance_sq := (orb.global_position - global_position).length_squared()
 		var distance := sqrt(distance_sq)
+
+		if distance > influence_radius:
+			continue
+		var influence := 1.0 - (distance / influence_radius) ** 16.0
+
+		# Newton's universal gravitation
 		var direction := (orb.global_position - global_position) / distance
-		var force_vec := g * mass * orb.mass / distance_sq * direction
+		var force_vec := g * mass * orb.mass / distance_sq * direction * influence
 		force += force_vec
 
 		# Circular orbit correction

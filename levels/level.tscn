@@ -1,0 +1,67 @@
+[gd_scene load_steps=8 format=4 uid="uid://delaxhx1j17tb"]
+
+[ext_resource type="TileSet" uid="uid://ibgnx2ymucbq" path="res://levels/tileset.tres" id="1_80vhd"]
+[ext_resource type="Script" uid="uid://do2or4ovxyerg" path="res://levels/level.gd" id="1_gjl0y"]
+[ext_resource type="PackedScene" uid="uid://dqaihh17n1f12" path="res://entities/camera/camera.tscn" id="2_hjsbj"]
+[ext_resource type="PackedScene" uid="uid://c3fqkueu71rf2" path="res://entities/door/door.tscn" id="2_safpt"]
+[ext_resource type="PackedScene" uid="uid://bk48wlfkg1p11" path="res://entities/button/button.tscn" id="3_gjl0y"]
+[ext_resource type="PackedScene" uid="uid://biotlhx7rd3hp" path="res://entities/orb/orb.tscn" id="4_vnv7o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hjsbj"]
+size = Vector2(96, 96)
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_gjl0y")
+
+[node name="Background" type="TileMapLayer" parent="."]
+tile_set = ExtResource("1_80vhd")
+metadata/_edit_lock_ = true
+
+[node name="Objects" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="ExitDoor" parent="Objects" instance=ExtResource("2_safpt")]
+position = Vector2(471, 64)
+
+[node name="Button" parent="Objects" node_paths=PackedStringArray("door") instance=ExtResource("3_gjl0y")]
+position = Vector2(240, 248)
+door = NodePath("../ExitDoor")
+
+[node name="Orb" parent="Objects" instance=ExtResource("4_vnv7o")]
+position = Vector2(240, 144)
+freeze = true
+
+[node name="Map" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAABABAAAgAWAAUAAAACABAAAgAWAAUAAAADABAAAgAWAAUAAAAEABAAAgAWAAUAAAAFABAAAgAWAAUAAAAGABAAAgAWAAUAAAAHABAAAgAWAAUAAAAIABAAAgAWAAUAAAAJABAAAgAWAAUAAAAKABAAAgAWAAUAAAALABAAAgAWAAUAAAAMABAAAgAWAAUAAAANABAAAgAWAAUAAAAOABAAAgAWAAUAAAAPABAAAgAWAAUAAAAQABAAAgAWAAUAAAARABAAAgAWAAUAAAASABAAAgAWAAUAAAATABAAAgAWAAUAAAAUABAAAgAWAAUAAAAVABAAAgAWAAUAAAAWABAAAgAWAAUAAAAXABAAAgAWAAUAAAAYABAAAgAWAAUAAAAZABAAAgAWAAUAAAAaABAAAgAWAAUAAAAbABAAAgAWAAUAAAAcABAAAgAWAAUAAAAAAAkAAgAXAAcAAAAAAAgAAgAXAAYAAAAAAAcAAgAXAAYAAAAAAAYAAgAXAAYAAAAAAAUAAgAXAAYAAAAAAAQAAgAXAAYAAAAAAAMAAgAXAAYAAAAAAAIAAgAXAAYAAAAAAAEAAgAXAAYAAAABAAAAAgAWAAcAAAACAAAAAgAWAAcAAAADAAAAAgAWAAcAAAAEAAAAAgAWAAcAAAAFAAAAAgAWAAcAAAAGAAAAAgAWAAcAAAAHAAAAAgAWAAcAAAAIAAAAAgAWAAcAAAAJAAAAAgAWAAcAAAAdAA8AAgAVAAYAAAAdAA4AAgAVAAYAAAAdAA0AAgAVAAYAAAAdAAwAAgAVAAYAAAAdAAsAAgAVAAYAAAAdAAoAAgAVAAYAAAAdAAkAAgAVAAYAAAAdAAgAAgAVAAYAAAAdAAcAAgAVAAUAAAAdAAAAAgAWAAcAAAAKAAAAAgAbAAUAAAALAAAAAgAbAAUAAAAMAAAAAgAbAAUAAAANAAAAAgAbAAUAAAAOAAAAAgAbAAUAAAAPAAAAAgAbAAUAAAAQAAAAAgAbAAUAAAARAAAAAgAbAAUAAAASAAAAAgAbAAUAAAATAAAAAgAbAAUAAAAUAAAAAgAbAAUAAAAVAAAAAgAbAAUAAAAWAAAAAgAbAAUAAAAXAAAAAgAbAAUAAAAYAAAAAgAbAAUAAAAZAAAAAgAbAAUAAAAaAAAAAgAbAAUAAAAbAAAAAgAbAAUAAAAcAAAAAgAbAAUAAAAdABAAAgAcAAcAAAAAAAAAAgAaAAUAAAAAABAAAgAbAAcAAAABAAIAAgAQAAEAAAABAAMAAgAQAAEAAAABAAQAAgAQAAEAAAABAAUAAgAQAAEAAAABAAYAAgAQAAEAAAABAAcAAgAQAAEAAAABAAgAAgAQAAEAAAA=")
+tile_set = ExtResource("1_80vhd")
+metadata/_edit_lock_ = true
+
+[node name="Camera" parent="." instance=ExtResource("2_hjsbj")]
+limit_left = 0
+limit_top = 0
+limit_right = 480
+limit_bottom = 270
+
+[node name="EntranceDoor" parent="." instance=ExtResource("2_safpt")]
+position = Vector2(9, 208)
+
+[node name="Timer" type="Timer" parent="EntranceDoor"]
+wait_time = 3.0
+one_shot = true
+
+[node name="PlayerSpawn" type="Marker2D" parent="."]
+position = Vector2(-52, 210)
+
+[node name="Velocity" type="Marker2D" parent="PlayerSpawn"]
+position = Vector2(142, 0)
+
+[node name="FinishArea" type="Area2D" parent="."]
+position = Vector2(528, 64)
+
+[node name="CollisionShape" type="CollisionShape2D" parent="FinishArea"]
+shape = SubResource("RectangleShape2D_hjsbj")
+debug_color = Color(0.680476, 1, 0.652914, 0.419608)
+metadata/_edit_lock_ = true
+
+[connection signal="timeout" from="EntranceDoor/Timer" to="." method="_on_entrance_timeout"]
+[connection signal="body_entered" from="FinishArea" to="." method="_on_finish_area_entered"]

@@ -21,9 +21,7 @@ func _process(delta: float) -> void:
 	latched = not dead and Input.is_action_pressed("latch")
 	draw_trajectories()
 
-	if dead:
-		linear_velocity -= linear_velocity * 0.975 * delta
-	elif check_collisions([trajectory_probe]):
+	if not dead and check_collisions([trajectory_probe]):
 		die.emit()
 
 
@@ -64,8 +62,15 @@ func draw_trajectories() -> void:
 
 signal die
 func _on_die() -> void:
-	print("Dead!")
+	call_deferred("do_death")
+
+
+func do_death() -> void:
 	dead = true
+	active = false
+	$CollisionShape.disabled = true
+	linear_velocity = Vector2(0.0, 0.0)
+
 	trajectory_line.hide()
 	gravitated_trajectory_line.hide()
 	$Sprites/Back.hide()

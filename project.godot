@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Off Course"
-run/main_scene="uid://blfhjbd4bjqmp"
+run/main_scene="uid://c5elde1l5hneb"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 

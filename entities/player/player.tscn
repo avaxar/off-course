@@ -162,6 +162,7 @@ animations = [{
 radius = 8.5
 
 [node name="Player" groups=["player"] instance=ExtResource("1_symyc")]
+mass = 0.75
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("2_abrql")
