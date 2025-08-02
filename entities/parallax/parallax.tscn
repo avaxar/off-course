@@ -1,0 +1,135 @@
+[gd_scene load_steps=12 format=3 uid="uid://ber2ukf0x5uaw"]
+
+[ext_resource type="Texture2D" uid="uid://dra1rxrusxmq2" path="res://entities/parallax/space.png" id="1_tekbh"]
+[ext_resource type="Script" uid="uid://dk55pwegngvpu" path="res://entities/parallax/parallax.gd" id="1_u8x40"]
+[ext_resource type="Texture2D" uid="uid://yelsk2xcfpxn" path="res://entities/parallax/space_objects/rock1.png" id="3_vwirp"]
+[ext_resource type="Texture2D" uid="uid://dun0qua7jieoh" path="res://entities/parallax/space_objects/rock2.png" id="4_kl16b"]
+[ext_resource type="Texture2D" uid="uid://cgy77imfsock8" path="res://entities/parallax/space_objects/spacecrackedball.png" id="5_0of0k"]
+[ext_resource type="Texture2D" uid="uid://ch74st1lhbo4y" path="res://entities/parallax/space_objects/astronautbig.png" id="6_4c8o1"]
+[ext_resource type="Texture2D" uid="uid://d1kngw8ij7vfg" path="res://entities/parallax/space_objects/satellite.png" id="6_n63x3"]
+[ext_resource type="Texture2D" uid="uid://bs84rppf28srv" path="res://entities/parallax/space_objects/spacelupin.png" id="7_4c8o1"]
+[ext_resource type="Texture2D" uid="uid://hngbtkwv62al" path="res://entities/parallax/space_objects/astronaut2.png" id="7_ovqdm"]
+[ext_resource type="Texture2D" uid="uid://b8qnnv3f04csq" path="res://entities/parallax/space_objects/amoguskickedout.png" id="8_6tvhf"]
+[ext_resource type="Texture2D" uid="uid://d2csrqi1ekh85" path="res://entities/parallax/space_objects/moron.png" id="8_vwirp"]
+
+[node name="Parallax" type="Node2D"]
+script = ExtResource("1_u8x40")
+
+[node name="Space" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Space"]
+position = Vector2(240, 135)
+texture = ExtResource("1_tekbh")
+
+[node name="Rocks2" type="Node2D" parent="."]
+position = Vector2(-1, 0)
+
+[node name="Rock10" type="Sprite2D" parent="Rocks2"]
+position = Vector2(-53, 58)
+texture = ExtResource("3_vwirp")
+
+[node name="Rock11" type="Sprite2D" parent="Rocks2"]
+position = Vector2(-76, 191)
+rotation = 0.0867383
+texture = ExtResource("4_kl16b")
+
+[node name="Rock12" type="Sprite2D" parent="Rocks2"]
+position = Vector2(-193, 143)
+rotation = -0.819207
+texture = ExtResource("3_vwirp")
+
+[node name="Rock13" type="Sprite2D" parent="Rocks2"]
+position = Vector2(-318, 82)
+texture = ExtResource("4_kl16b")
+
+[node name="Rock14" type="Sprite2D" parent="Rocks2"]
+position = Vector2(-346, 205)
+rotation = 1.59484
+texture = ExtResource("3_vwirp")
+
+[node name="Rock1" type="Sprite2D" parent="Rocks2"]
+position = Vector2(-428, 107)
+rotation = 2.36159
+texture = ExtResource("3_vwirp")
+
+[node name="Rocks" type="Node2D" parent="."]
+position = Vector2(1, 4)
+
+[node name="Rock10" type="Sprite2D" parent="Rocks"]
+position = Vector2(303, 269)
+rotation = 2.85134
+texture = ExtResource("4_kl16b")
+
+[node name="Rock9" type="Sprite2D" parent="Rocks"]
+position = Vector2(139, -4.99999)
+rotation = -1.8466
+texture = ExtResource("3_vwirp")
+
+[node name="Rock8" type="Sprite2D" parent="Rocks"]
+position = Vector2(29, 245)
+rotation = 2.21829
+texture = ExtResource("3_vwirp")
+
+[node name="Rock2" type="Sprite2D" parent="Rocks"]
+position = Vector2(298, 119)
+texture = ExtResource("4_kl16b")
+
+[node name="Rock3" type="Sprite2D" parent="Rocks"]
+position = Vector2(214, 59)
+rotation = -0.931868
+texture = ExtResource("4_kl16b")
+
+[node name="Rock4" type="Sprite2D" parent="Rocks"]
+position = Vector2(241, 189)
+rotation = -0.540886
+texture = ExtResource("3_vwirp")
+
+[node name="Rock5" type="Sprite2D" parent="Rocks"]
+position = Vector2(447, 206)
+rotation = 0.561164
+texture = ExtResource("3_vwirp")
+
+[node name="Rock6" type="Sprite2D" parent="Rocks"]
+position = Vector2(65, 93)
+texture = ExtResource("4_kl16b")
+
+[node name="Rock7" type="Sprite2D" parent="Rocks"]
+position = Vector2(417, 79)
+rotation = 1.42567
+texture = ExtResource("4_kl16b")
+
+[node name="Moron" type="Sprite2D" parent="."]
+position = Vector2(-446, 310)
+texture = ExtResource("8_vwirp")
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="1" type="Sprite2D" parent="Objects"]
+position = Vector2(100, 196)
+texture = ExtResource("6_4c8o1")
+
+[node name="2" type="Sprite2D" parent="Objects"]
+position = Vector2(227, 114)
+texture = ExtResource("7_ovqdm")
+
+[node name="3" type="Sprite2D" parent="Objects"]
+position = Vector2(372, 180)
+texture = ExtResource("8_vwirp")
+
+[node name="Objects2" type="Node2D" parent="."]
+
+[node name="4" type="Sprite2D" parent="Objects2"]
+position = Vector2(-455, 172)
+texture = ExtResource("8_6tvhf")
+
+[node name="5" type="Sprite2D" parent="Objects2"]
+position = Vector2(-145, 120)
+texture = ExtResource("6_n63x3")
+
+[node name="6" type="Sprite2D" parent="Objects2"]
+position = Vector2(-238, 227)
+texture = ExtResource("5_0of0k")
+
+[node name="7" type="Sprite2D" parent="Objects2"]
+position = Vector2(-366, 104)
+texture = ExtResource("7_4c8o1")
