@@ -1,7 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://c3fqkueu71rf2"]
+[gd_scene load_steps=15 format=3 uid="uid://c3fqkueu71rf2"]
 
 [ext_resource type="Texture2D" uid="uid://daiys6irsldvr" path="res://entities/door/door.png" id="1_05v0y"]
 [ext_resource type="Script" uid="uid://cilxaib8y71fq" path="res://entities/door/door.gd" id="2_bfv6c"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bfv6c"]
+bounce = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bfv6c"]
 atlas = ExtResource("1_05v0y")
@@ -38,7 +41,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Door2:animation")
+tracks/0/path = NodePath("Bottom:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -50,7 +53,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Door1:animation")
+tracks/1/path = NodePath("Top:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -65,7 +68,7 @@ resource_name = "close"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Door2:animation")
+tracks/0/path = NodePath("Bottom:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -77,7 +80,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Door1:animation")
+tracks/1/path = NodePath("Top:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -109,7 +112,7 @@ resource_name = "open"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Door2:animation")
+tracks/0/path = NodePath("Bottom:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -121,7 +124,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Door1:animation")
+tracks/1/path = NodePath("Top:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -162,15 +165,16 @@ _data = {
 }
 
 [node name="Door" type="StaticBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_bfv6c")
 script = ExtResource("2_bfv6c")
 
-[node name="Door2" type="AnimatedSprite2D" parent="."]
+[node name="Bottom" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 31)
 sprite_frames = SubResource("SpriteFrames_6sqah")
 animation = &"closed"
 offset = Vector2(0, -16)
 
-[node name="Door1" type="AnimatedSprite2D" parent="."]
+[node name="Top" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -33)
 rotation = -3.14159
 sprite_frames = SubResource("SpriteFrames_6sqah")

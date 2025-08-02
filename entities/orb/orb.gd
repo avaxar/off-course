@@ -20,7 +20,7 @@ func _physics_process(_delta: float) -> void:
 
 
 func _on_body_shape_entered(_body_rid: RID, body: Node, _body_shape_index: int, _local_shape_index: int) -> void:
-	if body is TileMapLayer:
+	if body is TileMapLayer or body is Door:
 		bounce(linear_velocity.normalized(), last_velocity)
 
 

@@ -33,6 +33,21 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x1tbq"]
 size = Vector2(16, 16)
 
+[sub_resource type="Animation" id="Animation_ugkm6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"unpressed"]
+}
+
 [sub_resource type="Animation" id="Animation_bnhup"]
 resource_name = "press"
 tracks/0/type = "value"
@@ -63,21 +78,6 @@ tracks/0/keys = {
 "values": [&"unpressed"]
 }
 
-[sub_resource type="Animation" id="Animation_ugkm6"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"unpressed"]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xmavd"]
 _data = {
 &"RESET": SubResource("Animation_ugkm6"),
@@ -85,7 +85,7 @@ _data = {
 &"unpressed": SubResource("Animation_xjlp8")
 }
 
-[node name="button" type="Area2D"]
+[node name="Button" type="Area2D"]
 script = ExtResource("1_7gf2j")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
