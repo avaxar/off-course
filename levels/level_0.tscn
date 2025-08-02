@@ -137,7 +137,7 @@ tile_map_data = PackedByteArray("AAABABAAAgAWAAUAAAACABAAAgAWAAUAAAADABAAAgAWAAU
 [node name="PlayerSpawn" parent="." index="5"]
 position = Vector2(-63, 204)
 
-[node name="Camera" parent="PlayerSpawn" index="1"]
+[node name="Camera" parent="PlayerSpawn" index="0"]
 position = Vector2(310, -61)
 
 [node name="FinishArea" parent="." index="6"]
