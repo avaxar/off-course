@@ -41,4 +41,4 @@ func _on_entrance_timeout() -> void:
 func _on_finish_area_entered(body: Node2D) -> void:
 	if body is Player:
 		print("Finish!")
-		get_tree().change_scene_to_packed(next_scene)
+		get_tree().call_deferred("change_scene_to_packed", next_scene)
