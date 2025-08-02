@@ -73,6 +73,7 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cbh67"]
 resource_local_to_scene = true
+radius = 12.0
 
 [node name="Orb" type="RigidBody2D" groups=["orbs"]]
 physics_material_override = SubResource("PhysicsMaterial_h8qx5")
