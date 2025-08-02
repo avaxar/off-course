@@ -12,9 +12,21 @@ func _process(_delta: float) -> void:
 	$CollisionShape.shape.radius = radius
 
 
+@onready var last_velocity := linear_velocity
 func _physics_process(_delta: float) -> void:
 	if active:
 		apply_force(gravitate())
+	last_velocity = linear_velocity
+
+
+func _on_body_shape_entered(_body_rid: RID, body: Node, _body_shape_index: int, _local_shape_index: int) -> void:
+	if body is TileMapLayer:
+		bounce(linear_velocity.normalized(), last_velocity)
+
+
+func bounce(normal: Vector2, incidence: Vector2) -> void:
+	linear_velocity = incidence.bounce(normal)
+	position += linear_velocity / 120.0
 
 
 func gravitate(exclusions: Array = []) -> Vector2:
