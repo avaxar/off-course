@@ -2,14 +2,14 @@ class_name Camera
 extends Camera2D
 
 @export var focus_radius: float = 64.0
-@export var correction_factor: float = 0.99995
+@export var correction_factor: float = 2.5
 
 
 func move(delta: float, player: Player) -> void:
 	var interest := get_interest(player)
 	if interest != null:
 		var correction := interest.global_position - global_position
-		global_position += correction * correction_factor * delta
+		global_position += min(correction * correction_factor * delta, correction)
 
 
 func get_interest(player: Player) -> Node2D:
