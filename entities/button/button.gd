@@ -8,7 +8,7 @@ func _process(delta):
 		$AnimationPlayer.play("unpressed")
 		
 func _on_body_entered(body: Node2D) -> void:
-	if body is Player:
+	if body is Player and press == false:
 		$AnimationPlayer.play("press")
 		door.open()
 		press = true

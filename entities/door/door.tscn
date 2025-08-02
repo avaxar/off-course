@@ -1,24 +1,22 @@
 [gd_scene load_steps=15 format=3 uid="uid://c3fqkueu71rf2"]
 
-[ext_resource type="Texture2D" uid="uid://daiys6irsldvr" path="res://entities/door/door.png" id="1_05v0y"]
 [ext_resource type="Script" uid="uid://cilxaib8y71fq" path="res://entities/door/door.gd" id="2_bfv6c"]
+[ext_resource type="Texture2D" uid="uid://b765m6u4jqnr" path="res://entities/door/door.png" id="2_dsbe1"]
+[ext_resource type="Texture2D" uid="uid://djfor7opcbqdj" path="res://entities/door/smoke.png" id="3_dsbe1"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bfv6c"]
-bounce = 1.0
+[sub_resource type="AtlasTexture" id="AtlasTexture_6sqah"]
+atlas = ExtResource("2_dsbe1")
+region = Rect2(0, 0, 16, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bfv6c"]
-atlas = ExtResource("1_05v0y")
-region = Rect2(0, 0, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dsbe1"]
-atlas = ExtResource("1_05v0y")
-region = Rect2(16, 0, 16, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_uq1c4"]
+atlas = ExtResource("2_dsbe1")
+region = Rect2(16, 0, 16, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6sqah"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bfv6c")
+"texture": SubResource("AtlasTexture_6sqah")
 }],
 "loop": true,
 "name": &"closed",
@@ -26,124 +24,106 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dsbe1")
+"texture": SubResource("AtlasTexture_uq1c4")
 }],
 "loop": true,
 "name": &"opened",
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uq1c4"]
-size = Vector2(12, 64)
-
 [sub_resource type="Animation" id="Animation_kgyc3"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Bottom:animation")
+tracks/0/path = NodePath("DoorUp:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"closed"]
+"update": 0,
+"values": [Vector2(0, -48)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Top:animation")
+tracks/1/path = NodePath("DoorDown:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"closed"]
+"update": 0,
+"values": [Vector2(0, 48)]
 }
 
 [sub_resource type="Animation" id="Animation_mjxdi"]
 resource_name = "close"
+length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Bottom:animation")
+tracks/0/path = NodePath("DoorUp:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.0333333),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"closed"]
+"times": PackedFloat32Array(-0.0333333, 0.133333, 0.6, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -80), Vector2(0, -75), Vector2(0, -75), Vector2(0, -48)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Top:animation")
+tracks/1/path = NodePath("DoorDown:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.0333333),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"closed"]
-}
-
-[sub_resource type="Animation" id="Animation_6agv2"]
-resource_name = "collision"
-tracks/0/type = "method"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CollisionShape2D")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"queue_free"
-}]
+"times": PackedFloat32Array(-0.0333333, 0.133333, 0.6, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 80), Vector2(0, 75), Vector2(0, 75), Vector2(0, 48)]
 }
 
 [sub_resource type="Animation" id="Animation_r5xgf"]
 resource_name = "open"
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Bottom:animation")
+tracks/0/path = NodePath("DoorUp:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"opened"]
+"times": PackedFloat32Array(0, 0.133333, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -48), Vector2(0, -54), Vector2(0, -54), Vector2(0, -80)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Top:animation")
+tracks/1/path = NodePath("DoorDown:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"opened"]
+"times": PackedFloat32Array(0, 0.133333, 1, 2),
+"transitions": PackedFloat32Array(1, 7.99998, 1, 1),
+"update": 0,
+"values": [Vector2(0, 48), Vector2(0, 54), Vector2(0, 54), Vector2(0, 80)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k25rb"]
 _data = {
 &"RESET": SubResource("Animation_kgyc3"),
 &"close": SubResource("Animation_mjxdi"),
-&"collision": SubResource("Animation_6agv2"),
 &"open": SubResource("Animation_r5xgf")
 }
 
 [sub_resource type="Animation" id="Animation_bfv6c"]
 resource_name = "Disable"
+length = 2.0
 tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -151,7 +131,7 @@ tracks/0/path = NodePath("CollisionShape2D")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(1.33333),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -164,27 +144,27 @@ _data = {
 &"Disable": SubResource("Animation_bfv6c")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bfv6c"]
+size = Vector2(12, 96)
+
+[sub_resource type="Gradient" id="Gradient_dsbe1"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
 [node name="Door" type="StaticBody2D"]
-physics_material_override = SubResource("PhysicsMaterial_bfv6c")
 script = ExtResource("2_bfv6c")
 
-[node name="Bottom" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 31)
-sprite_frames = SubResource("SpriteFrames_6sqah")
-animation = &"closed"
-offset = Vector2(0, -16)
-
-[node name="Top" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -33)
+[node name="DoorUp" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -48)
 rotation = -3.14159
 sprite_frames = SubResource("SpriteFrames_6sqah")
 animation = &"closed"
-offset = Vector2(0, -16)
+offset = Vector2(0, -24)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1)
-rotation = 3.14159
-shape = SubResource("RectangleShape2D_uq1c4")
+[node name="DoorDown" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 48)
+sprite_frames = SubResource("SpriteFrames_6sqah")
+animation = &"closed"
+offset = Vector2(0, -24)
 
 [node name="DoorPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -195,3 +175,36 @@ libraries = {
 libraries = {
 &"": SubResource("AnimationLibrary_dsbe1")
 }
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bfv6c")
+
+[node name="SmokeUp" type="CPUParticles2D" parent="."]
+position = Vector2(0, -46)
+scale = Vector2(0.75, 0.75)
+emitting = false
+amount = 20
+texture = ExtResource("3_dsbe1")
+lifetime = 1.25
+one_shot = true
+explosiveness = 0.3
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 20.61
+color_ramp = SubResource("Gradient_dsbe1")
+
+[node name="SmokeDown" type="CPUParticles2D" parent="."]
+position = Vector2(0, 47)
+scale = Vector2(0.75, 0.75)
+emitting = false
+amount = 15
+texture = ExtResource("3_dsbe1")
+lifetime = 1.25
+one_shot = true
+explosiveness = 0.3
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 20.61
+color_ramp = SubResource("Gradient_dsbe1")
