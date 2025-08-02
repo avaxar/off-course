@@ -128,7 +128,7 @@ limit_right = 99999
 limit_bottom = 99999
 
 [node name="PlayerSpawn" parent="." index="5"]
-position = Vector2(688, -495)
+position = Vector2(-75, 207)
 
 [node name="FinishArea" parent="." index="6"]
 position = Vector2(1310, -121)
