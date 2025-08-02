@@ -8,9 +8,17 @@ extends RigidBody2D
 @export var preferred_radius: float = 48.0
 @export var influence_radius: float = 256.0
 
+var color: Color:
+	get:
+		var h := intensity / 4.0
+		var s := lerpf(0.7, 0.0, inverse_lerp(48.0, 96.0, preferred_radius))
+		var v := 1.0
+		return Color.from_hsv(h, s, v)
+
 
 func _process(_delta: float) -> void:
 	$CollisionShape.shape.radius = radius
+	$Sprite.modulate = color
 
 
 @onready var last_velocity := linear_velocity

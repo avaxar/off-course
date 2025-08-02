@@ -22,21 +22,17 @@ scale = Vector2(0.999999, 0.999999)
 [node name="ExitDoor8" parent="Objects" index="2" instance=ExtResource("3_n46q3")]
 position = Vector2(112, -512)
 rotation = -1.57079
-scale = Vector2(1, 1)
 
 [node name="ExitDoor7" parent="Objects" index="3" instance=ExtResource("3_n46q3")]
 position = Vector2(598, -736)
 rotation = 4.65393e-05
-scale = Vector2(1, 1)
 
 [node name="ExitDoor6" parent="Objects" index="4" instance=ExtResource("3_n46q3")]
 position = Vector2(623, -736)
 rotation = -3.14157
-scale = Vector2(1, 1)
 
 [node name="ExitDoor5" parent="Objects" index="5" instance=ExtResource("3_n46q3")]
 position = Vector2(647, -736)
-scale = Vector2(1, 1)
 
 [node name="ExitDoor4" parent="Objects" index="6" instance=ExtResource("3_n46q3")]
 position = Vector2(366, -204)
@@ -164,10 +160,10 @@ rotation = -1.57079
 [node name="PlayerSpawn" parent="." index="5"]
 position = Vector2(159, 379)
 
-[node name="Camera" parent="PlayerSpawn" index="0"]
+[node name="Camera" parent="PlayerSpawn" index="1"]
 rotation = -0.00658693
 
-[node name="Velocity" parent="PlayerSpawn" index="1"]
+[node name="Velocity" parent="PlayerSpawn" index="2"]
 position = Vector2(0, -142)
 
 [node name="FinishArea" parent="." index="6"]
