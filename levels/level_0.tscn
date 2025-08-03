@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c3fqkueu71rf2" path="res://entities/door/door.tscn" id="4_foxie"]
 [ext_resource type="PackedScene" uid="uid://bk48wlfkg1p11" path="res://entities/button/button.tscn" id="5_7d3si"]
 
-[node name="Level2" instance=ExtResource("1_eus5j")]
+[node name="Level" instance=ExtResource("1_eus5j")]
 next_scene = ExtResource("2_823pn")
 
 [node name="Background" parent="." index="1"]

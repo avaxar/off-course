@@ -46,8 +46,8 @@ func _process(delta: float) -> void:
 			latched = true
 			latch_time = time
 
-			var strength := gravitate().length() / 18.0
-			$LatchAudio.volume_db = log(strength) * 3.5
+			# var strength := gravitate().length() / 18.0
+			$LatchAudio.volume_db = 10.0 # log(strength) * 3.5
 			$LatchAudio.pitch_scale = randf_range(0.95, 1.20)
 			$LatchAudio.play()
 			$Sprites/LatchSmoke.emitting = true
