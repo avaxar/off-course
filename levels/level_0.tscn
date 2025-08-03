@@ -414,6 +414,7 @@ animations = [{
 
 [node name="Level2" instance=ExtResource("1_eus5j")]
 next_scene = ExtResource("2_823pn")
+initial_dialogs = Array[String](["A:Experiment, Start.", "B:Here we goo"])
 
 [node name="ExitDoor4" parent="." index="0" instance=ExtResource("4_foxie")]
 position = Vector2(560, -336)
