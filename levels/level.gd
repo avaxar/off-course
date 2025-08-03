@@ -187,6 +187,26 @@ extends Node2D
 		"B:Are you prepared for what happens?",
 		"A:Yes."
 	],
+	38: [
+		"A:Lupin the 38th...",
+		"B:Strontium",
+		"A:Did you actually memorize all of them?"
+	],
+	39: [
+		"B:Blue hair, Blue tie.",
+		"A:Hiding in your wifi."
+	],
+	40: [
+		"A:How did we even get all these guinea pigs?",
+		"B:Don't ask questions.",
+		"B:You... don't wanna know."
+	],
+	41: [
+		"A:Did we have a guinea pig astronaut?",
+		"B:What? No?",
+		"B:OH! that's...",
+		"B:Johnny did say he knew a place to dump them..."
+	],
 	42: [
 		"B:He's the answer to life itself",
 	],
@@ -252,9 +272,33 @@ extends Node2D
 		"B:Can we go back in time now?",
 		"A:Mam, we do not have a delorean.",
 	],
+	92: [
+		"A:Deploying Lupin the 92nd",
+		"B:Uranium.",
+		"B:We are become death.",
+	],
+	95: [
+		"A:Deploying Lupin the 95th",
+		"B:Kachow!",
+	],
+	98: [
+		"A:Deploying Lupin the 84th",
+		"B:Best version of the OS legitimately",
+		"A:That's your nostalgia speaking",
+	],
 	100: [
 		"B:LETS GOOO WE REACHED 100!!!",
 		"A:I don't think it's something to celebrate, Mam."
+	],
+	101: [
+		"A:Deploying Lupin the 101st",
+		"B:You know what'd look good on me?",
+		"A:Did they kill your parents or something?"
+	],
+	104: [
+		"A:Deploying Lupin the 104th",
+		"B:Hey, I know what we're doing today",
+		"A:Yeah. The Experiment.",
 	],
 	151: [
 		"B:GOTTA CATCH 'EM ALL",
@@ -292,6 +336,11 @@ extends Node2D
 	],
 	1000: [
 		"A:1000... How have we gone this far?"
+	],
+	1337: [
+		"A:Lupin...the 1337th",
+		"B:TH4T5 GR8 M8",
+		"A:How are you doing that?"
 	],
 }
 
