@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://biotlhx7rd3hp"]
+[gd_scene load_steps=17 format=3 uid="uid://biotlhx7rd3hp"]
 
 [ext_resource type="Script" uid="uid://cju4qvsx3hlfj" path="res://entities/orb/orb.gd" id="1_4ogyp"]
 [ext_resource type="Texture2D" uid="uid://f7i2gsgexdih" path="res://entities/orb/orb.png" id="2_h8qx5"]
@@ -76,6 +76,11 @@ animations = [{
 resource_local_to_scene = true
 radius = 12.0
 
+[sub_resource type="Curve" id="Curve_b6827"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.148418, -124.59), 0.0, 0.0, 0, 0, Vector2(0.452555, 242.127), 0.0, 0.0, 0, 0, Vector2(0.542579, -290.469), 0.0, 0.0, 0, 0, Vector2(0.987835, 338.881), 0.0, 0.0, 0, 0]
+point_count = 5
+
 [node name="Orb" type="RigidBody2D" groups=["orbs"]]
 physics_material_override = SubResource("PhysicsMaterial_h8qx5")
 gravity_scale = 0.0
@@ -97,5 +102,27 @@ stream = ExtResource("3_ulscp")
 stream = ExtResource("4_b6827")
 volume_db = -80.0
 autoplay = true
+
+[node name="Particles" type="CPUParticles2D" parent="."]
+position = Vector2(-3, -3)
+rotation = 3.14159
+amount = 25
+lifetime = 2.0
+explosiveness = 0.11
+emission_shape = 5
+emission_points = PackedVector2Array(13, 13, 25, 25)
+emission_normals = PackedVector2Array(75, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+emission_colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+spread = 30.0
+gravity = Vector2(0, 25)
+initial_velocity_min = 10.0
+initial_velocity_max = 25.0
+orbit_velocity_min = 0.5
+orbit_velocity_max = 2.5
+angle_min = 200.0
+angle_max = 200.0
+angle_curve = SubResource("Curve_b6827")
+scale_amount_min = 0.5
+scale_amount_max = 1.5
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

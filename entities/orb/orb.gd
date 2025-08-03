@@ -27,6 +27,7 @@ var time := 0.0
 func _process(delta: float) -> void:
 	time += delta
 	$CollisionShape.shape.radius = radius
+	$Particles.color = color
 	$Sprite.modulate = color
 
 

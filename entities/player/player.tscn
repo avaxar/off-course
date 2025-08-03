@@ -293,6 +293,9 @@ stream = ExtResource("9_wvtmh")
 [node name="DelatchAudio" type="AudioStreamPlayer2D" parent="." index="8"]
 stream = ExtResource("10_7thud")
 
+[node name="Particles" parent="." index="10"]
+visible = false
+
 [connection signal="die" from="." to="." method="_on_die"]
 [connection signal="body_entered" from="DangerArea" to="." method="_on_danger_body_enter"]
 [connection signal="finished" from="DeathAudio" to="." method="_on_death_audio_finished"]
