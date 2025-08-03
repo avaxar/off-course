@@ -5,7 +5,6 @@ shader_type canvas_item;
 const vec4 background = vec4(1., 1., 1., 0.);
 
 uniform float pixel_scale: hint_range(0.0, 1.0) = 1.0;
-uniform bool enable_mod = false;
 
 
 varying vec4 modulate;
@@ -117,8 +116,5 @@ vec4 scale3x(sampler2D tex, vec2 uv, vec2 pixel_size) {
 }
 
 void fragment() {
-	COLOR = scale3x(TEXTURE, UV, TEXTURE_PIXEL_SIZE * pixel_scale);
-	if (enable_mod) {
-		COLOR *= modulate;
-	}
+	COLOR = scale3x(TEXTURE, UV, TEXTURE_PIXEL_SIZE * pixel_scale) * modulate;
 }

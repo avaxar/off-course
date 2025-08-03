@@ -25,12 +25,10 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a1qjk"]
 shader = ExtResource("3_8fjmc")
 shader_parameter/pixel_scale = 1.0
-shader_parameter/enable_mod = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_j3ovn"]
 shader = ExtResource("3_8fjmc")
 shader_parameter/pixel_scale = 1.0
-shader_parameter/enable_mod = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eyb6c"]
 atlas = ExtResource("4_8fjmc")
@@ -76,7 +74,6 @@ animations = [{
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_afbqv"]
 shader = ExtResource("3_8fjmc")
 shader_parameter/pixel_scale = 1.0
-shader_parameter/enable_mod = true
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8fjmc"]
 atlas = ExtResource("4_fkugw")

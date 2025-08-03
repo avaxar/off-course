@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://delaxhx1j17tb"]
+[gd_scene load_steps=18 format=4 uid="uid://delaxhx1j17tb"]
 
 [ext_resource type="TileSet" uid="uid://ibgnx2ymucbq" path="res://levels/tileset.tres" id="1_80vhd"]
 [ext_resource type="Script" uid="uid://do2or4ovxyerg" path="res://levels/level.gd" id="1_gjl0y"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bk48wlfkg1p11" path="res://entities/button/button.tscn" id="3_gjl0y"]
 [ext_resource type="PackedScene" uid="uid://biotlhx7rd3hp" path="res://entities/orb/orb.tscn" id="4_vnv7o"]
 [ext_resource type="Shader" uid="uid://c4kghet2pushk" path="res://levels/cutout.gdshader" id="8_d5x7l"]
+[ext_resource type="Texture2D" uid="uid://cndbn1jeog6o1" path="res://levels/loop.png" id="10_pb8y7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hjsbj"]
 size = Vector2(96, 96)
@@ -23,6 +24,36 @@ shader_parameter/rounded = 14.0
 shader_parameter/offset = Vector2(0, 0)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_d5x7l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxp4k"]
+atlas = ExtResource("10_pb8y7")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7v53"]
+atlas = ExtResource("10_pb8y7")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0qmeg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxp4k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7v53")
+}],
+"loop": true,
+"name": &"pressed",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ta7ci"]
+size = Vector2(32, 20)
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_gjl0y")
@@ -98,6 +129,18 @@ texture = SubResource("PlaceholderTexture2D_d5x7l")
 polygon = PackedVector2Array(0, 0, 480, 0, 480, 270, 0, 270)
 metadata/_edit_lock_ = true
 
+[node name="LoopButton" type="Area2D" parent="CanvasLayer"]
+position = Vector2(29, 23)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="CanvasLayer/LoopButton"]
+sprite_frames = SubResource("SpriteFrames_0qmeg")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape" type="CollisionShape2D" parent="CanvasLayer/LoopButton"]
+shape = SubResource("RectangleShape2D_ta7ci")
+metadata/_edit_lock_ = true
+
 [connection signal="timeout" from="EntranceDoor/Timer" to="." method="_on_entrance_timeout"]
 [connection signal="timeout" from="PlayerSpawn/Timer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="body_entered" from="FinishArea" to="." method="_on_finish_area_entered"]
+[connection signal="input_event" from="CanvasLayer/LoopButton" to="." method="_on_loop_button_input_event"]

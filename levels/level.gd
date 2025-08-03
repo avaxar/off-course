@@ -27,6 +27,7 @@ func spawn_player_timed() -> void:
 
 const PLAYER := preload("res://entities/player/player.tscn")
 func spawn_player() -> void:
+	Global.lupin += 1
 	entrance.open()
 	player = PLAYER.instantiate()
 	player.global_position = player_spawn.global_position
@@ -48,3 +49,12 @@ func _on_finish_area_entered(body: Node2D) -> void:
 	if body is Player:
 		print("Finish!")
 		get_tree().call_deferred("change_scene_to_packed", next_scene)
+
+
+func _on_loop_button_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+	if event is InputEventMouseButton:
+		if event.pressed:
+			$CanvasLayer/LoopButton/Sprite.play("pressed")
+		else:
+			$CanvasLayer/LoopButton/Sprite.play("default")
+			player.die.emit()

@@ -20,7 +20,8 @@ var dead := false
 
 
 func _ready() -> void:
-	$Sprites/Lupin.modulate = Color()
+	if Global.lupin == 3:
+		$Sprites/Lupin.play("third")
 
 	for trajlines in [unlatched_trajlines, latched_trajlines]:
 		for i in range(trajectory_line_steps, trajectory_steps, trajectory_line_steps * 2):
