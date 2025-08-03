@@ -1,7 +1,7 @@
 extends Node2D
 
-var panel:int = 0
-func _process(delta: float) -> void:
+var panel := 0
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("latch") && panel == 0:
 		$AnimationPlayer.play("panel_1")
 		print("com")
@@ -20,5 +20,5 @@ func _process(delta: float) -> void:
 		get_tree().change_scene_to_file("res://levels/level_0.tscn")
 
 
-func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	panel += 1
