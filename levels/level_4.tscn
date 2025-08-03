@@ -1,12 +1,12 @@
 [gd_scene load_steps=6 format=4 uid="uid://bcm3qhh0vom4r"]
 
 [ext_resource type="PackedScene" uid="uid://delaxhx1j17tb" path="res://levels/level.tscn" id="1_fwt2v"]
-[ext_resource type="PackedScene" uid="uid://d1eljgbwc0q2s" path="res://levels/level_5.tscn" id="2_b15rf"]
+[ext_resource type="PackedScene" uid="uid://f7vb3632flte" path="res://levels/level_8.tscn" id="2_b15rf"]
 [ext_resource type="PackedScene" uid="uid://c3fqkueu71rf2" path="res://entities/door/door.tscn" id="3_t0qhu"]
 [ext_resource type="PackedScene" uid="uid://bk48wlfkg1p11" path="res://entities/button/button.tscn" id="4_hokjj"]
 [ext_resource type="PackedScene" uid="uid://biotlhx7rd3hp" path="res://entities/orb/orb.tscn" id="4_t6q73"]
 
-[node name="Level" instance=ExtResource("1_fwt2v")]
+[node name="Level3" instance=ExtResource("1_fwt2v")]
 next_scene = ExtResource("2_b15rf")
 
 [node name="Background" parent="." index="1"]
