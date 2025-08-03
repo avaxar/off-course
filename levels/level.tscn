@@ -71,6 +71,12 @@ tile_set = ExtResource("1_80vhd")
 collision_enabled = false
 metadata/_edit_lock_ = true
 
+[node name="BackgroundOver" type="TileMapLayer" parent="."]
+z_index = -9
+tile_set = ExtResource("1_80vhd")
+collision_enabled = false
+metadata/_edit_lock_ = true
+
 [node name="Objects" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
 
