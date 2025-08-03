@@ -1,7 +1,13 @@
 extends Node2D
 
-var panel:int = 0
+var panel := 0
+var closing := false
+
 func _process(delta: float) -> void:
+	if closing:
+		modulate.a -= 4.0 * modulate.a * delta
+		modulate.a = max(modulate.a, 0.0)
+
 	if Input.is_action_just_pressed("latch") && panel == 0:
 		$AnimationPlayer.play("panel1")
 		print("com")
@@ -17,8 +23,13 @@ func _process(delta: float) -> void:
 		print("com")
 	
 	if Input.is_action_just_pressed("latch") && panel == 4:
-		get_tree().change_scene_to_file("res://entities/thankyou.tscn"  )
+		closing = true
+		$Timer.start()
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	panel += 1
+
+
+func _on_timer_timeout() -> void:
+	get_tree().change_scene_to_file("res://entities/thankyou.tscn")

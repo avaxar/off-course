@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://dwbu306cfutgu"]
+[gd_scene load_steps=2 format=3 uid="uid://cjnoqt4gkj1i5"]
 
 [ext_resource type="FontFile" uid="uid://cbptoha0rsyl" path="res://levels/unifont.ttf" id="1_28kwg"]
 
@@ -10,12 +10,12 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 80.0
-offset_top = 119.0
-offset_right = 395.0
-offset_bottom = 150.0
+offset_left = 152.0
+offset_top = 126.0
+offset_right = 320.0
+offset_bottom = 142.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("1_28kwg")
-theme_override_font_sizes/font_size = 30
-text = "Thank You For Playing"
+theme_override_font_sizes/font_size = 16
+text = "Thank you for playing!"
