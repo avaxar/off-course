@@ -276,6 +276,7 @@ script = ExtResource("10_ukwr8")
 metadata/_edit_lock_ = true
 
 [node name="DialogA" type="MarginContainer" parent="CanvasLayer/Dialogs"]
+visible = false
 offset_left = 13.0
 offset_top = -45.0
 offset_right = 45.0
@@ -283,7 +284,7 @@ offset_bottom = -13.0
 metadata/_edit_lock_ = true
 
 [node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Dialogs/DialogA"]
-modulate = Color(0.75, 0.995833, 1, 1)
+modulate = Color(0.75, 0.995833, 1, 0.752941)
 layout_mode = 2
 texture = SubResource("CompressedTexture2D_ukwr8")
 region_rect = Rect2(0, 0, 48, 48)
@@ -310,6 +311,7 @@ vertical_alignment = 1
 metadata/_edit_lock_ = true
 
 [node name="DialogB" type="MarginContainer" parent="CanvasLayer/Dialogs"]
+visible = false
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -324,7 +326,7 @@ grow_vertical = 0
 metadata/_edit_lock_ = true
 
 [node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Dialogs/DialogB"]
-modulate = Color(1, 0.8, 0.8, 1)
+modulate = Color(1, 0.8, 0.8, 0.752941)
 layout_mode = 2
 texture = SubResource("CompressedTexture2D_ukwr8")
 region_rect = Rect2(0, 0, 48, 48)
@@ -332,6 +334,7 @@ patch_margin_left = 16
 patch_margin_top = 16
 patch_margin_right = 16
 patch_margin_bottom = 16
+metadata/_edit_lock_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Dialogs/DialogB"]
 layout_mode = 2
@@ -339,6 +342,7 @@ theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 1
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
+metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="CanvasLayer/Dialogs/DialogB/MarginContainer"]
 layout_mode = 2
@@ -346,6 +350,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.501961, 0.501961, 0.501961, 1)
 theme_override_fonts/font = ExtResource("11_pb8y7")
 vertical_alignment = 1
+metadata/_edit_lock_ = true
 
 [node name="LetterTimer" type="Timer" parent="CanvasLayer/Dialogs"]
 wait_time = 0.035
