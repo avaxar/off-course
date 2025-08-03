@@ -105,9 +105,8 @@ autoplay = true
 
 [node name="Particles" type="CPUParticles2D" parent="."]
 position = Vector2(-3, -3)
-rotation = 3.14159
-amount = 25
-lifetime = 2.0
+rotation = 3.43587
+amount = 12
 explosiveness = 0.11
 emission_shape = 5
 emission_points = PackedVector2Array(13, 13, 25, 25)
