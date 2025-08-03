@@ -1,11 +1,16 @@
-[gd_scene load_steps=40 format=4 uid="uid://d14xuwuberf8j"]
+[gd_scene load_steps=65 format=4 uid="uid://d14xuwuberf8j"]
 
 [ext_resource type="Texture2D" uid="uid://bfvv800l6p0v" path="res://entities/menu/title.png" id="1_ab5ca"]
+[ext_resource type="Script" uid="uid://d0lhrb85imq0t" path="res://entities/menu/menu.gd" id="1_tjnt2"]
 [ext_resource type="PackedScene" uid="uid://ber2ukf0x5uaw" path="res://entities/parallax/parallax.tscn" id="2_28b7d"]
 [ext_resource type="TileSet" uid="uid://ibgnx2ymucbq" path="res://levels/tileset.tres" id="2_vtc7f"]
 [ext_resource type="PackedScene" uid="uid://c3fqkueu71rf2" path="res://entities/door/door.tscn" id="4_kk54r"]
 [ext_resource type="Texture2D" uid="uid://vyodekrereqw" path="res://entities/menu/StartButton-Sheet.png" id="5_aud0f"]
+[ext_resource type="FontFile" uid="uid://cbptoha0rsyl" path="res://levels/unifont.ttf" id="7_tjnt2"]
 [ext_resource type="PackedScene" uid="uid://biotlhx7rd3hp" path="res://entities/orb/orb.tscn" id="7_yttcm"]
+[ext_resource type="Shader" uid="uid://c4kghet2pushk" path="res://levels/cutout.gdshader" id="9_puy48"]
+[ext_resource type="Texture2D" uid="uid://ce87nkgmd0um4" path="res://levels/transition.png" id="10_425a5"]
+[ext_resource type="AudioStream" uid="uid://bp1ljb3322s37" path="res://entities/menu/typshit.wav" id="11_425a5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_28b7d"]
 atlas = ExtResource("1_ab5ca")
@@ -239,7 +244,158 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_qiot3"]
+atlas = ExtResource("5_aud0f")
+region = Rect2(0, 0, 103, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44gu3"]
+atlas = ExtResource("5_aud0f")
+region = Rect2(103, 0, 103, 42)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hahou"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qiot3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44gu3")
+}],
+"loop": true,
+"name": &"hold",
+"speed": 5.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dv6bp"]
+shader = ExtResource("9_puy48")
+shader_parameter/top_left = Vector2(20, 20)
+shader_parameter/bottom_right = Vector2(460, 250)
+shader_parameter/rounded = 14.0
+shader_parameter/offset = Vector2(0, 0)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_2aocl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dcgl2"]
+atlas = ExtResource("10_425a5")
+region = Rect2(0, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pm7mp"]
+atlas = ExtResource("10_425a5")
+region = Rect2(480, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sgadm"]
+atlas = ExtResource("10_425a5")
+region = Rect2(960, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_humu5"]
+atlas = ExtResource("10_425a5")
+region = Rect2(1440, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddeq6"]
+atlas = ExtResource("10_425a5")
+region = Rect2(1920, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4k87"]
+atlas = ExtResource("10_425a5")
+region = Rect2(2400, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ia6v6"]
+atlas = ExtResource("10_425a5")
+region = Rect2(2880, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_werwd"]
+atlas = ExtResource("10_425a5")
+region = Rect2(2880, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_of21v"]
+atlas = ExtResource("10_425a5")
+region = Rect2(2400, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80cyg"]
+atlas = ExtResource("10_425a5")
+region = Rect2(1920, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mca5t"]
+atlas = ExtResource("10_425a5")
+region = Rect2(1440, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axqo2"]
+atlas = ExtResource("10_425a5")
+region = Rect2(960, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8henu"]
+atlas = ExtResource("10_425a5")
+region = Rect2(480, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rm7tw"]
+atlas = ExtResource("10_425a5")
+region = Rect2(0, 0, 480, 270)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ffra8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcgl2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pm7mp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sgadm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_humu5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddeq6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4k87")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ia6v6")
+}],
+"loop": false,
+"name": &"close",
+"speed": 18.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_werwd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_of21v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80cyg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mca5t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axqo2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8henu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rm7tw")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"open",
+"speed": 18.0
+}]
+
 [node name="Menu" type="Node2D"]
+script = ExtResource("1_tjnt2")
 
 [node name="Parallax" parent="." instance=ExtResource("2_28b7d")]
 position = Vector2(0, -1)
@@ -248,7 +404,7 @@ position = Vector2(0, -1)
 tile_map_data = PackedByteArray("AAABAAEAAgAMAAwAAAABAAIAAgALAAwAAAABAAUAAgALAA0AAAABAAYAAgALAA0AAAABAAcAAgALAA0AAAABAAgAAgALAA0AAAABAAkAAgALAA0AAAABAAoAAgALAA0AAAABAAsAAgALAA0AAAABAAwAAgALAA0AAAABAA0AAgALAA0AAAABAA4AAgALAA4AAAABAA8AAgAMAAwAAAACAAEAAgAMAAwAAAACAAIAAgAHAAkAAAACAAUAAgAHAAoAAAACAAYAAgAHAAoAAAACAAcAAgAHAAoAAAACAAgAAgAHAAoAAAACAAkAAgAHAAoAAAACAAoAAgAHAAoAAAACAAsAAgAHAAoAAAACAAwAAgAHAAoAAAACAA0AAgAHAAoAAAACAA4AAgAHAAsAAAACAA8AAgAMAAwAAAADAAEAAgAMAAwAAAADAAIAAgAIAAkAAAADAAUAAgAIAAoAAAADAAYAAgAIAAoAAAADAAcAAgAIAAoAAAADAAgAAgAIAAoAAAADAAkAAgAIAAoAAAADAAoAAgAIAAoAAAADAAsAAgAIAAoAAAADAAwAAgAIAAoAAAADAA0AAgAIAAoAAAADAA4AAgAIAAsAAAADAA8AAgAMAAwAAAAEAAEAAgAMAAwAAAAEAAIAAgAIAAkAAAAEAAUAAgAIAAoAAAAEAAYAAgAIAAoAAAAEAAcAAgAIAAoAAAAEAAgAAgAIAAoAAAAEAAkAAgAIAAoAAAAEAAoAAgAIAAoAAAAEAAsAAgAIAAoAAAAEAAwAAgAIAAoAAAAEAA0AAgAIAAoAAAAEAA4AAgAIAAsAAAAEAA8AAgAMAAwAAAAFAAEAAgAMAAwAAAAFAAIAAgAIAAkAAAAFAAUAAgAIAAoAAAAFAAYAAgAIAAoAAAAFAAcAAgAIAAoAAAAFAAgAAgAIAAoAAAAFAAkAAgAIAAoAAAAFAAoAAgAIAAoAAAAFAAsAAgAIAAoAAAAFAAwAAgAIAAoAAAAFAA0AAgAIAAoAAAAFAA4AAgAIAAsAAAAFAA8AAgAMAAwAAAAGAAEAAgAMAAwAAAAGAAIAAgAIAAkAAAAGAAUAAgAIAAoAAAAGAAYAAgAIAAoAAAAGAAcAAgAIAAoAAAAGAAgAAgAIAAoAAAAGAAkAAgAIAAoAAAAGAAoAAgAIAAoAAAAGAAsAAgAIAAoAAAAGAAwAAgAIAAoAAAAGAA0AAgAIAAoAAAAGAA4AAgAIAAsAAAAGAA8AAgAMAAwAAAAHAAEAAgAMAAwAAAAHAAIAAgAJAAkAAAAHAAUAAgAJAAoAAAAHAAYAAgAJAAoAAAAHAAcAAgAJAAoAAAAHAAgAAgAJAAoAAAAHAAkAAgAIAA0AAAAHAAoAAgAIAA0AAAAHAAsAAgAJAAoAAAAHAAwAAgAJAAoAAAAHAA0AAgAJAAoAAAAHAA4AAgAJAAsAAAAHAA8AAgAMAAwAAAAIAAEAAgAMAAwAAAAIAAIAAgAMAAwAAAAIAAMAAgAUAAwAAAAIAAQAAgAUAA0AAAAIAAUAAgAMAAwAAAAIAAYAAgAMAAwAAAAIAAcAAgAMAAwAAAAIAAgAAgAMAAwAAAAIAAkAAgAIAAkAAAAIAAoAAgAIAAsAAAAIAAsAAgAMAAwAAAAIAAwAAgAMAAwAAAAIAA0AAgAMAAwAAAAIAA4AAgAMAAwAAAAIAA8AAgAMAAwAAAAJAAEAAgAMAAwAAAAJAAIAAgAVAAsAAAAJAAMAAgAVAAwAAAAJAAQAAgAVAA0AAAAJAAUAAgAVAA4AAAAJAAYAAgAVAA4AAAAJAAcAAgAVAA4AAAAJAAgAAgAVAA4AAAAJAAkAAgAIAAkAAAAJAAoAAgAIAAsAAAAJAAsAAgAVAA4AAAAJAAwAAgAVAAoAAAAJAA0AAgAMAAwAAAAJAA4AAgAMAAwAAAAJAA8AAgAMAAwAAAAKAAEAAgAMAAwAAAAKAAIAAgAWAAsAAAAKAAMAAgAWAA4AAAAKAAQAAgAWAA4AAAAKAAUAAgAWAA4AAAAKAAYAAgAWAA4AAAAKAAcAAgAWAA4AAAAKAAgAAgAWAA4AAAAKAAkAAgAIAAkAAAAKAAoAAgAIAAsAAAAKAAsAAgAWAA4AAAAKAAwAAgAWAAoAAAAKAA0AAgAMAAwAAAAKAA4AAgAMAAwAAAAKAA8AAgAMAAwAAAALAAEAAgAMAAwAAAALAAIAAgAMAAwAAAALAAMAAgAMAAwAAAALAAQAAgAMAAwAAAALAAUAAgAMAAwAAAALAAYAAgAMAAwAAAALAAcAAgAMAAwAAAALAAgAAgAMAAwAAAALAAkAAgAIAAkAAAALAAoAAgAIAAsAAAALAAsAAgAMAAwAAAALAAwAAgAMAAwAAAALAA0AAgAMAAwAAAALAA4AAgAMAAwAAAALAA8AAgAMAAwAAAAMAAEAAgAMAAwAAAAMAAIAAgAMAAwAAAAMAAMAAgAMAAwAAAAMAAQAAgAMAAwAAAAMAAUAAgAMAAwAAAAMAAYAAgAMAAwAAAAMAAcAAgAMAAwAAAAMAAgAAgAMAAwAAAAMAAkAAgAIAAkAAAAMAAoAAgAIAAsAAAAMAAsAAgAMAAwAAAAMAAwAAgAMAAwAAAAMAA0AAgAMAAwAAAAMAA4AAgAMAAwAAAAMAA8AAgAVAAsAAAANAAEAAgAMAAwAAAANAAIAAgAMAAwAAAANAAMAAgAMAAwAAAANAAQAAgAMAAwAAAANAAUAAgAMAAwAAAANAAYAAgAMAAwAAAANAAcAAgAMAAwAAAANAAgAAgAMAAwAAAANAAkAAgAIAAkAAAANAAoAAgAIAAsAAAANAAsAAgAMAAwAAAANAAwAAgAMAAwAAAANAA0AAgAMAAwAAAANAA4AAgAMAAwAAAANAA8AAgAWAAsAAAAOAAEAAgAMAAwAAAAOAAIAAgAMAAwAAAAOAAMAAgAMAAwAAAAOAAQAAgAMAAwAAAAOAAUAAgAMAAwAAAAOAAYAAgAMAAwAAAAOAAcAAgAMAAwAAAAOAAgAAgAMAAwAAAAOAAkAAgAIAAkAAAAOAAoAAgAIAAsAAAAOAAsAAgAMAAwAAAAOAAwAAgAMAAwAAAAOAA0AAgAMAAwAAAAOAA4AAgAMAAwAAAAOAA8AAgAMAAwAAAAPAAEAAgAMAAwAAAAPAAIAAgAMAAwAAAAPAAMAAgAMAAwAAAAPAAQAAgAMAAwAAAAPAAUAAgAMAAwAAAAPAAYAAgAMAAwAAAAPAAcAAgAMAAwAAAAPAAgAAgAMAAwAAAAPAAkAAgAIAAkAAAAPAAoAAgAIAAsAAAAPAAsAAgAMAAwAAAAPAAwAAgAMAAwAAAAPAA0AAgAMAAwAAAAPAA4AAgAMAAwAAAAPAA8AAgAMAAwAAAAQAAEAAgAMAAwAAAAQAAIAAgAMAAwAAAAQAAMAAgAMAAwAAAAQAAQAAgAMAAwAAAAQAAUAAgAMAAwAAAAQAAYAAgAMAAwAAAAQAAcAAgAMAAwAAAAQAAgAAgAMAAwAAAAQAAkAAgAIAAkAAAAQAAoAAgAIAAsAAAAQAAsAAgAMAAwAAAAQAAwAAgAMAAwAAAAQAA0AAgAMAAwAAAAQAA4AAgAMAAwAAAAQAA8AAgAMAAwAAAARAAEAAgAMAAwAAAARAAIAAgAMAAwAAAARAAMAAgAMAAwAAAARAAQAAgAMAAwAAAARAAUAAgAMAAwAAAARAAYAAgAMAAwAAAARAAcAAgAMAAwAAAARAAgAAgAMAAwAAAARAAkAAgAIAAkAAAARAAoAAgAIAAsAAAARAAsAAgAMAAwAAAARAAwAAgAMAAwAAAARAA0AAgAMAAwAAAARAA4AAgAMAAwAAAARAA8AAgAMAAwAAAASAAEAAgAMAAwAAAASAAIAAgAMAAwAAAASAAMAAgAMAAwAAAASAAQAAgAMAAwAAAASAAUAAgAMAAwAAAASAAYAAgAMAAwAAAASAAcAAgAMAAwAAAASAAgAAgAMAAwAAAASAAkAAgAIAAkAAAASAAoAAgAIAAsAAAASAAsAAgAMAAwAAAASAAwAAgAMAAwAAAASAA0AAgAMAAwAAAASAA4AAgAMAAwAAAASAA8AAgAMAAwAAAATAAQAAgAaAA4AAAATAAUAAgAaAA8AAAATAAYAAgAaAA8AAAATAAcAAgAaAA4AAAATAAgAAgAaAA8AAAATAAkAAgAIAAkAAAATAAoAAgAIAAsAAAATAAsAAgAaAA8AAAATAAwAAgAaAAoAAAATAA0AAgAMAAwAAAATAA4AAgAMAAwAAAATAA8AAgAMAAwAAAAUAAQAAgAbAA4AAAAUAAUAAgAbAA8AAAAUAAYAAgAbAA8AAAAUAAcAAgAbAA4AAAAUAAgAAgAbAA8AAAAUAAkAAgAIAAkAAAAUAAoAAgAIAAsAAAAUAAsAAgAbAA8AAAAUAAwAAgAbAAoAAAAUAA0AAgAMAAwAAAAUAA4AAgAMAAwAAAAUAA8AAgAOAA4AAAAVAAEAAgAMAAwAAAAVAAIAAgAOAA4AAAAVAAMAAgAQAA4AAAAVAAQAAgAOAA4AAAAVAAUAAgAMAAwAAAAVAAYAAgAMAAwAAAAVAAcAAgAMAAwAAAAVAAgAAgAMAAwAAAAVAAkAAgAIAAkAAAAVAAoAAgAIAAsAAAAVAAsAAgAMAAwAAAAVAAwAAgAMAAwAAAAVAA0AAgAMAAwAAAAVAA4AAgAMAAwAAAAVAA8AAgAOAA4AAAAWAAEAAgAMAAwAAAAWAAIAAgAHAAkAAAAWAAMAAgAHAAoAAAAWAAQAAgAHAAoAAAAWAAUAAgAHAAoAAAAWAAYAAgAHAAoAAAAWAAcAAgAHAAoAAAAWAAgAAgAHAAoAAAAWAAkAAgAIAA0AAAAWAAoAAgAIAA0AAAAWAAsAAgAHAAoAAAAWAAwAAgAHAAoAAAAWAA0AAgAHAAoAAAAWAA4AAgAHAAsAAAAWAA8AAgAOAA4AAAAXAAEAAgAMAAwAAAAXAAIAAgAIAAkAAAAXAAMAAgAIAAoAAAAXAAQAAgAIAAoAAAAXAAUAAgAIAAoAAAAXAAYAAgAIAAoAAAAXAAcAAgAIAAoAAAAXAAgAAgAIAAoAAAAXAAkAAgAIAAoAAAAXAAoAAgAIAAoAAAAXAAsAAgAIAAoAAAAXAAwAAgAIAAoAAAAXAA0AAgAIAAoAAAAXAA4AAgAIAAsAAAAXAA8AAgAOAA4AAAAYAAEAAgAMAAwAAAAYAAIAAgAIAAkAAAAYAAMAAgAIAAoAAAAYAAQAAgAIAAoAAAAYAAUAAgAIAAoAAAAYAAYAAgAIAAoAAAAYAAcAAgAIAAoAAAAYAAgAAgAIAAoAAAAYAAkAAgAIAAoAAAAYAAoAAgAIAAoAAAAYAAsAAgAIAAoAAAAYAAwAAgAIAAoAAAAYAA0AAgAIAAoAAAAYAA4AAgAIAAsAAAAYAA8AAgAOAA4AAAAZAAEAAgAMAAwAAAAZAAIAAgAIAAkAAAAZAAMAAgAIAAoAAAAZAAQAAgAIAAoAAAAZAAUAAgAIAAoAAAAZAAYAAgAIAAoAAAAZAAcAAgAIAAoAAAAZAAgAAgAIAAoAAAAZAAkAAgAIAAoAAAAZAAoAAgAIAAoAAAAZAAsAAgAIAAoAAAAZAAwAAgAIAAoAAAAZAA0AAgAIAAoAAAAZAA4AAgAIAAsAAAAZAA8AAgAOAA4AAAAaAAEAAgAMAAwAAAAaAAIAAgAIAAkAAAAaAAMAAgAIAAoAAAAaAAQAAgAIAAoAAAAaAAUAAgAIAAoAAAAaAAYAAgAIAAoAAAAaAAcAAgAIAAoAAAAaAAgAAgAIAAoAAAAaAAkAAgAIAAoAAAAaAAoAAgAIAAoAAAAaAAsAAgAIAAoAAAAaAAwAAgAIAAoAAAAaAA0AAgAIAAoAAAAaAA4AAgAIAAsAAAAaAA8AAgAOAA4AAAAbAAEAAgAMAAwAAAAbAAIAAgAJAAkAAAAbAAMAAgAJAAoAAAAbAAQAAgAJAAoAAAAbAAUAAgAJAAoAAAAbAAYAAgAJAAoAAAAbAAcAAgAJAAoAAAAbAAgAAgAJAAoAAAAbAAkAAgAJAAoAAAAbAAoAAgAJAAoAAAAbAAsAAgAJAAoAAAAbAAwAAgAJAAoAAAAbAA0AAgAJAAoAAAAbAA4AAgAJAAsAAAAbAA8AAgAOAA4AAAAcAAEAAgAMAAwAAAAcAAIAAgALAAwAAAAcAAMAAgALAA0AAAAcAAQAAgALAA0AAAAcAAUAAgALAA0AAAAcAAYAAgALAA4AAAAcAAcAAgAOAA4AAAAcAAgAAgAOAA4AAAAcAAkAAgAOAA4AAAAcAAoAAgAOAA4AAAAcAAsAAgAOAA4AAAAcAAwAAgAOAA4AAAAcAA0AAgAOAA4AAAAcAA4AAgAMAAwAAAAcAA8AAgAOAA4AAAAdAAEAAgAMAAwAAAAdAAIAAgAMAAwAAAAdAAMAAgAMAAwAAAAdAAQAAgAMAAwAAAAdAAUAAgAMAAwAAAAdAAYAAgAMAAwAAAAAAAoAAgAMAAwAAAAAAAsAAgAMAAwAAAAAAAwAAgAMAAwAAAAAAA0AAgAMAAwAAAAAAA4AAgAMAAwAAAAAAA8AAgAMAAwAAAABAAMAAgALAA0AAAABAAQAAgALAA0AAAACAAMAAgAHAAoAAAACAAQAAgAHAAoAAAAHAAMAAgAJAAoAAAAHAAQAAgAJAAoAAAATAAMAAgAcAA4AAAAUAAMAAgAdAA4AAAAUAAEAAgAbAAsAAAAUAAIAAgAdAAwAAAATAAEAAgAaAAsAAAATAAIAAgAQAA4AAAA=")
 tile_set = ExtResource("2_vtc7f")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="TitleScreen" type="AnimatedSprite2D" parent="."]
 position = Vector2(253, 80)
 sprite_frames = SubResource("SpriteFrames_gn5he")
 autoplay = "default"
@@ -267,11 +423,10 @@ visibility_layer = 7
 z_index = 1
 position = Vector2(7, 208)
 
-[node name="StartButton" type="Sprite2D" parent="."]
-position = Vector2(188, 189)
-texture = ExtResource("5_aud0f")
-centered = false
-hframes = 2
+[node name="StartButton" type="AnimatedSprite2D" parent="."]
+position = Vector2(240, 204)
+sprite_frames = SubResource("SpriteFrames_hahou")
+autoplay = "default"
 
 [node name="Orb2" parent="." instance=ExtResource("7_yttcm")]
 position = Vector2(78, 159)
@@ -280,3 +435,40 @@ freeze = true
 [node name="Orb" parent="." instance=ExtResource("7_yttcm")]
 position = Vector2(407, 157)
 freeze = true
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 200.0
+offset_top = 229.0
+offset_right = 280.0
+offset_bottom = 252.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("7_tjnt2")
+text = "Hold SPACE"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Cutout" type="Polygon2D" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_dv6bp")
+color = Color(0, 0, 0, 1)
+texture = SubResource("PlaceholderTexture2D_2aocl")
+polygon = PackedVector2Array(0, 0, 480, 0, 480, 270, 0, 270)
+metadata/_edit_lock_ = true
+
+[node name="Transition" type="AnimatedSprite2D" parent="CanvasLayer"]
+position = Vector2(240, 135)
+sprite_frames = SubResource("SpriteFrames_ffra8")
+animation = &"close"
+autoplay = "open"
+metadata/_edit_lock_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_425a5")
+autoplay = true
+
+[connection signal="animation_finished" from="CanvasLayer/Transition" to="." method="_on_transition_animation_finished"]
