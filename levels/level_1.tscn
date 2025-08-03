@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=4 uid="uid://f7vb3632flte"]
+[gd_scene load_steps=67 format=4 uid="uid://f7vb3632flte"]
 
 [ext_resource type="PackedScene" uid="uid://delaxhx1j17tb" path="res://levels/level.tscn" id="1_vn7o3"]
 [ext_resource type="PackedScene" uid="uid://chun6t68qrex5" path="res://levels/level_2.tscn" id="2_08mmt"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://djt7gmee2vagr" path="res://entities/tutorial/Tutorial3-Sheet.png" id="7_5ot28"]
 [ext_resource type="Texture2D" uid="uid://df4f1n8a5fygi" path="res://entities/tutorial/Tutorial1-Sheet.png" id="8_aerfg"]
 [ext_resource type="Texture2D" uid="uid://dxe8k8o1aovp1" path="res://entities/tutorial/Tutorial5-Sheet.png" id="9_nmsli"]
+[ext_resource type="Texture2D" uid="uid://cq1qn1bqe01t" path="res://entities/misc/Exit.png" id="11_5ot28"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gxks1"]
 atlas = ExtResource("5_3sk1a")
@@ -515,3 +516,8 @@ position = Vector2(893, -606)
 sprite_frames = SubResource("SpriteFrames_fksli")
 animation = &"trajectory"
 autoplay = "trajectory"
+
+[node name="Exit" type="Sprite2D" parent="." index="23"]
+position = Vector2(558, -538)
+rotation = -1.5708
+texture = ExtResource("11_5ot28")
