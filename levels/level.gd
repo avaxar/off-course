@@ -42,6 +42,9 @@ extends Node2D
 	],
 	6: [
 		"B:Guys, I think this one is afraid of Lupin the 7th."
+	],
+	7: [
+		"B:God. Here's the cannibal."
 	]
 }
 
@@ -53,6 +56,7 @@ extends Node2D
 @onready var camera: Camera = $PlayerSpawn/Camera
 @onready var level_indicator: AnimatedSprite2D = $CanvasLayer/LevelIndicator
 @onready var dialogs: Dialogs = $CanvasLayer/Dialogs
+@onready var transition: AnimatedSprite2D = $CanvasLayer/Transition
 
 var player: Player
 
@@ -113,6 +117,11 @@ func _on_spawn_timer_timeout() -> void:
 func _on_finish_area_entered(body: Node2D) -> void:
 	if body is Player:
 		print("Finish!")
+		transition.play("close")
+
+
+func _on_transition_animation_finished() -> void:
+	if transition.animation == "close":
 		get_tree().call_deferred("change_scene_to_packed", next_scene)
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://delaxhx1j17tb"]
+[gd_scene load_steps=50 format=4 uid="uid://delaxhx1j17tb"]
 
 [ext_resource type="TileSet" uid="uid://ibgnx2ymucbq" path="res://levels/tileset.tres" id="1_80vhd"]
 [ext_resource type="Script" uid="uid://do2or4ovxyerg" path="res://levels/level.gd" id="1_gjl0y"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cndbn1jeog6o1" path="res://levels/loop.png" id="10_pb8y7"]
 [ext_resource type="Script" uid="uid://dej1251bfh2gd" path="res://levels/dialogs.gd" id="10_ukwr8"]
 [ext_resource type="FontFile" uid="uid://cbptoha0rsyl" path="res://levels/unifont.ttf" id="11_pb8y7"]
+[ext_resource type="Texture2D" uid="uid://ce87nkgmd0um4" path="res://levels/transition.png" id="14_d7v53"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hjsbj"]
 size = Vector2(96, 96)
@@ -177,7 +178,121 @@ shader_parameter/offset = Vector2(0, 0)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_d5x7l"]
 
-[node name="Level" type="Node2D"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dcgl2"]
+atlas = ExtResource("14_d7v53")
+region = Rect2(0, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pm7mp"]
+atlas = ExtResource("14_d7v53")
+region = Rect2(480, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sgadm"]
+atlas = ExtResource("14_d7v53")
+region = Rect2(960, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_humu5"]
+atlas = ExtResource("14_d7v53")
+region = Rect2(1440, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddeq6"]
+atlas = ExtResource("14_d7v53")
+region = Rect2(1920, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4k87"]
+atlas = ExtResource("14_d7v53")
+region = Rect2(2400, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ia6v6"]
+atlas = ExtResource("14_d7v53")
+region = Rect2(2880, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_werwd"]
+atlas = ExtResource("14_d7v53")
+region = Rect2(2880, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_of21v"]
+atlas = ExtResource("14_d7v53")
+region = Rect2(2400, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80cyg"]
+atlas = ExtResource("14_d7v53")
+region = Rect2(1920, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mca5t"]
+atlas = ExtResource("14_d7v53")
+region = Rect2(1440, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axqo2"]
+atlas = ExtResource("14_d7v53")
+region = Rect2(960, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8henu"]
+atlas = ExtResource("14_d7v53")
+region = Rect2(480, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rm7tw"]
+atlas = ExtResource("14_d7v53")
+region = Rect2(0, 0, 480, 270)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dcgl2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcgl2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pm7mp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sgadm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_humu5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddeq6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4k87")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ia6v6")
+}],
+"loop": false,
+"name": &"close",
+"speed": 18.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_werwd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_of21v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80cyg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mca5t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axqo2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8henu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rm7tw")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"open",
+"speed": 18.0
+}]
+
+[node name="Level2" type="Node2D"]
 script = ExtResource("1_gjl0y")
 
 [node name="Parallax" type="CanvasLayer" parent="."]
@@ -370,6 +485,15 @@ texture = SubResource("PlaceholderTexture2D_d5x7l")
 polygon = PackedVector2Array(0, 0, 480, 0, 480, 270, 0, 270)
 metadata/_edit_lock_ = true
 
+[node name="Transition" type="AnimatedSprite2D" parent="CanvasLayer"]
+position = Vector2(240, 135)
+sprite_frames = SubResource("SpriteFrames_dcgl2")
+animation = &"open"
+autoplay = "open"
+frame = 7
+frame_progress = 1.0
+metadata/_edit_lock_ = true
+
 [connection signal="timeout" from="EntranceDoor/Timer" to="." method="_on_entrance_timeout"]
 [connection signal="timeout" from="PlayerSpawn/Timer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="body_entered" from="FinishArea" to="." method="_on_finish_area_entered"]
@@ -377,3 +501,4 @@ metadata/_edit_lock_ = true
 [connection signal="timeout" from="CanvasLayer/Dialogs/LetterTimer" to="CanvasLayer/Dialogs" method="_on_letter_timer_timeout"]
 [connection signal="timeout" from="CanvasLayer/Dialogs/LetterRetractTimer" to="CanvasLayer/Dialogs" method="_on_letter_retract_timer_timeout"]
 [connection signal="timeout" from="CanvasLayer/Dialogs/DialogRetractTimer" to="CanvasLayer/Dialogs" method="_on_dialog_retract_timer_timeout"]
+[connection signal="animation_finished" from="CanvasLayer/Transition" to="." method="_on_transition_animation_finished"]
