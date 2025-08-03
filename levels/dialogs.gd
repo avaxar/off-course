@@ -38,7 +38,6 @@ func _on_letter_timer_timeout() -> void:
 	current_dialog = dialog
 
 	if message.is_empty():
-		print("Finish")
 		dialog_queue = dialog_queue.slice(1)
 		dialog_retract_timer.start()
 		return

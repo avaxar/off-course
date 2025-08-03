@@ -32,6 +32,16 @@ extends Node2D
 		"A:Wait, where did the previous one go?",
 		"B:He failed. Look at his successor, though!",
 		"A:I don't think this is ethical..."
+	],
+	3: [
+		"B:Welp. Third time's the charm."
+	],
+	5: [
+		"B:Pentakill!!!",
+		"A:What is wrong with you?"
+	],
+	6: [
+		"B:Guys, I think this one is afraid of Lupin the 7th."
 	]
 }
 
@@ -41,6 +51,7 @@ extends Node2D
 @onready var player_velocity := $PlayerSpawn/Velocity
 @onready var spawn_timer = $PlayerSpawn/Timer
 @onready var camera: Camera = $PlayerSpawn/Camera
+@onready var level_indicator: AnimatedSprite2D = $CanvasLayer/LevelIndicator
 @onready var dialogs: Dialogs = $CanvasLayer/Dialogs
 
 var player: Player
@@ -48,6 +59,7 @@ var player: Player
 
 func _ready() -> void:
 	spawn_player(true)
+	level_indicator.play(str(level))
 	dialogs.queue_list(format_dialogs(initial_dialogs))
 
 
@@ -73,6 +85,9 @@ const PLAYER := preload("res://entities/player/player.tscn")
 func spawn_player(first_time: bool = false) -> void:
 	if not first_time:
 		Global.lupin += 1
+		if Global.lupin == 9: # Because 7 8 9
+			Global.lupin = 10
+
 		if spawn_dialogs.has(Global.lupin):
 			dialogs.queue_list(format_dialogs(spawn_dialogs[Global.lupin]))
 		else:
@@ -98,7 +113,6 @@ func _on_spawn_timer_timeout() -> void:
 func _on_finish_area_entered(body: Node2D) -> void:
 	if body is Player:
 		print("Finish!")
-		Global.level += 1
 		get_tree().call_deferred("change_scene_to_packed", next_scene)
 
 

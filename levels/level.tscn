@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://delaxhx1j17tb"]
+[gd_scene load_steps=34 format=4 uid="uid://delaxhx1j17tb"]
 
 [ext_resource type="TileSet" uid="uid://ibgnx2ymucbq" path="res://levels/tileset.tres" id="1_80vhd"]
 [ext_resource type="Script" uid="uid://do2or4ovxyerg" path="res://levels/level.gd" id="1_gjl0y"]
@@ -8,9 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://bk48wlfkg1p11" path="res://entities/button/button.tscn" id="3_gjl0y"]
 [ext_resource type="PackedScene" uid="uid://biotlhx7rd3hp" path="res://entities/orb/orb.tscn" id="4_vnv7o"]
 [ext_resource type="Shader" uid="uid://c4kghet2pushk" path="res://levels/cutout.gdshader" id="8_d5x7l"]
+[ext_resource type="Texture2D" uid="uid://dvwe6yyf0dldh" path="res://levels/levels.png" id="8_mxp4k"]
 [ext_resource type="Shader" uid="uid://b1geqjqhk6fmn" path="res://entities/rotsprite.gdshader" id="9_ukwr8"]
 [ext_resource type="Texture2D" uid="uid://cndbn1jeog6o1" path="res://levels/loop.png" id="10_pb8y7"]
-[ext_resource type="Script" path="res://levels/dialogs.gd" id="10_ukwr8"]
+[ext_resource type="Script" uid="uid://dej1251bfh2gd" path="res://levels/dialogs.gd" id="10_ukwr8"]
 [ext_resource type="FontFile" uid="uid://cbptoha0rsyl" path="res://levels/unifont.ttf" id="11_pb8y7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hjsbj"]
@@ -18,6 +19,117 @@ size = Vector2(96, 96)
 
 [sub_resource type="Environment" id="Environment_vnv7o"]
 background_mode = 3
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qmeg"]
+atlas = ExtResource("8_mxp4k")
+region = Rect2(0, 0, 56, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ta7ci"]
+atlas = ExtResource("8_mxp4k")
+region = Rect2(56, 0, 56, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lh335"]
+atlas = ExtResource("8_mxp4k")
+region = Rect2(112, 0, 56, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6cys"]
+atlas = ExtResource("8_mxp4k")
+region = Rect2(168, 0, 56, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_368ro"]
+atlas = ExtResource("8_mxp4k")
+region = Rect2(224, 0, 56, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ca7f"]
+atlas = ExtResource("8_mxp4k")
+region = Rect2(280, 0, 56, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kogck"]
+atlas = ExtResource("8_mxp4k")
+region = Rect2(336, 0, 56, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_574oa"]
+atlas = ExtResource("8_mxp4k")
+region = Rect2(392, 0, 56, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tn76l"]
+atlas = ExtResource("8_mxp4k")
+region = Rect2(448, 0, 56, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_werwd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0qmeg")
+}],
+"loop": true,
+"name": &"0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ta7ci")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lh335")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u6cys")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_368ro")
+}],
+"loop": true,
+"name": &"4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ca7f")
+}],
+"loop": true,
+"name": &"5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kogck")
+}],
+"loop": true,
+"name": &"6",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_574oa")
+}],
+"loop": true,
+"name": &"7",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tn76l")
+}],
+"loop": true,
+"name": &"8",
+"speed": 5.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mxp4k"]
 atlas = ExtResource("10_pb8y7")
@@ -138,6 +250,13 @@ metadata/_edit_lock_ = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="CanvasLayer"]
 environment = SubResource("Environment_vnv7o")
 
+[node name="LevelIndicator" type="AnimatedSprite2D" parent="CanvasLayer"]
+position = Vector2(439, 23)
+sprite_frames = SubResource("SpriteFrames_werwd")
+animation = &"8"
+autoplay = "0"
+metadata/_edit_lock_ = true
+
 [node name="LoopButton" type="Area2D" parent="CanvasLayer"]
 position = Vector2(29, 23)
 metadata/_edit_lock_ = true
@@ -157,7 +276,6 @@ script = ExtResource("10_ukwr8")
 metadata/_edit_lock_ = true
 
 [node name="DialogA" type="MarginContainer" parent="CanvasLayer/Dialogs"]
-visible = false
 offset_left = 13.0
 offset_top = -45.0
 offset_right = 45.0
@@ -165,6 +283,7 @@ offset_bottom = -13.0
 metadata/_edit_lock_ = true
 
 [node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Dialogs/DialogA"]
+modulate = Color(0.75, 0.995833, 1, 1)
 layout_mode = 2
 texture = SubResource("CompressedTexture2D_ukwr8")
 region_rect = Rect2(0, 0, 48, 48)
@@ -191,7 +310,6 @@ vertical_alignment = 1
 metadata/_edit_lock_ = true
 
 [node name="DialogB" type="MarginContainer" parent="CanvasLayer/Dialogs"]
-visible = false
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -206,6 +324,7 @@ grow_vertical = 0
 metadata/_edit_lock_ = true
 
 [node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Dialogs/DialogB"]
+modulate = Color(1, 0.8, 0.8, 1)
 layout_mode = 2
 texture = SubResource("CompressedTexture2D_ukwr8")
 region_rect = Rect2(0, 0, 48, 48)
@@ -229,7 +348,7 @@ theme_override_fonts/font = ExtResource("11_pb8y7")
 vertical_alignment = 1
 
 [node name="LetterTimer" type="Timer" parent="CanvasLayer/Dialogs"]
-wait_time = 0.05
+wait_time = 0.035
 one_shot = true
 
 [node name="LetterRetractTimer" type="Timer" parent="CanvasLayer/Dialogs"]
