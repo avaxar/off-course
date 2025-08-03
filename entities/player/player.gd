@@ -29,10 +29,8 @@ func _ready() -> void:
 			trajlines.append(line)
 
 
-var time := 0.0
 var latch_time := 0.0
 func _process(delta: float) -> void:
-	time += delta
 	super(delta)
 	handle_rotation(delta)
 
@@ -159,10 +157,10 @@ func draw_arcs() -> void:
 		if distance > orb.influence_radius:
 			continue
 		var strength := 1.0 - (distance / orb.influence_radius) ** 2.0
-		orbit_audio.volume_db = log(strength) * 10.0 + 10.0
+		orbit_audio.volume_db = log(strength) * 10.0
 
 		if not latched:
-			strength *= unlatched_gravitation * 2.0
+			strength *= unlatched_gravitation * 4.0
 
 		var normalized := (orb.global_position - global_position) / distance
 		var perpendicular := normalized.rotated(PI / 2.0)

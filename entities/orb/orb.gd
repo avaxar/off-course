@@ -2,6 +2,7 @@ class_name Orb
 extends RigidBody2D
 
 @export var active: bool = true
+@export var deadly: bool = false
 @export var radius: float = 10.0
 @export var intensity: float = 1.0
 @export var correction_radius: float = 128.0
@@ -13,10 +14,18 @@ var color: Color:
 		var h := intensity / 2.5
 		var s := lerpf(0.7, 0.0, inverse_lerp(48.0, 96.0, preferred_radius))
 		var v := 1.0
-		return Color.from_hsv(h, s, v)
+		var rgb := Color.from_hsv(h, s, v)
+		if deadly:
+			rgb = lerp(rgb, Color(1.0, rgb.g / 2.0, rgb.b / 2.0), sin(time * PI * 2.0) / 2.0 + 0.5)
+		else:
+			rgb = lerp(rgb, rgb.darkened(0.2), sin(time * PI * 2.0) / 2.0 + 0.5)
+
+		return rgb
 
 
-func _process(_delta: float) -> void:
+var time := 0.0
+func _process(delta: float) -> void:
+	time += delta
 	$CollisionShape.shape.radius = radius
 	$Sprite.modulate = color
 
@@ -29,7 +38,7 @@ func _physics_process(_delta: float) -> void:
 
 
 func _on_body_shape_entered(_body_rid: RID, body: Node, _body_shape_index: int, _local_shape_index: int) -> void:
-	if body is TileMapLayer or body is StaticBody2D:
+	if body is TileMapLayer or body is StaticBody2D or body is RigidBody2D:
 		bounce(linear_velocity.normalized(), last_velocity)
 
 
@@ -89,7 +98,7 @@ func gravitate(exclusions: Array = []) -> Vector2:
 
 func check_collisions(exclusions: Array = [], margin: float = 0.5) -> bool:
 	for orb: Orb in get_tree().get_nodes_in_group("orbs"):
-		if orb == self or not orb.active or orb in exclusions:
+		if orb == self or not orb.active or not orb.deadly or orb in exclusions:
 			continue
 		if (orb.global_position - global_position).length() <= radius + orb.radius + margin:
 			return true
