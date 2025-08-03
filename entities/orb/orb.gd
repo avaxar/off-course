@@ -18,7 +18,7 @@ var color: Color:
 		if deadly:
 			rgb = lerp(rgb, Color(1.0, rgb.g / 2.0, rgb.b / 2.0), sin(time * PI * 2.0) / 2.0 + 0.5)
 		else:
-			rgb = lerp(rgb, rgb.darkened(0.2), sin(time * PI * 2.0) / 2.0 + 0.5)
+			rgb = lerp(rgb, rgb.darkened(0.2), sin(time * PI * 4.0) / 2.0 + 0.5)
 
 		return rgb
 
