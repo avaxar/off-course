@@ -150,8 +150,7 @@ func do_death() -> void:
 			line.hide()
 	$Sprites/Back.hide()
 	$Sprites/Lupin.hide()
-	if latched:
-		$Sprites/DelatchSmoke.emitting = true
+	$Sprites/DelatchSmoke.emitting = true
 	$Sprites/Front.modulate = Color(1.0, 1.0, 1.0)
 	$Sprites/Front.play("pop")
 
