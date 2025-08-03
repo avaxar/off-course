@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://bikrnxap3ik6q"]
+
+[node name="DialogTimer" type="Timer"]
+wait_time = 2.0

@@ -3,7 +3,12 @@ extends Area2D
 @export var door: Door
 var press: bool = false
 
-func _process(delta):
+const lines: Array[String] = [
+	"hey you",
+	"if this works im going home"
+]
+
+func _process(_delta):
 	if press == false:
 		$AnimationPlayer.play("unpressed")
 		

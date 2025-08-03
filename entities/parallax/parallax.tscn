@@ -16,6 +16,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ovqdm"]
 shader = ExtResource("1_4c8o1")
 shader_parameter/pixel_scale = 1.0
+shader_parameter/enable_mod = false
 
 [node name="Parallax" type="Node2D"]
 z_index = -10
