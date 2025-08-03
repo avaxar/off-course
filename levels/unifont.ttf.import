@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://5w2p6heh1r5i"
-path="res://.godot/imported/font.ttf-a10b6cc65830c95cfe113ece375e6a34.fontdata"
+uid="uid://cbptoha0rsyl"
+path="res://.godot/imported/unifont.ttf-a5de1356612871f168c872fe50110717.fontdata"
 
 [deps]
 
-source_file="res://entities/textbox/font.ttf"
-dest_files=["res://.godot/imported/font.ttf-a10b6cc65830c95cfe113ece375e6a34.fontdata"]
+source_file="res://levels/unifont.ttf"
+dest_files=["res://.godot/imported/unifont.ttf-a5de1356612871f168c872fe50110717.fontdata"]
 
 [params]
 

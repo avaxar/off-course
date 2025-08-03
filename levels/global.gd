@@ -1,3 +1,3 @@
 extends Node
 
-static var lupin := 0
+static var lupin := 1

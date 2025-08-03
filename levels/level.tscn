@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://delaxhx1j17tb"]
+[gd_scene load_steps=23 format=4 uid="uid://delaxhx1j17tb"]
 
 [ext_resource type="TileSet" uid="uid://ibgnx2ymucbq" path="res://levels/tileset.tres" id="1_80vhd"]
 [ext_resource type="Script" uid="uid://do2or4ovxyerg" path="res://levels/level.gd" id="1_gjl0y"]
@@ -8,22 +8,16 @@
 [ext_resource type="PackedScene" uid="uid://bk48wlfkg1p11" path="res://entities/button/button.tscn" id="3_gjl0y"]
 [ext_resource type="PackedScene" uid="uid://biotlhx7rd3hp" path="res://entities/orb/orb.tscn" id="4_vnv7o"]
 [ext_resource type="Shader" uid="uid://c4kghet2pushk" path="res://levels/cutout.gdshader" id="8_d5x7l"]
+[ext_resource type="Shader" uid="uid://b1geqjqhk6fmn" path="res://entities/rotsprite.gdshader" id="9_ukwr8"]
 [ext_resource type="Texture2D" uid="uid://cndbn1jeog6o1" path="res://levels/loop.png" id="10_pb8y7"]
+[ext_resource type="Script" uid="uid://dej1251bfh2gd" path="res://levels/dialogs.gd" id="10_ukwr8"]
+[ext_resource type="FontFile" uid="uid://cbptoha0rsyl" path="res://levels/unifont.ttf" id="11_pb8y7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hjsbj"]
 size = Vector2(96, 96)
 
 [sub_resource type="Environment" id="Environment_vnv7o"]
 background_mode = 3
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_rtcij"]
-shader = ExtResource("8_d5x7l")
-shader_parameter/top_left = Vector2(20, 20)
-shader_parameter/bottom_right = Vector2(460, 250)
-shader_parameter/rounded = 14.0
-shader_parameter/offset = Vector2(0, 0)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_d5x7l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mxp4k"]
 atlas = ExtResource("10_pb8y7")
@@ -54,6 +48,22 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ta7ci"]
 size = Vector2(32, 20)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hy0rb"]
+shader = ExtResource("9_ukwr8")
+shader_parameter/pixel_scale = 1.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ukwr8"]
+load_path = "res://.godot/imported/dialogue.png-f545bace210ecb526dc7c95e4d23f758.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rtcij"]
+shader = ExtResource("8_d5x7l")
+shader_parameter/top_left = Vector2(20, 20)
+shader_parameter/bottom_right = Vector2(460, 250)
+shader_parameter/rounded = 14.0
+shader_parameter/offset = Vector2(0, 0)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_d5x7l"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_gjl0y")
@@ -128,15 +138,9 @@ metadata/_edit_lock_ = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="CanvasLayer"]
 environment = SubResource("Environment_vnv7o")
 
-[node name="Cutout" type="Polygon2D" parent="CanvasLayer"]
-material = SubResource("ShaderMaterial_rtcij")
-color = Color(0, 0, 0, 1)
-texture = SubResource("PlaceholderTexture2D_d5x7l")
-polygon = PackedVector2Array(0, 0, 480, 0, 480, 270, 0, 270)
-metadata/_edit_lock_ = true
-
 [node name="LoopButton" type="Area2D" parent="CanvasLayer"]
 position = Vector2(29, 23)
+metadata/_edit_lock_ = true
 
 [node name="Sprite" type="AnimatedSprite2D" parent="CanvasLayer/LoopButton"]
 sprite_frames = SubResource("SpriteFrames_0qmeg")
@@ -146,7 +150,106 @@ metadata/_edit_lock_ = true
 shape = SubResource("RectangleShape2D_ta7ci")
 metadata/_edit_lock_ = true
 
+[node name="Dialogs" type="Node2D" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_hy0rb")
+position = Vector2(0, 270)
+script = ExtResource("10_ukwr8")
+metadata/_edit_lock_ = true
+
+[node name="DialogA" type="MarginContainer" parent="CanvasLayer/Dialogs"]
+visible = false
+offset_left = 13.0
+offset_top = -45.0
+offset_right = 45.0
+offset_bottom = -13.0
+metadata/_edit_lock_ = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Dialogs/DialogA"]
+layout_mode = 2
+texture = SubResource("CompressedTexture2D_ukwr8")
+region_rect = Rect2(0, 0, 48, 48)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+metadata/_edit_lock_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Dialogs/DialogA"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/Dialogs/DialogA/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.501407, 0.501406, 0.501406, 1)
+theme_override_fonts/font = ExtResource("11_pb8y7")
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="DialogB" type="MarginContainer" parent="CanvasLayer/Dialogs"]
+visible = false
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 432.0
+offset_top = -45.0
+offset_right = 464.0
+offset_bottom = -13.0
+grow_horizontal = 0
+grow_vertical = 0
+metadata/_edit_lock_ = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Dialogs/DialogB"]
+layout_mode = 2
+texture = SubResource("CompressedTexture2D_ukwr8")
+region_rect = Rect2(0, 0, 48, 48)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Dialogs/DialogB"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Label" type="Label" parent="CanvasLayer/Dialogs/DialogB/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.501961, 0.501961, 0.501961, 1)
+theme_override_fonts/font = ExtResource("11_pb8y7")
+vertical_alignment = 1
+
+[node name="LetterTimer" type="Timer" parent="CanvasLayer/Dialogs"]
+wait_time = 0.05
+one_shot = true
+
+[node name="LetterRetractTimer" type="Timer" parent="CanvasLayer/Dialogs"]
+wait_time = 0.025
+one_shot = true
+
+[node name="DialogRetractTimer" type="Timer" parent="CanvasLayer/Dialogs"]
+one_shot = true
+
+[node name="Cutout" type="Polygon2D" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_rtcij")
+color = Color(0, 0, 0, 1)
+texture = SubResource("PlaceholderTexture2D_d5x7l")
+polygon = PackedVector2Array(0, 0, 480, 0, 480, 270, 0, 270)
+metadata/_edit_lock_ = true
+
 [connection signal="timeout" from="EntranceDoor/Timer" to="." method="_on_entrance_timeout"]
 [connection signal="timeout" from="PlayerSpawn/Timer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="body_entered" from="FinishArea" to="." method="_on_finish_area_entered"]
 [connection signal="input_event" from="CanvasLayer/LoopButton" to="." method="_on_loop_button_input_event"]
+[connection signal="timeout" from="CanvasLayer/Dialogs/LetterTimer" to="CanvasLayer/Dialogs" method="_on_letter_timer_timeout"]
+[connection signal="timeout" from="CanvasLayer/Dialogs/LetterRetractTimer" to="CanvasLayer/Dialogs" method="_on_letter_retract_timer_timeout"]
+[connection signal="timeout" from="CanvasLayer/Dialogs/DialogRetractTimer" to="CanvasLayer/Dialogs" method="_on_dialog_retract_timer_timeout"]
