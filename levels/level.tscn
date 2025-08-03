@@ -10,7 +10,7 @@
 [ext_resource type="Shader" uid="uid://c4kghet2pushk" path="res://levels/cutout.gdshader" id="8_d5x7l"]
 [ext_resource type="Shader" uid="uid://b1geqjqhk6fmn" path="res://entities/rotsprite.gdshader" id="9_ukwr8"]
 [ext_resource type="Texture2D" uid="uid://cndbn1jeog6o1" path="res://levels/loop.png" id="10_pb8y7"]
-[ext_resource type="Script" uid="uid://dej1251bfh2gd" path="res://levels/dialogs.gd" id="10_ukwr8"]
+[ext_resource type="Script" path="res://levels/dialogs.gd" id="10_ukwr8"]
 [ext_resource type="FontFile" uid="uid://cbptoha0rsyl" path="res://levels/unifont.ttf" id="11_pb8y7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hjsbj"]
