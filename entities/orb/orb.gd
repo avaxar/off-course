@@ -10,7 +10,7 @@ extends RigidBody2D
 
 var color: Color:
 	get:
-		var h := intensity / 4.0
+		var h := intensity / 2.5
 		var s := lerpf(0.7, 0.0, inverse_lerp(48.0, 96.0, preferred_radius))
 		var v := 1.0
 		return Color.from_hsv(h, s, v)
@@ -53,9 +53,9 @@ func gravitate(exclusions: Array = []) -> Vector2:
 		var distance_sq := (orb.global_position - global_position).length_squared()
 		var distance := sqrt(distance_sq)
 
-		if distance > influence_radius:
+		if distance > orb.influence_radius:
 			continue
-		var influence := 1.0 - (distance / influence_radius) ** 16.0
+		var influence := 1.0 - (distance / orb.influence_radius) ** 16.0
 
 		# Newton's universal gravitation
 		var direction := (orb.global_position - global_position) / distance
@@ -63,7 +63,7 @@ func gravitate(exclusions: Array = []) -> Vector2:
 		force += force_vec
 
 		# Circular orbit correction
-		if distance > correction_radius:
+		if distance > orb.correction_radius:
 			continue
 
 		var perpendicular := direction.rotated(PI / 2.0)
@@ -74,14 +74,14 @@ func gravitate(exclusions: Array = []) -> Vector2:
 		var orbital_vec := perpendicular * orbital_speed
 
 		var correction_vec := orbital_vec - linear_velocity
-		var correction_strength := 1.0 - (distance / correction_radius) ** 64.0
+		var correction_strength := 1.0 - (distance / orb.correction_radius) ** 64.0
 		force += correction_vec * correction_strength * mass
 
 		# Preferred orbital radius, as to not hit directly
-		if distance > preferred_radius:
+		if distance > orb.preferred_radius:
 			continue
 		
-		var safety_strength := 1.0 - (distance / preferred_radius) ** 4.0
+		var safety_strength := 1.0 - (distance / orb.preferred_radius) ** 4.0
 		force += -force_vec * safety_strength
 	
 	return force

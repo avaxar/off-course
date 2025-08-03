@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://d3olnmo84qmhm"
-path="res://.godot/imported/orbit.wav-4c80e21797407373403af61d7feb3d77.sample"
+path="res://.godot/imported/orbit.wav-bc4e151289bfa7307adeddea0398f2d6.sample"
 
 [deps]
 
-source_file="res://entities/player/orbit.wav"
-dest_files=["res://.godot/imported/orbit.wav-4c80e21797407373403af61d7feb3d77.sample"]
+source_file="res://entities/orb/orbit.wav"
+dest_files=["res://.godot/imported/orbit.wav-bc4e151289bfa7307adeddea0398f2d6.sample"]
 
 [params]
 

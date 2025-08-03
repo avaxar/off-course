@@ -8,6 +8,8 @@ extends Orb
 @export var unlatched_gravitation: float = 0.15
 @export var unlatching_boost: float = 1.1
 @export var unlatching_time: float = 2.0
+@export var arcs: int = 12
+@export var arc_divisions: int = 8
 
 @onready var trajectory_probe: Orb = $TrajectoryProbe
 
@@ -34,17 +36,20 @@ func _process(delta: float) -> void:
 	super(delta)
 	handle_rotation(delta)
 
-	draw_trajectories()
-
+	clear_arcs()
 	if not dead:
+		draw_trajectories()
+		draw_arcs()
+
 		if check_collisions([trajectory_probe]):
 			die.emit()
 		if Input.is_action_just_pressed("latch"):
 			latched = true
 			latch_time = time
 
-			var strength := gravitate().length() / 12.0
+			var strength := gravitate().length() / 18.0
 			$LatchAudio.volume_db = log(strength) * 3.5
+			$LatchAudio.pitch_scale = randf_range(0.95, 1.20)
 			$LatchAudio.play()
 			$Sprites/LatchSmoke.emitting = true
 			$Sprites/Front.modulate = Color(1.0, 0.0, 0.0)
@@ -55,7 +60,7 @@ func _process(delta: float) -> void:
 			linear_velocity *= boost
 
 			var strength := linear_velocity.length() / 32.0
-			$DelatchAudio.volume_db = log(strength) * 5.0
+			$DelatchAudio.volume_db = log(strength) * 5.0 - 5.0
 			$DelatchAudio.play()
 			$Sprites/DelatchSmoke.emitting = true
 			$Sprites/Front.modulate = Color(1.0, 1.0, 1.0)
@@ -123,15 +128,73 @@ func draw_trajectories() -> void:
 				  [latched_trajlines, latched_traj, Color(1.0, 0.0, 0.0)]]:
 		var lines: Array = tuple[0]
 		var traj: PackedVector2Array = tuple[1]
-		var color: Color = tuple[2]
+		var tint: Color = tuple[2]
 
 		for i in range(trajectory_line_steps, trajectory_steps, trajectory_line_steps * 2):
 			@warning_ignore("integer_division")
 			var j := i / (trajectory_line_steps * 2)
 
 			lines[j].width = 1.0
-			lines[j].default_color = Color(color.r, color.g, color.b, 1.0 - float(i) / trajectory_steps)
+			lines[j].default_color = Color(tint.r, tint.g, tint.b, 1.0 - float(i) / trajectory_steps)
 			lines[j].points = traj.slice(i, i + trajectory_line_steps)
+
+
+# I can't be bothered to optimize and create a recycling system for this.
+var orb_arcs := []
+func clear_arcs() -> void:
+	for arc: Line2D in orb_arcs:
+		arc.queue_free()
+	orb_arcs = []
+
+
+func draw_arcs() -> void:
+	for orb: Orb in get_tree().get_nodes_in_group("orbs"):
+		var orbit_audio: AudioStreamPlayer2D = orb.get_node("OrbitAudio")
+		orbit_audio.volume_db = -INF;
+
+		if orb == self or orb == trajectory_probe or not orb.active:
+			continue
+		
+		var distance := (orb.global_position - global_position).length()
+		if distance > orb.influence_radius:
+			continue
+		var strength := 1.0 - (distance / orb.influence_radius) ** 2.0
+		orbit_audio.volume_db = log(strength) * 10.0 + 10.0
+
+		if not latched:
+			strength *= unlatched_gravitation * 2.0
+
+		var normalized := (orb.global_position - global_position) / distance
+		var perpendicular := normalized.rotated(PI / 2.0)
+		var start := global_position + normalized * radius
+		var end := orb.global_position - normalized * orb.radius
+
+		for i in range(arcs):
+			@warning_ignore("integer_division")
+			var is_red := i >= arcs / 2
+
+			var points := PackedVector2Array()
+			points.resize(arc_divisions)
+			for j in range(arc_divisions):
+				var progress := float(j) / (arc_divisions - 1.0)
+				points[j] = lerp(start, end, progress)
+
+				var random := perpendicular * randf_range(-8.0, 8.0) * sqrt(strength) * progress ** 1.25
+				points[j] += random * (0.25 if is_red else 1.0)
+
+				points[j] -= global_position
+
+			var arc := Line2D.new()
+			arc.points = points
+			arc.width = 1.0
+			if is_red and latched:
+				arc.default_color = Color(1.0, 0.0, 0.0)
+			else:
+				arc.default_color = orb.color
+			arc.default_color.a = strength ** 2
+			arc.z_index = -1
+			add_child(arc)
+			orb_arcs.append(arc)
 
 
 signal die

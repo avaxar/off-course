@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://biotlhx7rd3hp"]
+[gd_scene load_steps=16 format=3 uid="uid://biotlhx7rd3hp"]
 
 [ext_resource type="Script" uid="uid://cju4qvsx3hlfj" path="res://entities/orb/orb.gd" id="1_4ogyp"]
 [ext_resource type="Texture2D" uid="uid://f7i2gsgexdih" path="res://entities/orb/orb.png" id="2_h8qx5"]
 [ext_resource type="AudioStream" uid="uid://cnjslpvysqpri" path="res://entities/orb/bounce.wav" id="3_ulscp"]
+[ext_resource type="AudioStream" uid="uid://d3olnmo84qmhm" path="res://entities/orb/orbit.wav" id="4_b6827"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_h8qx5"]
 bounce = 1.0
@@ -91,5 +92,10 @@ shape = SubResource("CircleShape2D_cbh67")
 
 [node name="BounceAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_ulscp")
+
+[node name="OrbitAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_b6827")
+volume_db = -80.0
+autoplay = true
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
