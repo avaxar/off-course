@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 		print("com")
 	
 	if Input.is_action_just_pressed("latch") && panel == 4:
-		get_tree().change_scene_to_file("res://entities/menu/menu.tscn")
+		get_tree().change_scene_to_file("res://entities/thankyou.tscn"  )
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
