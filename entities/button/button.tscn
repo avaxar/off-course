@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bk48wlfkg1p11"]
+[gd_scene load_steps=12 format=3 uid="uid://bk48wlfkg1p11"]
 
 [ext_resource type="Texture2D" uid="uid://bs00ee1483cge" path="res://entities/button/button.png" id="1_4tlb3"]
 [ext_resource type="Script" uid="uid://w4302nqg2dtr" path="res://entities/button/button.gd" id="1_7gf2j"]
@@ -110,12 +110,6 @@ _data = {
 &"unpressed": SubResource("Animation_xjlp8")
 }
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7gf2j"]
-bounce = 1.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7gf2j"]
-size = Vector2(16, 6)
-
 [node name="Button" type="Area2D"]
 script = ExtResource("1_7gf2j")
 
@@ -130,13 +124,6 @@ shape = SubResource("RectangleShape2D_x1tbq")
 libraries = {
 &"": SubResource("AnimationLibrary_xmavd")
 }
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-physics_material_override = SubResource("PhysicsMaterial_7gf2j")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, 5)
-shape = SubResource("RectangleShape2D_7gf2j")
 
 [node name="ButtonPress" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_6bgj0")
