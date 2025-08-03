@@ -64,7 +64,7 @@ var player: Player
 func _ready() -> void:
 	spawn_player(true)
 	level_indicator.play(str(level))
-	dialogs.queue_list(format_dialogs(initial_dialogs))
+	dialogs.set_queue(format_dialogs(initial_dialogs))
 
 
 func _process(delta: float) -> void:
@@ -93,9 +93,9 @@ func spawn_player(first_time: bool = false) -> void:
 			Global.lupin = 10
 
 		if spawn_dialogs.has(Global.lupin):
-			dialogs.queue_list(format_dialogs(spawn_dialogs[Global.lupin]))
+			dialogs.set_queue(format_dialogs(spawn_dialogs[Global.lupin]))
 		else:
-			dialogs.queue_list(format_dialogs(default_spawn_dialogs[randi() % len(default_spawn_dialogs)]))
+			dialogs.set_queue(format_dialogs(default_spawn_dialogs[randi() % len(default_spawn_dialogs)]))
 
 	entrance.open()
 	player = PLAYER.instantiate()

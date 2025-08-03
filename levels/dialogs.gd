@@ -2,7 +2,9 @@ class_name Dialogs
 extends Node2D
 
 @onready var dialog_a := $DialogA
+@onready var dialog_a_label := $DialogA/MarginContainer/Label
 @onready var dialog_b := $DialogB
+@onready var dialog_b_label := $DialogB/MarginContainer/Label
 
 @onready var letter_timer := $LetterTimer
 @onready var letter_retract_timer := $LetterRetractTimer
@@ -17,13 +19,15 @@ func _ready() -> void:
 	letter_timer.start()
 
 
-func queue(dialog: String) -> void:
-	dialog_queue.append(dialog)
-	letter_timer.start()
-
-
-func queue_list(dialogs: Array[String]) -> void:
-	dialog_queue.append_array(dialogs)
+func set_queue(dialogs: Array[String]) -> void:
+	dialog_queue = dialogs
+	dialog_a.hide()
+	dialog_a_label.text = ""
+	dialog_b.hide()
+	dialog_b_label.text = ""
+	letter_timer.stop()
+	letter_retract_timer.stop()
+	dialog_retract_timer.stop()
 	letter_timer.start()
 
 
