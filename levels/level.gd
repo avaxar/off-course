@@ -22,7 +22,6 @@ func _process(delta: float) -> void:
 
 
 func spawn_player_timed() -> void:
-	# call_deferred("spawn_player")
 	spawn_timer.start()
 
 

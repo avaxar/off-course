@@ -40,11 +40,28 @@ func _process(delta: float) -> void:
 		if check_collisions([trajectory_probe]):
 			die.emit()
 		if Input.is_action_just_pressed("latch"):
+			latched = true
 			latch_time = time
-		if Input.is_action_just_released("latch"):
-			linear_velocity *= get_unlatch_boost()
 
-	latched = not dead and Input.is_action_pressed("latch")
+			var strength := gravitate().length() / 12.0
+			$LatchAudio.volume_db = log(strength) * 3.5
+			$LatchAudio.play()
+			$Sprites/LatchSmoke.emitting = true
+			$Sprites/Front.modulate = Color(1.0, 0.0, 0.0)
+			$Sprites/Back.modulate = Color(1.0, 0.0, 0.0)
+		if Input.is_action_just_released("latch"):
+			var boost := get_unlatch_boost()
+			latched = false
+			linear_velocity *= boost
+
+			var strength := linear_velocity.length() / 32.0
+			$DelatchAudio.volume_db = log(strength) * 5.0
+			$DelatchAudio.play()
+			$Sprites/DelatchSmoke.emitting = true
+			$Sprites/Front.modulate = Color(1.0, 1.0, 1.0)
+			$Sprites/Back.modulate = Color(1.0, 1.0, 1.0)
+	else:
+		latched = false
 
 
 func handle_rotation(delta: float) -> void:
@@ -133,6 +150,9 @@ func do_death() -> void:
 			line.hide()
 	$Sprites/Back.hide()
 	$Sprites/Lupin.hide()
+	if latched:
+		$Sprites/DelatchSmoke.emitting = true
+	$Sprites/Front.modulate = Color(1.0, 1.0, 1.0)
 	$Sprites/Front.play("pop")
 
 	$DeathAudio.play()

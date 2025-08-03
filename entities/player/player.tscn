@@ -1,21 +1,37 @@
-[gd_scene load_steps=33 format=3 uid="uid://csntg42ps0ogc"]
+[gd_scene load_steps=41 format=3 uid="uid://csntg42ps0ogc"]
 
 [ext_resource type="PackedScene" uid="uid://biotlhx7rd3hp" path="res://entities/orb/orb.tscn" id="1_symyc"]
 [ext_resource type="Script" uid="uid://c22tsr6r03flk" path="res://entities/player/player.gd" id="2_abrql"]
 [ext_resource type="Shader" uid="uid://b1geqjqhk6fmn" path="res://entities/rotsprite.gdshader" id="3_8fjmc"]
 [ext_resource type="Texture2D" uid="uid://8d6ive5cjagj" path="res://entities/player/bubble_back.png" id="3_bls4j"]
 [ext_resource type="Texture2D" uid="uid://bjsh7303ticie" path="res://entities/player/lupin.png" id="4_8fjmc"]
+[ext_resource type="Texture2D" uid="uid://djfor7opcbqdj" path="res://entities/smoke.png" id="4_a1qjk"]
 [ext_resource type="Texture2D" uid="uid://dj45pvpacwsv7" path="res://entities/player/bubble_front.png" id="4_fkugw"]
 [ext_resource type="Texture2D" uid="uid://dcrcecryobrox" path="res://entities/player/lupin_the_3rd.png" id="6_26q78"]
 [ext_resource type="AudioStream" uid="uid://c28lsegwqbdun" path="res://entities/player/death.wav" id="7_qiwj3"]
+[ext_resource type="AudioStream" uid="uid://c7tkk5uuhunm" path="res://entities/player/latch.wav" id="9_wvtmh"]
+[ext_resource type="AudioStream" uid="uid://do3erdk6b4o7s" path="res://entities/player/delatch.wav" id="10_7thud"]
+[ext_resource type="AudioStream" uid="uid://d3olnmo84qmhm" path="res://entities/player/orbit.wav" id="11_7thud"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fkugw"]
 resource_local_to_scene = true
 radius = 12.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qiwj3"]
+[sub_resource type="Gradient" id="Gradient_j3ovn"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_a1qjk"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a1qjk"]
 shader = ExtResource("3_8fjmc")
 shader_parameter/pixel_scale = 1.0
+shader_parameter/enable_mod = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j3ovn"]
+shader = ExtResource("3_8fjmc")
+shader_parameter/pixel_scale = 1.0
+shader_parameter/enable_mod = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eyb6c"]
 atlas = ExtResource("4_8fjmc")
@@ -57,6 +73,11 @@ animations = [{
 "name": &"third",
 "speed": 5.0
 }]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_afbqv"]
+shader = ExtResource("3_8fjmc")
+shader_parameter/pixel_scale = 1.0
+shader_parameter/enable_mod = true
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8fjmc"]
 atlas = ExtResource("4_fkugw")
@@ -200,23 +221,50 @@ radius = 8.0
 visible = false
 
 [node name="CollisionShape" parent="." index="1"]
+visible = false
 shape = SubResource("CircleShape2D_fkugw")
 
 [node name="Sprites" type="Node2D" parent="." index="2"]
-material = SubResource("ShaderMaterial_qiwj3")
 
-[node name="Back" type="Sprite2D" parent="Sprites" index="0"]
-use_parent_material = true
+[node name="LatchSmoke" type="CPUParticles2D" parent="Sprites" index="0"]
+emitting = false
+amount = 16
+texture = ExtResource("4_a1qjk")
+lifetime = 0.35
+one_shot = true
+explosiveness = 0.3
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 20.61
+color = Color(1, 0, 0, 1)
+color_ramp = SubResource("Gradient_j3ovn")
+
+[node name="DelatchSmoke" type="CPUParticles2D" parent="Sprites" index="1"]
+emitting = false
+texture = ExtResource("4_a1qjk")
+lifetime = 0.25
+one_shot = true
+explosiveness = 0.3
+direction = Vector2(-1, 0)
+spread = 30.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 20.61
+color_ramp = SubResource("Gradient_a1qjk")
+
+[node name="Back" type="Sprite2D" parent="Sprites" index="2"]
+material = SubResource("ShaderMaterial_a1qjk")
 texture = ExtResource("3_bls4j")
 
-[node name="Lupin" type="AnimatedSprite2D" parent="Sprites" index="1"]
-use_parent_material = true
+[node name="Lupin" type="AnimatedSprite2D" parent="Sprites" index="3"]
+material = SubResource("ShaderMaterial_j3ovn")
 sprite_frames = SubResource("SpriteFrames_ghoj8")
 autoplay = "default"
 flip_h = true
 
-[node name="Front" type="AnimatedSprite2D" parent="Sprites" index="2"]
-use_parent_material = true
+[node name="Front" type="AnimatedSprite2D" parent="Sprites" index="4"]
+material = SubResource("ShaderMaterial_afbqv")
 sprite_frames = SubResource("SpriteFrames_eyb6c")
 autoplay = "default"
 
@@ -228,6 +276,7 @@ active = false
 radius = 8.0
 
 [node name="DangerArea" type="Area2D" parent="." index="4"]
+visible = false
 collision_layer = 2
 collision_mask = 2
 
@@ -236,6 +285,15 @@ shape = SubResource("CircleShape2D_8fjmc")
 
 [node name="DeathAudio" type="AudioStreamPlayer2D" parent="." index="5"]
 stream = ExtResource("7_qiwj3")
+
+[node name="LatchAudio" type="AudioStreamPlayer2D" parent="." index="7"]
+stream = ExtResource("9_wvtmh")
+
+[node name="DelatchAudio" type="AudioStreamPlayer2D" parent="." index="8"]
+stream = ExtResource("10_7thud")
+
+[node name="OrbitAudio" type="AudioStreamPlayer2D" parent="." index="9"]
+stream = ExtResource("11_7thud")
 
 [connection signal="die" from="." to="." method="_on_die"]
 [connection signal="body_entered" from="DangerArea" to="." method="_on_danger_body_enter"]

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://csxxecmfxib1u"
-path="res://.godot/imported/Door_No Jingle.wav-0beec43dbc16f6c33884181c6fe28379.sample"
+path="res://.godot/imported/door_open.wav-16bbe8dd5410ee334d9bed705a1ca1f1.sample"
 
 [deps]
 
-source_file="res://entities/door/Door_No Jingle.wav"
-dest_files=["res://.godot/imported/Door_No Jingle.wav-0beec43dbc16f6c33884181c6fe28379.sample"]
+source_file="res://entities/door/door_open.wav"
+dest_files=["res://.godot/imported/door_open.wav-16bbe8dd5410ee334d9bed705a1ca1f1.sample"]
 
 [params]
 

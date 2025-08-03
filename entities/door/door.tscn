@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cilxaib8y71fq" path="res://entities/door/door.gd" id="2_bfv6c"]
 [ext_resource type="Texture2D" uid="uid://b765m6u4jqnr" path="res://entities/door/door.png" id="2_dsbe1"]
-[ext_resource type="Texture2D" uid="uid://djfor7opcbqdj" path="res://entities/door/smoke.png" id="3_dsbe1"]
-[ext_resource type="AudioStream" uid="uid://csxxecmfxib1u" path="res://entities/door/Door_No Jingle.wav" id="4_uq1c4"]
+[ext_resource type="Texture2D" uid="uid://djfor7opcbqdj" path="res://entities/smoke.png" id="3_dsbe1"]
+[ext_resource type="AudioStream" uid="uid://csxxecmfxib1u" path="res://entities/door/door_open.wav" id="4_uq1c4"]
 [ext_resource type="AudioStream" uid="uid://bf3yys8ipr5ud" path="res://entities/door/door_close.wav" id="5_r5xgf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6sqah"]
