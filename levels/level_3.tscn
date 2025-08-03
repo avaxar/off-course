@@ -143,5 +143,5 @@ intensity = 2.0
 correction_radius = 256.0
 influence_radius = 128.0
 
-[node name="LoopButton" parent="CanvasLayer" index="2"]
+[node name="LoopButton" parent="CanvasLayer" index="3"]
 rotation = -0.000552522
