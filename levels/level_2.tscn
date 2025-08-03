@@ -126,6 +126,12 @@ position = Vector2(473, 64)
 [node name="PlayerSpawn" parent="." index="6"]
 position = Vector2(624, 67)
 
+[node name="Camera" parent="PlayerSpawn" index="1"]
+limit_left = -525
+limit_top = -700
+limit_right = 816
+limit_bottom = 320
+
 [node name="Velocity" parent="PlayerSpawn" index="2"]
 position = Vector2(-186, -4)
 

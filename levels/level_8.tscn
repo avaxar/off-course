@@ -429,6 +429,12 @@ rotation = 1.5708
 [node name="PlayerSpawn" parent="." index="6"]
 position = Vector2(563, -231)
 
+[node name="Camera" parent="PlayerSpawn" index="1"]
+limit_left = 125
+limit_top = -675
+limit_right = 1280
+limit_bottom = -325
+
 [node name="Velocity" parent="PlayerSpawn" index="2"]
 position = Vector2(-5, -185)
 
