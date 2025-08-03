@@ -467,7 +467,7 @@ animation = &"close"
 autoplay = "open"
 metadata/_edit_lock_ = true
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_425a5")
 autoplay = true
 
