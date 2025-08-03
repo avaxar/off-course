@@ -13,8 +13,8 @@ extends Orb
 
 @onready var trajectory_probe: Orb = $TrajectoryProbe
 
-var latched_trajlines := []
 var unlatched_trajlines := []
+var latched_trajlines := []
 var latched := false
 var dead := false
 
@@ -22,7 +22,7 @@ var dead := false
 func _ready() -> void:
 	$Sprites/Lupin.modulate = Color()
 
-	for trajlines in [latched_trajlines, unlatched_trajlines]:
+	for trajlines in [unlatched_trajlines, latched_trajlines]:
 		for i in range(trajectory_line_steps, trajectory_steps, trajectory_line_steps * 2):
 			var line := Line2D.new()
 			add_child(line)
