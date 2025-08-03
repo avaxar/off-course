@@ -301,6 +301,7 @@ extends Node2D
 @onready var player_velocity := $PlayerSpawn/Velocity
 @onready var spawn_timer = $PlayerSpawn/Timer
 @onready var camera: Camera = $PlayerSpawn/Camera
+@onready var lupin_counter: Label = $CanvasLayer/LupinCounter
 @onready var level_indicator: AnimatedSprite2D = $CanvasLayer/LevelIndicator
 @onready var dialogs: Dialogs = $CanvasLayer/Dialogs
 @onready var transition: AnimatedSprite2D = $CanvasLayer/Transition
@@ -315,6 +316,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	lupin_counter.text = "#%s" % Global.lupin
 	camera.move(delta, player)
 
 

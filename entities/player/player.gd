@@ -35,6 +35,10 @@ func _process(delta: float) -> void:
 	super(delta)
 	handle_rotation(delta)
 
+	# Because 7 8 9
+	if Global.lupin == 7:
+		$Sprites/Lupin.scale = Vector2(1.45, 1.45)
+
 	clear_arcs()
 	if not dead:
 		draw_trajectories()

@@ -372,6 +372,16 @@ animation = &"8"
 autoplay = "0"
 metadata/_edit_lock_ = true
 
+[node name="LupinCounter" type="Label" parent="CanvasLayer"]
+offset_left = 48.0
+offset_top = 14.0
+offset_right = 406.0
+offset_bottom = 37.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.662745)
+theme_override_fonts/font = ExtResource("11_pb8y7")
+theme_override_font_sizes/font_size = 16
+text = "#..."
+
 [node name="LoopButton" type="Area2D" parent="CanvasLayer"]
 position = Vector2(29, 23)
 metadata/_edit_lock_ = true
