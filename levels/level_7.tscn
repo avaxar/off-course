@@ -152,7 +152,7 @@ position = Vector2(176, -167)
 
 [node name="Camera" parent="PlayerSpawn" index="1"]
 limit_left = 0
-limit_top = -50
+limit_top = -160
 limit_right = 3140
 limit_bottom = 510
 
