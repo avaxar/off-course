@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://balqm2vt1aiv4"
 path.s3tc="res://.godot/imported/particle.png-b9a81620a65a33713cd4f5f15a9eb53b.s3tc.ctex"
+path.etc2="res://.godot/imported/particle.png-b9a81620a65a33713cd4f5f15a9eb53b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://entities/orb/particle.png"
-dest_files=["res://.godot/imported/particle.png-b9a81620a65a33713cd4f5f15a9eb53b.s3tc.ctex"]
+dest_files=["res://.godot/imported/particle.png-b9a81620a65a33713cd4f5f15a9eb53b.s3tc.ctex", "res://.godot/imported/particle.png-b9a81620a65a33713cd4f5f15a9eb53b.etc2.ctex"]
 
 [params]
 
