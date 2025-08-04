@@ -6,7 +6,7 @@
 script/source = "extends Node2D
 
 func _ready():
-	$Label.text = \"Thank your for playing!\\nLupin #%s destroyed the facility.\" % Global.lupin
+	$Label.text = \"Thank you for playing!\\nLupin #%s destroyed the facility.\" % Global.lupin
 "
 
 [node name="Node2D" type="Node2D"]
