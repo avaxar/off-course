@@ -1,8 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://cjnoqt4gkj1i5"]
+[gd_scene load_steps=3 format=3 uid="uid://cjnoqt4gkj1i5"]
 
 [ext_resource type="FontFile" uid="uid://cbptoha0rsyl" path="res://levels/unifont.ttf" id="1_28kwg"]
 
+[sub_resource type="GDScript" id="GDScript_28kwg"]
+script/source = "extends Node2D
+
+func _ready():
+	$Label.text = \"Thank your for playing!\\nLupin #%s destroyed the facility.\" % Global.lupin
+"
+
 [node name="Node2D" type="Node2D"]
+script = SubResource("GDScript_28kwg")
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 7
@@ -18,4 +26,6 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("1_28kwg")
 theme_override_font_sizes/font_size = 16
-text = "Thank you for playing!"
+text = "Thank you for playing!
+..."
+horizontal_alignment = 1

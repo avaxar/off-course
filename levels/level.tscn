@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cndbn1jeog6o1" path="res://levels/loop.png" id="10_pb8y7"]
 [ext_resource type="Script" uid="uid://dej1251bfh2gd" path="res://levels/dialogs.gd" id="10_ukwr8"]
 [ext_resource type="FontFile" uid="uid://cbptoha0rsyl" path="res://levels/unifont.ttf" id="11_pb8y7"]
+[ext_resource type="Texture2D" uid="uid://h23juck7fdud" path="res://levels/dialogue.png" id="13_0qmeg"]
 [ext_resource type="Texture2D" uid="uid://ce87nkgmd0um4" path="res://levels/transition.png" id="14_d7v53"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hjsbj"]
@@ -165,9 +166,6 @@ size = Vector2(32, 20)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hy0rb"]
 shader = ExtResource("9_ukwr8")
 shader_parameter/pixel_scale = 1.0
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ukwr8"]
-load_path = "res://.godot/imported/dialogue.png-f545bace210ecb526dc7c95e4d23f758.ctex"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rtcij"]
 shader = ExtResource("8_d5x7l")
@@ -375,12 +373,13 @@ metadata/_edit_lock_ = true
 [node name="LupinCounter" type="Label" parent="CanvasLayer"]
 offset_left = 48.0
 offset_top = 14.0
-offset_right = 406.0
+offset_right = 405.0
 offset_bottom = 37.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.662745)
 theme_override_fonts/font = ExtResource("11_pb8y7")
 theme_override_font_sizes/font_size = 16
-text = "#..."
+text = "#... @"
+horizontal_alignment = 2
 
 [node name="LoopButton" type="Area2D" parent="CanvasLayer"]
 position = Vector2(29, 23)
@@ -411,7 +410,7 @@ metadata/_edit_lock_ = true
 [node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Dialogs/DialogA"]
 modulate = Color(0.75, 0.995833, 1, 0.752941)
 layout_mode = 2
-texture = SubResource("CompressedTexture2D_ukwr8")
+texture = ExtResource("13_0qmeg")
 region_rect = Rect2(0, 0, 48, 48)
 patch_margin_left = 16
 patch_margin_top = 16
@@ -453,7 +452,7 @@ metadata/_edit_lock_ = true
 [node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Dialogs/DialogB"]
 modulate = Color(1, 0.8, 0.8, 0.752941)
 layout_mode = 2
-texture = SubResource("CompressedTexture2D_ukwr8")
+texture = ExtResource("13_0qmeg")
 region_rect = Rect2(0, 0, 48, 48)
 patch_margin_left = 16
 patch_margin_top = 16
