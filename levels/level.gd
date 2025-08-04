@@ -365,7 +365,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	lupin_counter.text = "#%s @" % Global.lupin
+	lupin_counter.text = "Lupin #%s" % Global.lupin
 	camera.move(delta, player)
 
 
