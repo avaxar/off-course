@@ -413,7 +413,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Level2" instance=ExtResource("1_eus5j")]
+[node name="Level0" instance=ExtResource("1_eus5j")]
 next_scene = ExtResource("2_823pn")
 initial_dialogs = Array[String](["A:Experiment, Start.", "B:Here we goo"])
 

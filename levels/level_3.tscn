@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://biotlhx7rd3hp" path="res://entities/orb/orb.tscn" id="6_jq78i"]
 
 [node name="Level3" instance=ExtResource("1_vkd0v")]
-rotation = -0.000552522
 level = 3
 next_scene = ExtResource("2_8l0e1")
 

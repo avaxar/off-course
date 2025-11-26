@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://biotlhx7rd3hp" path="res://entities/orb/orb.tscn" id="5_fpvgn"]
 [ext_resource type="Texture2D" uid="uid://cq1qn1bqe01t" path="res://entities/misc/Exit.png" id="6_fpvgn"]
 
-[node name="Level2" instance=ExtResource("1_6up2b")]
+[node name="Level6" instance=ExtResource("1_6up2b")]
 level = 6
 next_scene = ExtResource("2_rqsg2")
 initial_dialogs = Array[String](["A:Poor lupins...", "A:After all those sections...", "B:Yeah, not a fan either."])

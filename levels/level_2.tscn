@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bk48wlfkg1p11" path="res://entities/button/button.tscn" id="4_btoec"]
 [ext_resource type="Texture2D" uid="uid://cq1qn1bqe01t" path="res://entities/misc/Exit.png" id="6_btoec"]
 
-[node name="Level" instance=ExtResource("1_vn7o3")]
+[node name="Level2" instance=ExtResource("1_vn7o3")]
 level = 2
 next_scene = ExtResource("2_n46q3")
 initial_dialogs = Array[String](["A:Are we sure about this section?", "A:It seems a bit fast for them...", "B:SPEEDD"])

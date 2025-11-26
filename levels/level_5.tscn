@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bk48wlfkg1p11" path="res://entities/button/button.tscn" id="4_1y5xd"]
 [ext_resource type="Texture2D" uid="uid://cq1qn1bqe01t" path="res://entities/misc/Exit.png" id="6_1y5xd"]
 
-[node name="Level3" instance=ExtResource("1_erq1u")]
+[node name="Level5" instance=ExtResource("1_erq1u")]
 level = 5
 next_scene = ExtResource("2_yaabq")
 initial_dialogs = Array[String](["A:Wait...The Orbs...", "B:Yeah, they're outside", "Let's see if they can handle this."])

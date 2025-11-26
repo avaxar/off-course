@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://biotlhx7rd3hp" path="res://entities/orb/orb.tscn" id="4_t6q73"]
 [ext_resource type="Texture2D" uid="uid://cq1qn1bqe01t" path="res://entities/misc/Exit.png" id="6_hokjj"]
 
-[node name="Level" instance=ExtResource("1_fwt2v")]
+[node name="Level4" instance=ExtResource("1_fwt2v")]
 level = 4
 next_scene = ExtResource("2_hokjj")
 initial_dialogs = Array[String](["B:Remind me, what's this section for again?", "A:Uhm... Slingshots, Mam.", "B:HAH! Classic.", "B:Thank god i made Johnny build this one."])
