@@ -245,6 +245,10 @@ extends Node2D
 		"B:Corpos are gonks.",
 		"A:Mam, we're the corpos in this situation.",
 	],
+	67: [
+		"A:Si-",
+		"B:No."
+	],
 	69: [
 		"A:Deploying number 69",
 		"B:Nice",
