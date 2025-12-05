@@ -139,7 +139,7 @@ extends Node2D
 		"A:Oh God, is it my turn this week?"
 	],
 	27: [
-		"B:Third time third time's the charm"
+		"B:Third time third time third time's the charm"
 	],
 	28: [
 		"B:It's the Alpha",
@@ -255,7 +255,7 @@ extends Node2D
 		"A:..."
 	],
 	81: [
-		"B:Third time third time third time's the charm",
+		"B:Third time third time third time third time's the charm",
 	],
 	84: [
 		"A:Deploying Lupin the 84th",
@@ -312,7 +312,7 @@ extends Node2D
 		"B:Don't. Look. Away.",
 	],
 	243: [
-		"B:B:Third time third time third time third time's the charm",
+		"B:B:Third time third time third time third time third time's the charm",
 	],
 	365: [
 		"A:Deploying Lupin the 365th",
