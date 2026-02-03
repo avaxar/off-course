@@ -32,7 +32,7 @@ func _ready() -> void:
 
 var latch_time := 0.0
 func _process(delta: float) -> void:
-	super(delta)
+	super (delta)
 	handle_rotation(delta)
 
 	# Because 7 8 9
@@ -98,7 +98,7 @@ static func calc_latch(force: Vector2, velocity: Vector2, latching: bool, unlatc
 
 
 func gravitate(exclusions: Array = []) -> Vector2:
-	return calc_latch(super(exclusions + [trajectory_probe]), linear_velocity, latched, unlatched_gravitation)
+	return calc_latch(super (exclusions + [trajectory_probe]), linear_velocity, latched, unlatched_gravitation)
 
 
 func map_trajectory(latching: bool) -> PackedVector2Array:
@@ -111,11 +111,11 @@ func map_trajectory(latching: bool) -> PackedVector2Array:
 	for _i in range(trajectory_steps):
 		trajectory_probe.position += trajectory_probe.linear_velocity * trajectory_step_size
 
-		var accel := trajectory_probe.gravitate([self]) / trajectory_probe.mass
+		var accel := trajectory_probe.gravitate([ self ]) / trajectory_probe.mass
 		trajectory_probe.linear_velocity += calc_latch(accel, trajectory_probe.linear_velocity,
 													   latching, unlatched_gravitation) * trajectory_step_size
 
-		if trajectory_probe.check_collisions([self], 1.0):
+		if trajectory_probe.check_collisions([ self ], 1.0):
 			break
 
 		path.append(trajectory_probe.position)
@@ -153,11 +153,11 @@ func clear_arcs() -> void:
 func draw_arcs() -> void:
 	for orb: Orb in get_tree().get_nodes_in_group("orbs"):
 		var orbit_audio: AudioStreamPlayer2D = orb.get_node("OrbitAudio")
-		orbit_audio.volume_db = -INF;
+		orbit_audio.volume_db = - INF;
 
 		if orb == self or orb == trajectory_probe or not orb.active:
 			continue
-		
+
 		var distance := (orb.global_position - global_position).length()
 		if distance > orb.influence_radius:
 			continue

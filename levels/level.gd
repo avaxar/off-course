@@ -326,7 +326,7 @@ extends Node2D
 		"B:RED LIGHT!!",
 		"A:GREEN LIGHT!!"
 	],
-	616:[
+	616: [
 		"B:Do you think WE'RE in the main universe?",
 		"A:Well there are many theories about thi-",
 		"B:Nevermind.",

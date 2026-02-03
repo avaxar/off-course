@@ -18,13 +18,13 @@ func get_interest(player: Player) -> Node2D:
 	for orb: Orb in get_tree().get_nodes_in_group("orbs"):
 		if orb in get_tree().get_nodes_in_group("player") or not orb.active:
 			continue
-		
+
 		var distance := (orb.global_position - player.global_position).length()
 		if distance > focus_radius:
 			continue
 		if interest == null or distance < (interest.global_position - player.global_position).length():
 			interest = orb
-	
+
 	if interest == null:
 		return player
 	else:

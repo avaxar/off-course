@@ -35,7 +35,7 @@ var current_dialog: Control = null
 func _on_letter_timer_timeout() -> void:
 	if dialog_queue.is_empty():
 		return
-	
+
 	var dialog := dialog_a if dialog_queue[0][0] == 'A' else dialog_b
 	var label: Label = dialog.get_node("MarginContainer/Label")
 	var message := dialog_queue[0].substr(2)

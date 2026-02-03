@@ -290,7 +290,7 @@ animations = [{
 "speed": 18.0
 }]
 
-[node name="Level2" type="Node2D"]
+[node name="Level" type="Node2D"]
 script = ExtResource("1_gjl0y")
 
 [node name="Parallax" type="CanvasLayer" parent="."]

@@ -79,7 +79,7 @@ func gravitate(exclusions: Array = []) -> Vector2:
 		var perpendicular := direction.rotated(PI / 2.0)
 		if linear_velocity.normalized().dot(perpendicular) < 0.0:
 			# Makes sure the perpendicular direction matches with the direction
-			perpendicular = -perpendicular
+			perpendicular = - perpendicular
 		var orbital_speed := sqrt(g * orb.mass / distance) * mass
 		var orbital_vec := perpendicular * orbital_speed
 
@@ -90,10 +90,10 @@ func gravitate(exclusions: Array = []) -> Vector2:
 		# Preferred orbital radius, as to not hit directly
 		if distance > orb.preferred_radius:
 			continue
-		
+
 		var safety_strength := 1.0 - (distance / orb.preferred_radius) ** 4.0
 		force += -force_vec * safety_strength
-	
+
 	return force
 
 
@@ -103,5 +103,5 @@ func check_collisions(exclusions: Array = [], margin: float = 0.5) -> bool:
 			continue
 		if (orb.global_position - global_position).length() <= radius + orb.radius + margin:
 			return true
-	
+
 	return false
