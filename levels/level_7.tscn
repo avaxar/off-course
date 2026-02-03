@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=4 uid="uid://dqrvqpt8fjil5"]
+[gd_scene format=4 uid="uid://dqrvqpt8fjil5"]
 
 [ext_resource type="PackedScene" uid="uid://delaxhx1j17tb" path="res://levels/level.tscn" id="1_jm8gk"]
 [ext_resource type="PackedScene" uid="uid://7eogtg8ox5y4" path="res://entities/opening_comic/closing_comic.tscn" id="2_jgr6b"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bk48wlfkg1p11" path="res://entities/button/button.tscn" id="4_urq6f"]
 [ext_resource type="PackedScene" uid="uid://biotlhx7rd3hp" path="res://entities/orb/orb.tscn" id="5_nyknj"]
 
-[node name="Level7" instance=ExtResource("1_jm8gk")]
+[node name="Level7" unique_id=1860127628 instance=ExtResource("1_jm8gk")]
 level = 7
 next_scene = ExtResource("2_jgr6b")
 initial_dialogs = Array[String](["A:Final stretch.", "B:No going back."])
@@ -17,64 +17,64 @@ tile_map_data = PackedByteArray("AAD///b/AgAWAAYAAAD///f/AgAWAAYAAAD///j/AgAWAAY
 [node name="BackgroundOver" parent="." index="2"]
 tile_map_data = PackedByteArray("AAAIAAMAAgAQAAkAAAAHAAMAAgAPAAkAAAAGAAMAAgAPAAkAAAAIAAQAAgAQAAoAAAAIAAUAAgAQAAoAAAAIAAYAAgAQAAoAAAAIAAcAAgAQAAoAAAAIAAgAAgAQAAoAAAAIAAkAAgAQAAoAAAAIAAoAAgAQAAoAAAAIAAsAAgAQAAoAAAAIAAwAAgAQAAoAAAAaAAgAAgARAAsAAAAOAAoAAgARAAsAAAAYAAAAAgAQAA0AAAA7AAsAAgARAAsAAAA+AP//AgAQAA0AAABUABcAAgARAAsAAABZAB0AAgAXAA4AAABZAB4AAgAXAA8AAABaAB0AAgAYAA4AAABaAB4AAgAYAA8AAABZABwAAgAcAAoAAABaABwAAgAdAAoAAABZABsAAgAcAAoAAABaABsAAgAdAAoAAAAvAAkAAgAKAAkAAAAvAAoAAgAKAAoAAAAvAAsAAgAKAAsAAAAwAAkAAgALAAkAAAAwAAoAAgALAAoAAAAwAAsAAgALAAsAAAAxAAkAAgALAAkAAAAxAAoAAgALAAoAAAAxAAsAAgALAAsAAAAyAAkAAgAMAAkAAAAyAAoAAgAMAAoAAAAyAAsAAgAMAAsAAAA2AAAAAgAPAAkAAAA3AAAAAgAPAAkAAAA4AAAAAgAPAAkAAAA5AAAAAgAQAAkAAAA5AP//AgAQAAgAAAA5AP7/AgAQAAgAAAA5AP3/AgAQAAgAAAA5APz/AgAQAAgAAABDAAsAAgANAAkAAABDAAwAAgANAAoAAABEAAsAAgAOAAkAAABEAAwAAgAOAAoAAABCAP3/AgASAAkAAABCAP7/AgASAAoAAABCAP//AgASAAsAAABDAP3/AgATAAkAAABDAP7/AgATAAoAAABDAP//AgATAAsAAABEAP3/AgAUAAkAAABEAP7/AgAUAAoAAABEAP//AgAUAAsAAAA0AAoAAgAMAA0AAABcAAMAAgATAAoAAABcAAQAAgATAAsAAABdAAMAAgAUAAoAAABdAAQAAgAUAAsAAABiAA8AAgAQAA0AAAB+AAkAAgAOAAwAAACLAP3/AgAQAA0AAAB5AA4AAgAXAA4AAAB5AA8AAgAXAA8AAAB6AA4AAgAYAA4AAAB6AA8AAgAYAA8AAAB5AA0AAgAcAAoAAAB6AA0AAgAdAAoAAAB5AAwAAgAXAAsAAAB6AAwAAgAYAAsAAAB2AAwAAgAXAA4AAAB2AA0AAgAXAA8AAAB3AAwAAgAYAA4AAAB3AA0AAgAYAA8AAAB3AA4AAgAYAA8AAAB2AAsAAgAcAAoAAAB3AAsAAgAdAAoAAAB2AAoAAgAXAAsAAAB3AAoAAgAYAAsAAAB0APz/AgAXAAgAAAB0AP3/AgAXAAkAAAB1APz/AgAXAAgAAAB1AP3/AgAXAAkAAAB2APz/AgAYAAgAAAB2AP3/AgAYAAkAAABzAP3/AgAXAAkAAAB8APn/AgAZAAsAAAB8APr/AgAZAAsAAAB8APv/AgAZAAsAAAB8APz/AgAZAAsAAAB8AP3/AgAZAAsAAAB8AP7/AgAZAAsAAACSAAkAAgANAAkAAACSAAoAAgANAAoAAACTAAkAAgAOAAkAAACTAAoAAgAOAAoAAACKAAkAAgANAAkAAACKAAoAAgANAAoAAACLAAkAAgAOAAkAAACLAAoAAgAOAAoAAACOAAwAAgANAAkAAACOAA0AAgANAAoAAACPAAwAAgAOAAkAAACPAA0AAgAOAAoAAADCAPn/AgAQAA0AAAC7APv/AgARAAkAAAC8APv/AgARAAkAAAC9APv/AgARAAkAAAC/APv/AgAOAAwAAACuAAEAAgAIAA0AAACtAAIAAgARAAsAAAA=")
 
-[node name="ExitDoor8" parent="Objects" index="0" instance=ExtResource("3_vendn")]
+[node name="ExitDoor8" parent="Objects" index="0" unique_id=1255049696 instance=ExtResource("3_vendn")]
 position = Vector2(2483, 63)
 
-[node name="ExitDoor7" parent="Objects" index="1" instance=ExtResource("3_vendn")]
+[node name="ExitDoor7" parent="Objects" index="1" unique_id=2051547135 instance=ExtResource("3_vendn")]
 position = Vector2(2453, 64)
 
-[node name="ExitDoor6" parent="Objects" index="2" instance=ExtResource("3_vendn")]
+[node name="ExitDoor6" parent="Objects" index="2" unique_id=85016690 instance=ExtResource("3_vendn")]
 position = Vector2(1579, 63)
 
-[node name="ExitDoor5" parent="Objects" index="3" instance=ExtResource("3_vendn")]
+[node name="ExitDoor5" parent="Objects" index="3" unique_id=1669670040 instance=ExtResource("3_vendn")]
 position = Vector2(1560, 64)
 
-[node name="ExitDoor4" parent="Objects" index="4" instance=ExtResource("3_vendn")]
+[node name="ExitDoor4" parent="Objects" index="4" unique_id=955198488 instance=ExtResource("3_vendn")]
 position = Vector2(1150, 64)
 
-[node name="ExitDoor3" parent="Objects" index="5" instance=ExtResource("3_vendn")]
+[node name="ExitDoor3" parent="Objects" index="5" unique_id=634346961 instance=ExtResource("3_vendn")]
 position = Vector2(1126, 64)
 
-[node name="ExitDoor2" parent="Objects" index="6" instance=ExtResource("3_vendn")]
+[node name="ExitDoor2" parent="Objects" index="6" unique_id=1806449770 instance=ExtResource("3_vendn")]
 position = Vector2(552, 64)
 
 [node name="ExitDoor" parent="Objects" index="7"]
 position = Vector2(535, 65)
 
-[node name="Button9" parent="Objects" index="8" instance=ExtResource("4_urq6f")]
+[node name="Button9" parent="Objects" index="8" unique_id=1341352723 instance=ExtResource("4_urq6f")]
 position = Vector2(2905, -56)
 rotation = -3.13598
 
-[node name="Button8" parent="Objects" index="9" node_paths=PackedStringArray("door") instance=ExtResource("4_urq6f")]
+[node name="Button8" parent="Objects" index="9" unique_id=1411024909 node_paths=PackedStringArray("door") instance=ExtResource("4_urq6f")]
 position = Vector2(2288, 248)
 door = NodePath("../ExitDoor8")
 
-[node name="Button7" parent="Objects" index="10" node_paths=PackedStringArray("door") instance=ExtResource("4_urq6f")]
+[node name="Button7" parent="Objects" index="10" unique_id=15470484 node_paths=PackedStringArray("door") instance=ExtResource("4_urq6f")]
 position = Vector2(1952, -119)
 rotation = -3.14159
 door = NodePath("../ExitDoor7")
 
-[node name="Button6" parent="Objects" index="11" node_paths=PackedStringArray("door") instance=ExtResource("4_urq6f")]
+[node name="Button6" parent="Objects" index="11" unique_id=1377814238 node_paths=PackedStringArray("door") instance=ExtResource("4_urq6f")]
 position = Vector2(1609, 254)
 rotation = -1.57079
 door = NodePath("../ExitDoor6")
 
-[node name="Button5" parent="Objects" index="12" node_paths=PackedStringArray("door") instance=ExtResource("4_urq6f")]
+[node name="Button5" parent="Objects" index="12" unique_id=1270305659 node_paths=PackedStringArray("door") instance=ExtResource("4_urq6f")]
 position = Vector2(1343, 344)
 rotation = -3.14159
 door = NodePath("../ExitDoor5")
 
-[node name="Button4" parent="Objects" index="13" node_paths=PackedStringArray("door") instance=ExtResource("4_urq6f")]
+[node name="Button4" parent="Objects" index="13" unique_id=1132889781 node_paths=PackedStringArray("door") instance=ExtResource("4_urq6f")]
 position = Vector2(887, 280)
 rotation = 6.28318
 door = NodePath("../ExitDoor4")
 
-[node name="Button3" parent="Objects" index="14" node_paths=PackedStringArray("door") instance=ExtResource("4_urq6f")]
+[node name="Button3" parent="Objects" index="14" unique_id=1229582822 node_paths=PackedStringArray("door") instance=ExtResource("4_urq6f")]
 position = Vector2(728, -38)
 rotation = 1.57079
 door = NodePath("../ExitDoor3")
 
-[node name="Button2" parent="Objects" index="15" node_paths=PackedStringArray("door") instance=ExtResource("4_urq6f")]
+[node name="Button2" parent="Objects" index="15" unique_id=774655183 node_paths=PackedStringArray("door") instance=ExtResource("4_urq6f")]
 position = Vector2(40, 144)
 rotation = 1.57079
 door = NodePath("../ExitDoor2")
@@ -82,52 +82,52 @@ door = NodePath("../ExitDoor2")
 [node name="Button" parent="Objects" index="16"]
 position = Vector2(280, 250)
 
-[node name="Orb5" parent="Objects" index="17" instance=ExtResource("5_nyknj")]
+[node name="Orb5" parent="Objects" index="17" unique_id=1102864408 instance=ExtResource("5_nyknj")]
 position = Vector2(1430, 378)
 freeze = true
 intensity = 1.25
 correction_radius = 256.0
 
-[node name="Orb8" parent="Objects" index="18" instance=ExtResource("5_nyknj")]
+[node name="Orb8" parent="Objects" index="18" unique_id=857483286 instance=ExtResource("5_nyknj")]
 position = Vector2(2905, 56)
 freeze = true
 preferred_radius = 0.0
 
-[node name="Orb7" parent="Objects" index="19" instance=ExtResource("5_nyknj")]
+[node name="Orb7" parent="Objects" index="19" unique_id=894361138 instance=ExtResource("5_nyknj")]
 position = Vector2(2294, 12)
 freeze = true
 deadly = true
 intensity = 2.0
 preferred_radius = 0.0
 
-[node name="Orb6" parent="Objects" index="20" instance=ExtResource("5_nyknj")]
+[node name="Orb6" parent="Objects" index="20" unique_id=1945909274 instance=ExtResource("5_nyknj")]
 position = Vector2(1956, 110)
 freeze = true
 deadly = true
 intensity = 2.0
 preferred_radius = 0.0
 
-[node name="Orb4" parent="Objects" index="21" instance=ExtResource("5_nyknj")]
+[node name="Orb4" parent="Objects" index="21" unique_id=1650872326 instance=ExtResource("5_nyknj")]
 position = Vector2(1424, 176)
 freeze = true
 intensity = 1.25
 correction_radius = 256.0
 
-[node name="Orb3" parent="Objects" index="22" instance=ExtResource("5_nyknj")]
+[node name="Orb3" parent="Objects" index="22" unique_id=1130025046 instance=ExtResource("5_nyknj")]
 position = Vector2(928, 176)
 freeze = true
 intensity = 1.5
 correction_radius = 196.0
 influence_radius = 128.0
 
-[node name="Orb2" parent="Objects" index="23" instance=ExtResource("5_nyknj")]
+[node name="Orb2" parent="Objects" index="23" unique_id=413838624 instance=ExtResource("5_nyknj")]
 position = Vector2(975, 1)
 freeze = true
 intensity = 1.5
 correction_radius = 196.0
 influence_radius = 128.0
 
-[node name="Orb9" parent="Objects" index="24" instance=ExtResource("5_nyknj")]
+[node name="Orb9" parent="Objects" index="24" unique_id=249678135 instance=ExtResource("5_nyknj")]
 position = Vector2(414, 32)
 freeze = true
 intensity = 2.0

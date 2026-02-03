@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bk48wlfkg1p11"]
+[gd_scene format=3 uid="uid://bk48wlfkg1p11"]
 
 [ext_resource type="Texture2D" uid="uid://bs00ee1483cge" path="res://entities/button/button.png" id="1_4tlb3"]
 [ext_resource type="Script" uid="uid://w4302nqg2dtr" path="res://entities/button/button.gd" id="1_7gf2j"]
@@ -110,22 +110,20 @@ _data = {
 &"unpressed": SubResource("Animation_xjlp8")
 }
 
-[node name="Button" type="Area2D"]
+[node name="Button" type="Area2D" unique_id=957861724]
 script = ExtResource("1_7gf2j")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1452117274]
 sprite_frames = SubResource("SpriteFrames_tdykk")
 animation = &"unpressed"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1790498855]
 shape = SubResource("RectangleShape2D_x1tbq")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_xmavd")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=327570050]
+libraries/ = SubResource("AnimationLibrary_xmavd")
 
-[node name="ButtonPress" type="AudioStreamPlayer2D" parent="."]
+[node name="ButtonPress" type="AudioStreamPlayer2D" parent="." unique_id=1729077851]
 stream = ExtResource("3_6bgj0")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

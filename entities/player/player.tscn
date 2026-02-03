@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://csntg42ps0ogc"]
+[gd_scene format=3 uid="uid://csntg42ps0ogc"]
 
 [ext_resource type="PackedScene" uid="uid://biotlhx7rd3hp" path="res://entities/orb/orb.tscn" id="1_symyc"]
 [ext_resource type="Script" uid="uid://c22tsr6r03flk" path="res://entities/player/player.gd" id="2_abrql"]
@@ -12,7 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://c7tkk5uuhunm" path="res://entities/player/latch.wav" id="9_wvtmh"]
 [ext_resource type="AudioStream" uid="uid://do3erdk6b4o7s" path="res://entities/player/delatch.wav" id="10_7thud"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_fkugw"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_7thud"]
 resource_local_to_scene = true
 radius = 12.0
 
@@ -199,7 +199,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_8fjmc"]
 radius = 8.5
 
-[node name="Player" groups=["player"] instance=ExtResource("1_symyc")]
+[node name="Player" unique_id=1039897982 groups=["player"] instance=ExtResource("1_symyc")]
 mass = 0.75
 contact_monitor = true
 max_contacts_reported = 1
@@ -215,16 +215,16 @@ arcs = 12
 arc_divisions = 8
 radius = 8.0
 
-[node name="Sprite" parent="." index="0"]
+[node name="Sprite" parent="." index="0" unique_id=139438059]
 visible = false
 
-[node name="CollisionShape" parent="." index="1"]
+[node name="CollisionShape" parent="." index="1" unique_id=806147550]
 visible = false
-shape = SubResource("CircleShape2D_fkugw")
+shape = SubResource("CircleShape2D_7thud")
 
-[node name="Sprites" type="Node2D" parent="." index="2"]
+[node name="Sprites" type="Node2D" parent="." index="2" unique_id=1297508990]
 
-[node name="LatchSmoke" type="CPUParticles2D" parent="Sprites" index="0"]
+[node name="LatchSmoke" type="CPUParticles2D" parent="Sprites" index="0" unique_id=590057042]
 emitting = false
 amount = 16
 texture = ExtResource("4_a1qjk")
@@ -238,7 +238,7 @@ initial_velocity_max = 20.61
 color = Color(1, 0, 0, 1)
 color_ramp = SubResource("Gradient_j3ovn")
 
-[node name="DelatchSmoke" type="CPUParticles2D" parent="Sprites" index="1"]
+[node name="DelatchSmoke" type="CPUParticles2D" parent="Sprites" index="1" unique_id=245649105]
 emitting = false
 texture = ExtResource("4_a1qjk")
 lifetime = 0.25
@@ -251,46 +251,46 @@ initial_velocity_min = 20.0
 initial_velocity_max = 20.61
 color_ramp = SubResource("Gradient_a1qjk")
 
-[node name="Back" type="Sprite2D" parent="Sprites" index="2"]
+[node name="Back" type="Sprite2D" parent="Sprites" index="2" unique_id=1278749285]
 material = SubResource("ShaderMaterial_a1qjk")
 texture = ExtResource("3_bls4j")
 
-[node name="Lupin" type="AnimatedSprite2D" parent="Sprites" index="3"]
+[node name="Lupin" type="AnimatedSprite2D" parent="Sprites" index="3" unique_id=1761124449]
 material = SubResource("ShaderMaterial_j3ovn")
 sprite_frames = SubResource("SpriteFrames_ghoj8")
 autoplay = "default"
 flip_h = true
 
-[node name="Front" type="AnimatedSprite2D" parent="Sprites" index="4"]
+[node name="Front" type="AnimatedSprite2D" parent="Sprites" index="4" unique_id=192324765]
 material = SubResource("ShaderMaterial_afbqv")
 sprite_frames = SubResource("SpriteFrames_eyb6c")
 autoplay = "default"
 
-[node name="TrajectoryProbe" parent="." index="3" groups=["player"] instance=ExtResource("1_symyc")]
+[node name="TrajectoryProbe" parent="." index="3" unique_id=1958499 groups=["player"] instance=ExtResource("1_symyc")]
 visible = false
 collision_layer = 0
 collision_mask = 0
 active = false
 radius = 8.0
 
-[node name="DangerArea" type="Area2D" parent="." index="4"]
+[node name="DangerArea" type="Area2D" parent="." index="4" unique_id=409287025]
 visible = false
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape" type="CollisionShape2D" parent="DangerArea" index="0"]
+[node name="CollisionShape" type="CollisionShape2D" parent="DangerArea" index="0" unique_id=1271870757]
 shape = SubResource("CircleShape2D_8fjmc")
 
-[node name="DeathAudio" type="AudioStreamPlayer2D" parent="." index="5"]
+[node name="DeathAudio" type="AudioStreamPlayer2D" parent="." index="5" unique_id=614020021]
 stream = ExtResource("7_qiwj3")
 
-[node name="LatchAudio" type="AudioStreamPlayer2D" parent="." index="7"]
+[node name="LatchAudio" type="AudioStreamPlayer2D" parent="." index="7" unique_id=1823070610]
 stream = ExtResource("9_wvtmh")
 
-[node name="DelatchAudio" type="AudioStreamPlayer2D" parent="." index="8"]
+[node name="DelatchAudio" type="AudioStreamPlayer2D" parent="." index="8" unique_id=193169633]
 stream = ExtResource("10_7thud")
 
-[node name="Particles" parent="." index="10"]
+[node name="Particles" parent="." index="10" unique_id=875119314]
 visible = false
 
 [connection signal="die" from="." to="." method="_on_die"]

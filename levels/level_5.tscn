@@ -1,13 +1,13 @@
-[gd_scene load_steps=7 format=4 uid="uid://bcm3qhh0vom4a"]
+[gd_scene format=4 uid="uid://bcm3qhh0vom4a"]
 
 [ext_resource type="PackedScene" uid="uid://delaxhx1j17tb" path="res://levels/level.tscn" id="1_erq1u"]
 [ext_resource type="PackedScene" uid="uid://bcm3qhh0vom4r" path="res://levels/level_6.tscn" id="2_yaabq"]
 [ext_resource type="PackedScene" uid="uid://c3fqkueu71rf2" path="res://entities/door/door.tscn" id="3_26h77"]
 [ext_resource type="PackedScene" uid="uid://biotlhx7rd3hp" path="res://entities/orb/orb.tscn" id="3_dhnqt"]
 [ext_resource type="PackedScene" uid="uid://bk48wlfkg1p11" path="res://entities/button/button.tscn" id="4_1y5xd"]
-[ext_resource type="Texture2D" uid="uid://cq1qn1bqe01t" path="res://entities/misc/Exit.png" id="6_1y5xd"]
+[ext_resource type="Texture2D" uid="uid://cq1qn1bqe01t" path="res://entities/misc/exit.png" id="6_1y5xd"]
 
-[node name="Level5" instance=ExtResource("1_erq1u")]
+[node name="Level5" unique_id=1103195699 instance=ExtResource("1_erq1u")]
 level = 5
 next_scene = ExtResource("2_yaabq")
 initial_dialogs = Array[String](["A:Wait...The Orbs...", "B:Yeah, they're outside", "Let's see if they can handle this."])
@@ -18,64 +18,64 @@ tile_map_data = PackedByteArray("AAAQAAoAAgAOAA4AAAARAAoAAgAOAA4AAAASAAoAAgAOAA4
 [node name="BackgroundOver" parent="." index="2"]
 tile_map_data = PackedByteArray("AAAiAP//AgAQAAgAAAAiAP7/AgAQAAgAAAAiAP3/AgAQAAgAAAAhAAAAAgAPAAkAAAAgAAAAAgAPAAkAAAAeAAQAAgALAAQAAAAeAAUAAgALAAUAAAAfAAQAAgAMAAQAAAAfAAUAAgAMAAUAAAAFABAAAgATAAQAAAAGABAAAgASAAUAAAAHABAAAgASAAUAAAAIABAAAgASAAUAAAAJABAAAgASAAUAAAAKABAAAgASAAUAAAALABAAAgASAAUAAAAMABAAAgASAAUAAAANABAAAgARAAgAAAAOABAAAgARAAUAAAAPABAAAgARAAUAAAAQABAAAgARAAUAAAARABAAAgARAAUAAAASABAAAgARAAUAAAATABAAAgARAAUAAAAUABAAAgARAAUAAAAVABAAAgASAAMAAAARAAwAAgARAAsAAABCABoAAgAQAAkAAABCABsAAgAQAAoAAABCABwAAgAQAAoAAABCAB0AAgAQAAoAAABBABoAAgAPAAkAAABAABoAAgAPAAkAAAA/ABoAAgAPAAkAAABAAAgAAgANAAkAAABAAAkAAgANAAoAAABBAAgAAgAOAAkAAABBAAkAAgAOAAoAAAAnAP7/AgASAAkAAAAoAP7/AgASAAkAAAApAP7/AgATAAkAAAAqAP7/AgAUAAkAAAAnAP//AgASAAoAAAAnAAAAAgASAAsAAAAoAP//AgASAAoAAAAoAAAAAgASAAsAAAApAP//AgATAAoAAAApAAAAAgATAAsAAAAqAP//AgAUAAoAAAAqAAAAAgAUAAsAAABdAAsAAgANAAYAAABeAAsAAgAOAAYAAABRAAsAAgAIAAEAAABSAAsAAgAJAAEAAABTAAsAAgAKAAEAAABdAAwAAgANAAcAAABeAAwAAgAOAAcAAABrAAAAAgANAAAAAABrAAEAAgANAAEAAABsAAAAAgAOAAAAAABsAAEAAgAOAAEAAAB1AP//AgAUAAQAAAB1AAAAAgAUAAUAAAB1AAEAAgAUAAYAAAB1AAIAAgAUAAcAAAB1AAMAAgARAAgAAAB2AAMAAgATAAQAAAB2AAkAAgASAAkAAAB2AAoAAgASAAoAAAB2AAsAAgASAAsAAAB3AAMAAgASAAUAAAB3AAkAAgATAAkAAAB3AAoAAgATAAoAAAB3AAsAAgATAAsAAAB4AAMAAgASAAUAAAB4AAkAAgAUAAkAAAB4AAoAAgAUAAoAAAB4AAsAAgAUAAsAAAB5AAMAAgASAAUAAAA=")
 
-[node name="ExitDoor6" parent="Objects" index="0" instance=ExtResource("3_26h77")]
+[node name="ExitDoor6" parent="Objects" index="0" unique_id=643623418 instance=ExtResource("3_26h77")]
 position = Vector2(1496, -23.9999)
 rotation = 1.5708
 
-[node name="ExitDoor5" parent="Objects" index="1" instance=ExtResource("3_26h77")]
+[node name="ExitDoor5" parent="Objects" index="1" unique_id=1238138113 instance=ExtResource("3_26h77")]
 position = Vector2(808, 146)
 rotation = -3.14159
 
-[node name="ExitDoor4" parent="Objects" index="2" instance=ExtResource("3_26h77")]
+[node name="ExitDoor4" parent="Objects" index="2" unique_id=211019740 instance=ExtResource("3_26h77")]
 position = Vector2(657, 297)
 rotation = -1.5708
 
-[node name="ExitDoor3" parent="Objects" index="3" instance=ExtResource("3_26h77")]
+[node name="ExitDoor3" parent="Objects" index="3" unique_id=700554966 instance=ExtResource("3_26h77")]
 position = Vector2(656, 271)
 rotation = -1.5708
 
-[node name="ExitDoor2" parent="Objects" index="4" instance=ExtResource("3_26h77")]
+[node name="ExitDoor2" parent="Objects" index="4" unique_id=843900730 instance=ExtResource("3_26h77")]
 position = Vector2(656, 247)
 rotation = -1.5708
 
-[node name="ExitDoor8" parent="Objects" index="5" instance=ExtResource("3_26h77")]
+[node name="ExitDoor8" parent="Objects" index="5" unique_id=1779056620 instance=ExtResource("3_26h77")]
 position = Vector2(719, -55)
 rotation = -1.5708
 
 [node name="ExitDoor" parent="Objects" index="6"]
 position = Vector2(808, 34)
 
-[node name="Button5" parent="Objects" index="7" node_paths=PackedStringArray("door") instance=ExtResource("4_1y5xd")]
+[node name="Button5" parent="Objects" index="7" unique_id=710147777 node_paths=PackedStringArray("door") instance=ExtResource("4_1y5xd")]
 position = Vector2(305, 168)
 rotation = 3.14159
 scale = Vector2(0.999999, 0.999999)
 door = NodePath("../ExitDoor5")
 
-[node name="Button8" parent="Objects" index="8" node_paths=PackedStringArray("door") instance=ExtResource("4_1y5xd")]
+[node name="Button8" parent="Objects" index="8" unique_id=1304423141 node_paths=PackedStringArray("door") instance=ExtResource("4_1y5xd")]
 position = Vector2(305, 168)
 rotation = -3.14159
 door = NodePath("../ExitDoor8")
 
-[node name="Button7" parent="Objects" index="9" node_paths=PackedStringArray("door") instance=ExtResource("4_1y5xd")]
+[node name="Button7" parent="Objects" index="9" unique_id=539822995 node_paths=PackedStringArray("door") instance=ExtResource("4_1y5xd")]
 position = Vector2(1913, 215)
 door = NodePath("../ExitDoor7")
 
-[node name="Button6" parent="Objects" index="10" node_paths=PackedStringArray("door") instance=ExtResource("4_1y5xd")]
+[node name="Button6" parent="Objects" index="10" unique_id=596077686 node_paths=PackedStringArray("door") instance=ExtResource("4_1y5xd")]
 position = Vector2(1502, -81.9998)
 rotation = -3.92699
 door = NodePath("../ExitDoor6")
 
-[node name="Button4" parent="Objects" index="11" node_paths=PackedStringArray("door") instance=ExtResource("4_1y5xd")]
+[node name="Button4" parent="Objects" index="11" unique_id=455396074 node_paths=PackedStringArray("door") instance=ExtResource("4_1y5xd")]
 position = Vector2(936, -288)
 rotation = -1.5708
 door = NodePath("../ExitDoor4")
 
-[node name="Button3" parent="Objects" index="12" node_paths=PackedStringArray("door") instance=ExtResource("4_1y5xd")]
+[node name="Button3" parent="Objects" index="12" unique_id=1648295470 node_paths=PackedStringArray("door") instance=ExtResource("4_1y5xd")]
 position = Vector2(1502, -82)
 rotation = 2.35619
 door = NodePath("../ExitDoor3")
 
-[node name="Button2" parent="Objects" index="13" node_paths=PackedStringArray("door") instance=ExtResource("4_1y5xd")]
+[node name="Button2" parent="Objects" index="13" unique_id=405696181 node_paths=PackedStringArray("door") instance=ExtResource("4_1y5xd")]
 position = Vector2(1209, 447)
 rotation = -1.5708
 door = NodePath("../ExitDoor2")
@@ -84,37 +84,37 @@ door = NodePath("../ExitDoor2")
 position = Vector2(305, 168)
 rotation = 3.14159
 
-[node name="Orb7" parent="Objects" index="15" instance=ExtResource("3_dhnqt")]
+[node name="Orb7" parent="Objects" index="15" unique_id=1910052372 instance=ExtResource("3_dhnqt")]
 position = Vector2(799, -213)
 freeze = true
 intensity = 1.25
 correction_radius = 256.0
 
-[node name="Orb6" parent="Objects" index="16" instance=ExtResource("3_dhnqt")]
+[node name="Orb6" parent="Objects" index="16" unique_id=2014748556 instance=ExtResource("3_dhnqt")]
 position = Vector2(1824, 113)
 freeze = true
 intensity = 1.25
 correction_radius = 256.0
 
-[node name="Orb5" parent="Objects" index="17" instance=ExtResource("3_dhnqt")]
+[node name="Orb5" parent="Objects" index="17" unique_id=467230432 instance=ExtResource("3_dhnqt")]
 position = Vector2(1394, 113)
 freeze = true
 intensity = 1.25
 correction_radius = 256.0
 
-[node name="Orb4" parent="Objects" index="18" instance=ExtResource("3_dhnqt")]
+[node name="Orb4" parent="Objects" index="18" unique_id=437281661 instance=ExtResource("3_dhnqt")]
 position = Vector2(1130, 376)
 freeze = true
 intensity = 1.25
 correction_radius = 256.0
 
-[node name="Orb3" parent="Objects" index="19" instance=ExtResource("3_dhnqt")]
+[node name="Orb3" parent="Objects" index="19" unique_id=820493975 instance=ExtResource("3_dhnqt")]
 position = Vector2(948, 216)
 freeze = true
 intensity = 1.25
 correction_radius = 256.0
 
-[node name="Orb2" parent="Objects" index="20" instance=ExtResource("3_dhnqt")]
+[node name="Orb2" parent="Objects" index="20" unique_id=203404562 instance=ExtResource("3_dhnqt")]
 position = Vector2(659, 95)
 freeze = true
 intensity = 1.5
@@ -125,12 +125,12 @@ position = Vector2(207, 180)
 intensity = 1.25
 correction_radius = 256.0
 
-[node name="Exit" type="Sprite2D" parent="Objects" index="22"]
+[node name="Exit" type="Sprite2D" parent="Objects" index="22" unique_id=627395838]
 position = Vector2(656, 195)
 rotation = 1.5708
 texture = ExtResource("6_1y5xd")
 
-[node name="ExitDoor7" parent="Objects" index="23" instance=ExtResource("3_26h77")]
+[node name="ExitDoor7" parent="Objects" index="23" unique_id=252513285 instance=ExtResource("3_26h77")]
 position = Vector2(1736, -25)
 rotation = -4.71239
 

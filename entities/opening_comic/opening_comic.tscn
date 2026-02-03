@@ -1,12 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://b4fqpag2tsdh0"]
+[gd_scene format=3 uid="uid://b4fqpag2tsdh0"]
 
 [ext_resource type="Script" uid="uid://p3mccogulcsl" path="res://entities/opening_comic/opening_comic.gd" id="1_qo320"]
-[ext_resource type="Texture2D" uid="uid://bct22vl8l84hn" path="res://entities/opening_comic/Panel1_Background.png" id="2_5wa28"]
-[ext_resource type="Texture2D" uid="uid://dsoh2g73egvdd" path="res://entities/opening_comic/Panel1_Object.png" id="3_df4p6"]
-[ext_resource type="Texture2D" uid="uid://bsyofj8gcen6k" path="res://entities/opening_comic/Panel2_Background.png" id="4_j5dou"]
-[ext_resource type="Texture2D" uid="uid://76hwn5cggp5w" path="res://entities/opening_comic/Panel2_Object.png" id="5_lo8dl"]
-[ext_resource type="Texture2D" uid="uid://dmwlodvbjo6v3" path="res://entities/opening_comic/Panel3.png" id="6_2d4ed"]
-[ext_resource type="Texture2D" uid="uid://dm3nk2lwbdv72" path="res://entities/opening_comic/Panel4.png" id="7_8rv2q"]
+[ext_resource type="Texture2D" uid="uid://bct22vl8l84hn" path="res://entities/opening_comic/panel1_background.png" id="2_5wa28"]
+[ext_resource type="Texture2D" uid="uid://dsoh2g73egvdd" path="res://entities/opening_comic/panel1_object.png" id="3_df4p6"]
+[ext_resource type="Texture2D" uid="uid://bsyofj8gcen6k" path="res://entities/opening_comic/panel2_background.png" id="4_j5dou"]
+[ext_resource type="Texture2D" uid="uid://76hwn5cggp5w" path="res://entities/opening_comic/panel2_object.png" id="5_lo8dl"]
+[ext_resource type="Texture2D" uid="uid://dmwlodvbjo6v3" path="res://entities/opening_comic/panel3.png" id="6_2d4ed"]
+[ext_resource type="Texture2D" uid="uid://dm3nk2lwbdv72" path="res://entities/opening_comic/panel4.png" id="7_8rv2q"]
 
 [sub_resource type="Animation" id="Animation_lqd3i"]
 length = 0.001
@@ -297,44 +297,42 @@ _data = {
 &"panel_4": SubResource("Animation_df4p6")
 }
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" unique_id=1330958842]
 script = ExtResource("1_qo320")
 
-[node name="Panel1Background" type="Sprite2D" parent="."]
+[node name="Panel1Background" type="Sprite2D" parent="." unique_id=252235569]
 visible = false
 position = Vector2(139, 72)
 texture = ExtResource("2_5wa28")
 
-[node name="Panel1Object" type="Sprite2D" parent="."]
+[node name="Panel1Object" type="Sprite2D" parent="." unique_id=1042200982]
 visible = false
 modulate = Color(1, 1, 1, 0)
 position = Vector2(119, 72)
 texture = ExtResource("3_df4p6")
 
-[node name="Panel2Background" type="Sprite2D" parent="."]
+[node name="Panel2Background" type="Sprite2D" parent="." unique_id=1005577998]
 visible = false
 position = Vector2(377, 58)
 texture = ExtResource("4_j5dou")
 
-[node name="Panel2Object" type="Sprite2D" parent="."]
+[node name="Panel2Object" type="Sprite2D" parent="." unique_id=439341306]
 visible = false
 position = Vector2(368, 60)
 texture = ExtResource("5_lo8dl")
 
-[node name="Panel3" type="Sprite2D" parent="."]
+[node name="Panel3" type="Sprite2D" parent="." unique_id=1405174862]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(129, 193)
 texture = ExtResource("6_2d4ed")
 
-[node name="Panel4" type="Sprite2D" parent="."]
+[node name="Panel4" type="Sprite2D" parent="." unique_id=756622216]
 visible = false
 modulate = Color(1, 1, 1, 0)
 position = Vector2(345, 195)
 texture = ExtResource("7_8rv2q")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_ufxj8")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=312683491]
+libraries/ = SubResource("AnimationLibrary_ufxj8")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

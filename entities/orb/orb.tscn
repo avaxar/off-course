@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://biotlhx7rd3hp"]
+[gd_scene format=3 uid="uid://biotlhx7rd3hp"]
 
 [ext_resource type="Script" uid="uid://cju4qvsx3hlfj" path="res://entities/orb/orb.gd" id="1_4ogyp"]
 [ext_resource type="Texture2D" uid="uid://f7i2gsgexdih" path="res://entities/orb/orb.png" id="2_h8qx5"]
@@ -81,29 +81,29 @@ _limits = [-360.0, 360.0, 0.0, 1.0]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.148418, -124.59), 0.0, 0.0, 0, 0, Vector2(0.452555, 242.127), 0.0, 0.0, 0, 0, Vector2(0.542579, -290.469), 0.0, 0.0, 0, 0, Vector2(0.987835, 338.881), 0.0, 0.0, 0, 0]
 point_count = 5
 
-[node name="Orb" type="RigidBody2D" groups=["orbs"]]
+[node name="Orb" type="RigidBody2D" unique_id=794850524 groups=["orbs"]]
 physics_material_override = SubResource("PhysicsMaterial_h8qx5")
 gravity_scale = 0.0
 lock_rotation = true
 script = ExtResource("1_4ogyp")
 
-[node name="Sprite" type="AnimatedSprite2D" parent="."]
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=139438059]
 sprite_frames = SubResource("SpriteFrames_e34t8")
 autoplay = "default"
 frame_progress = 0.442961
 
-[node name="CollisionShape" type="CollisionShape2D" parent="."]
+[node name="CollisionShape" type="CollisionShape2D" parent="." unique_id=806147550]
 shape = SubResource("CircleShape2D_cbh67")
 
-[node name="BounceAudio" type="AudioStreamPlayer2D" parent="."]
+[node name="BounceAudio" type="AudioStreamPlayer2D" parent="." unique_id=1415125308]
 stream = ExtResource("3_ulscp")
 
-[node name="OrbitAudio" type="AudioStreamPlayer2D" parent="."]
+[node name="OrbitAudio" type="AudioStreamPlayer2D" parent="." unique_id=1547857248]
 stream = ExtResource("4_b6827")
 volume_db = -80.0
 autoplay = true
 
-[node name="Particles" type="CPUParticles2D" parent="."]
+[node name="Particles" type="CPUParticles2D" parent="." unique_id=875119314]
 position = Vector2(-3, -3)
 rotation = 3.43587
 amount = 12

@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cjnoqt4gkj1i5"]
+[gd_scene format=3 uid="uid://cjnoqt4gkj1i5"]
 
 [ext_resource type="FontFile" uid="uid://cbptoha0rsyl" path="res://levels/unifont.ttf" id="1_28kwg"]
 
@@ -9,10 +9,10 @@ func _ready():
 	$Label.text = \"Thank you for playing!\\nLupin #%s destroyed the facility.\" % Global.lupin
 "
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" unique_id=1732672656]
 script = SubResource("GDScript_28kwg")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=315234933]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0

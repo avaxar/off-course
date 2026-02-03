@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c3fqkueu71rf2"]
+[gd_scene format=3 uid="uid://c3fqkueu71rf2"]
 
 [ext_resource type="Script" uid="uid://cilxaib8y71fq" path="res://entities/door/door.gd" id="2_bfv6c"]
 [ext_resource type="Texture2D" uid="uid://b765m6u4jqnr" path="res://entities/door/door.png" id="2_dsbe1"]
@@ -213,10 +213,10 @@ size = Vector2(12, 96)
 [sub_resource type="Gradient" id="Gradient_dsbe1"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
-[node name="Door" type="StaticBody2D"]
+[node name="Door" type="StaticBody2D" unique_id=226325518]
 script = ExtResource("2_bfv6c")
 
-[node name="DoorUp" type="AnimatedSprite2D" parent="."]
+[node name="DoorUp" type="AnimatedSprite2D" parent="." unique_id=625281802]
 z_index = -1
 position = Vector2(0, -48)
 rotation = -3.14159
@@ -224,7 +224,7 @@ sprite_frames = SubResource("SpriteFrames_6sqah")
 animation = &"closed"
 offset = Vector2(0, -24)
 
-[node name="DoorDown" type="AnimatedSprite2D" parent="."]
+[node name="DoorDown" type="AnimatedSprite2D" parent="." unique_id=2108412824]
 z_index = -1
 position = Vector2(0, 48)
 sprite_frames = SubResource("SpriteFrames_6sqah")
@@ -232,15 +232,13 @@ animation = &"closed"
 frame_progress = 0.27911
 offset = Vector2(0, -24)
 
-[node name="DoorPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_k25rb")
-}
+[node name="DoorPlayer" type="AnimationPlayer" parent="." unique_id=1577243725]
+libraries/ = SubResource("AnimationLibrary_k25rb")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1536288031]
 shape = SubResource("RectangleShape2D_bfv6c")
 
-[node name="SmokeUp" type="CPUParticles2D" parent="."]
+[node name="SmokeUp" type="CPUParticles2D" parent="." unique_id=1387539169]
 position = Vector2(0, -46)
 scale = Vector2(0.75, 0.75)
 emitting = false
@@ -255,7 +253,7 @@ initial_velocity_min = 20.0
 initial_velocity_max = 20.61
 color_ramp = SubResource("Gradient_dsbe1")
 
-[node name="SmokeDown" type="CPUParticles2D" parent="."]
+[node name="SmokeDown" type="CPUParticles2D" parent="." unique_id=149069554]
 position = Vector2(0, 47)
 scale = Vector2(0.75, 0.75)
 emitting = false
@@ -270,8 +268,8 @@ initial_velocity_min = 20.0
 initial_velocity_max = 20.61
 color_ramp = SubResource("Gradient_dsbe1")
 
-[node name="DoorOpen" type="AudioStreamPlayer2D" parent="."]
+[node name="DoorOpen" type="AudioStreamPlayer2D" parent="." unique_id=1935069700]
 stream = ExtResource("4_uq1c4")
 
-[node name="DoorClose" type="AudioStreamPlayer2D" parent="."]
+[node name="DoorClose" type="AudioStreamPlayer2D" parent="." unique_id=446619136]
 stream = ExtResource("5_r5xgf")

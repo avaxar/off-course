@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ber2ukf0x5uaw"]
+[gd_scene format=3 uid="uid://ber2ukf0x5uaw"]
 
 [ext_resource type="Shader" uid="uid://b1geqjqhk6fmn" path="res://entities/rotsprite.gdshader" id="1_4c8o1"]
 [ext_resource type="Texture2D" uid="uid://dra1rxrusxmq2" path="res://entities/parallax/space.png" id="1_tekbh"]
@@ -17,156 +17,156 @@
 shader = ExtResource("1_4c8o1")
 shader_parameter/pixel_scale = 1.0
 
-[node name="Parallax" type="Node2D"]
+[node name="Parallax" type="Node2D" unique_id=1571835510]
 z_index = -10
 material = SubResource("ShaderMaterial_ovqdm")
 script = ExtResource("1_u8x40")
 
-[node name="Space" type="Node2D" parent="."]
+[node name="Space" type="Node2D" parent="." unique_id=1003779985]
 z_index = -100
 use_parent_material = true
 
-[node name="Space" type="Sprite2D" parent="Space"]
+[node name="Space" type="Sprite2D" parent="Space" unique_id=1048341492]
 use_parent_material = true
 position = Vector2(240, 136)
 texture = ExtResource("1_tekbh")
 
-[node name="Rocks2" type="Node2D" parent="."]
+[node name="Rocks2" type="Node2D" parent="." unique_id=1668371946]
 use_parent_material = true
 position = Vector2(-1, 0)
 
-[node name="Rock10" type="Sprite2D" parent="Rocks2"]
+[node name="Rock10" type="Sprite2D" parent="Rocks2" unique_id=136279282]
 use_parent_material = true
 position = Vector2(-53, 58)
 texture = ExtResource("3_vwirp")
 
-[node name="Rock11" type="Sprite2D" parent="Rocks2"]
+[node name="Rock11" type="Sprite2D" parent="Rocks2" unique_id=112193601]
 use_parent_material = true
 position = Vector2(-76, 191)
 rotation = 0.0867383
 texture = ExtResource("4_kl16b")
 
-[node name="Rock12" type="Sprite2D" parent="Rocks2"]
+[node name="Rock12" type="Sprite2D" parent="Rocks2" unique_id=1199758160]
 use_parent_material = true
 position = Vector2(-193, 143)
 rotation = -0.819207
 texture = ExtResource("3_vwirp")
 
-[node name="Rock13" type="Sprite2D" parent="Rocks2"]
+[node name="Rock13" type="Sprite2D" parent="Rocks2" unique_id=1111584548]
 use_parent_material = true
 position = Vector2(-318, 82)
 texture = ExtResource("4_kl16b")
 
-[node name="Rock14" type="Sprite2D" parent="Rocks2"]
+[node name="Rock14" type="Sprite2D" parent="Rocks2" unique_id=3124452]
 use_parent_material = true
 position = Vector2(-346, 205)
 rotation = 1.59484
 texture = ExtResource("3_vwirp")
 
-[node name="Rock1" type="Sprite2D" parent="Rocks2"]
+[node name="Rock1" type="Sprite2D" parent="Rocks2" unique_id=1181307808]
 use_parent_material = true
 position = Vector2(-428, 107)
 rotation = 2.36159
 texture = ExtResource("3_vwirp")
 
-[node name="Rocks" type="Node2D" parent="."]
+[node name="Rocks" type="Node2D" parent="." unique_id=196880723]
 use_parent_material = true
 position = Vector2(1, 4)
 
-[node name="Rock10" type="Sprite2D" parent="Rocks"]
+[node name="Rock10" type="Sprite2D" parent="Rocks" unique_id=364894839]
 use_parent_material = true
 position = Vector2(303, 269)
 rotation = 2.85134
 texture = ExtResource("4_kl16b")
 
-[node name="Rock9" type="Sprite2D" parent="Rocks"]
+[node name="Rock9" type="Sprite2D" parent="Rocks" unique_id=1459693339]
 use_parent_material = true
 position = Vector2(139, -4.99999)
 rotation = -1.8466
 texture = ExtResource("3_vwirp")
 
-[node name="Rock8" type="Sprite2D" parent="Rocks"]
+[node name="Rock8" type="Sprite2D" parent="Rocks" unique_id=936195485]
 use_parent_material = true
 position = Vector2(29, 245)
 rotation = 2.21829
 texture = ExtResource("3_vwirp")
 
-[node name="Rock2" type="Sprite2D" parent="Rocks"]
+[node name="Rock2" type="Sprite2D" parent="Rocks" unique_id=941377582]
 use_parent_material = true
 position = Vector2(298, 119)
 texture = ExtResource("4_kl16b")
 
-[node name="Rock3" type="Sprite2D" parent="Rocks"]
+[node name="Rock3" type="Sprite2D" parent="Rocks" unique_id=1530831666]
 use_parent_material = true
 position = Vector2(214, 59)
 rotation = -0.931868
 texture = ExtResource("4_kl16b")
 
-[node name="Rock4" type="Sprite2D" parent="Rocks"]
+[node name="Rock4" type="Sprite2D" parent="Rocks" unique_id=200992363]
 use_parent_material = true
 position = Vector2(241, 189)
 rotation = -0.540886
 texture = ExtResource("3_vwirp")
 
-[node name="Rock5" type="Sprite2D" parent="Rocks"]
+[node name="Rock5" type="Sprite2D" parent="Rocks" unique_id=1280351771]
 use_parent_material = true
 position = Vector2(447, 206)
 rotation = 0.561164
 texture = ExtResource("3_vwirp")
 
-[node name="Rock6" type="Sprite2D" parent="Rocks"]
+[node name="Rock6" type="Sprite2D" parent="Rocks" unique_id=1120624348]
 use_parent_material = true
 position = Vector2(65, 93)
 texture = ExtResource("4_kl16b")
 
-[node name="Rock7" type="Sprite2D" parent="Rocks"]
+[node name="Rock7" type="Sprite2D" parent="Rocks" unique_id=1743754192]
 use_parent_material = true
 position = Vector2(417, 79)
 rotation = 1.42567
 texture = ExtResource("4_kl16b")
 
-[node name="Moron" type="Sprite2D" parent="."]
+[node name="Moron" type="Sprite2D" parent="." unique_id=1597891042]
 use_parent_material = true
 position = Vector2(-446, 310)
 texture = ExtResource("8_vwirp")
 
-[node name="Objects" type="Node2D" parent="."]
+[node name="Objects" type="Node2D" parent="." unique_id=967444950]
 use_parent_material = true
 
-[node name="1" type="Sprite2D" parent="Objects"]
+[node name="1" type="Sprite2D" parent="Objects" unique_id=554230654]
 use_parent_material = true
 position = Vector2(100, 196)
 texture = ExtResource("6_4c8o1")
 
-[node name="2" type="Sprite2D" parent="Objects"]
+[node name="2" type="Sprite2D" parent="Objects" unique_id=1129889154]
 use_parent_material = true
 position = Vector2(227, 114)
 texture = ExtResource("7_ovqdm")
 
-[node name="3" type="Sprite2D" parent="Objects"]
+[node name="3" type="Sprite2D" parent="Objects" unique_id=1810275772]
 use_parent_material = true
 position = Vector2(372, 180)
 texture = ExtResource("8_vwirp")
 
-[node name="Objects2" type="Node2D" parent="."]
+[node name="Objects2" type="Node2D" parent="." unique_id=532065652]
 use_parent_material = true
 
-[node name="4" type="Sprite2D" parent="Objects2"]
+[node name="4" type="Sprite2D" parent="Objects2" unique_id=1374681377]
 use_parent_material = true
 position = Vector2(-455, 172)
 texture = ExtResource("8_6tvhf")
 
-[node name="5" type="Sprite2D" parent="Objects2"]
+[node name="5" type="Sprite2D" parent="Objects2" unique_id=1357351264]
 use_parent_material = true
 position = Vector2(-145, 120)
 texture = ExtResource("6_n63x3")
 
-[node name="6" type="Sprite2D" parent="Objects2"]
+[node name="6" type="Sprite2D" parent="Objects2" unique_id=356092212]
 use_parent_material = true
 position = Vector2(-238, 227)
 texture = ExtResource("5_0of0k")
 
-[node name="7" type="Sprite2D" parent="Objects2"]
+[node name="7" type="Sprite2D" parent="Objects2" unique_id=854324840]
 use_parent_material = true
 position = Vector2(-366, 104)
 texture = ExtResource("7_4c8o1")

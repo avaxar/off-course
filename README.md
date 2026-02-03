@@ -1,4 +1,4 @@
-# Off Course
+# Off Course!
 
 A botched team submission for [GMTK 2025](https://itch.io/jam/gmtk-2025) under the theme "Loop", made using [Godot](https://godotengine.org). This project has its own [itch.io](https://avaxar.itch.io/off-course) page.
 

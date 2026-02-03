@@ -1,10 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://7eogtg8ox5y4"]
+[gd_scene format=3 uid="uid://7eogtg8ox5y4"]
 
-[ext_resource type="Texture2D" uid="uid://bf5pgr2weuw34" path="res://entities/closing_comic/EndPanel1.png" id="1_l35bx"]
+[ext_resource type="Texture2D" uid="uid://bf5pgr2weuw34" path="res://entities/closing_comic/panel1.png" id="1_l35bx"]
 [ext_resource type="Script" uid="uid://cc2eaqeingld" path="res://entities/opening_comic/closing_comic.gd" id="1_o5tic"]
-[ext_resource type="Texture2D" uid="uid://ch3ir45o0klwu" path="res://entities/closing_comic/EndPanel2.png" id="2_o5tic"]
-[ext_resource type="Texture2D" uid="uid://b8vvcocc68srt" path="res://entities/closing_comic/EndPanel3.png" id="3_x2lpg"]
-[ext_resource type="Texture2D" uid="uid://3pnov08gw8rg" path="res://entities/closing_comic/EndPanel4.png" id="4_ydild"]
+[ext_resource type="Texture2D" uid="uid://ch3ir45o0klwu" path="res://entities/closing_comic/panel2.png" id="2_o5tic"]
+[ext_resource type="Texture2D" uid="uid://b8vvcocc68srt" path="res://entities/closing_comic/panel3.png" id="3_x2lpg"]
+[ext_resource type="Texture2D" uid="uid://3pnov08gw8rg" path="res://entities/closing_comic/panel4.png" id="4_ydild"]
 
 [sub_resource type="Animation" id="Animation_o5tic"]
 length = 0.001
@@ -222,39 +222,37 @@ _data = {
 &"panel4": SubResource("Animation_5hlnx")
 }
 
-[node name="ClosingComic" type="Node2D"]
+[node name="ClosingComic" type="Node2D" unique_id=354798713]
 script = ExtResource("1_o5tic")
 
-[node name="EndPanel1" type="Sprite2D" parent="."]
+[node name="EndPanel1" type="Sprite2D" parent="." unique_id=764315]
 visible = false
 modulate = Color(1, 1, 1, 0)
 position = Vector2(99, 72)
 texture = ExtResource("1_l35bx")
 
-[node name="EndPanel2" type="Sprite2D" parent="."]
+[node name="EndPanel2" type="Sprite2D" parent="." unique_id=860935357]
 visible = false
 modulate = Color(1, 1, 1, 0)
 position = Vector2(100, 136)
 texture = ExtResource("2_o5tic")
 
-[node name="EndPanel3" type="Sprite2D" parent="."]
+[node name="EndPanel3" type="Sprite2D" parent="." unique_id=109827337]
 visible = false
 modulate = Color(1, 1, 1, 0)
 position = Vector2(342, 71)
 texture = ExtResource("3_x2lpg")
 
-[node name="EndPanel4" type="Sprite2D" parent="."]
+[node name="EndPanel4" type="Sprite2D" parent="." unique_id=1371562365]
 visible = false
 modulate = Color(1, 1, 1, 0)
 position = Vector2(340, 194)
 texture = ExtResource("4_ydild")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_ohfap")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1913615059]
+libraries/ = SubResource("AnimationLibrary_ohfap")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=810301669]
 one_shot = true
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

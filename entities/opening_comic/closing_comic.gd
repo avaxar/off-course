@@ -32,4 +32,4 @@ func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 
 
 func _on_timer_timeout() -> void:
-	get_tree().change_scene_to_file("res://entities/thankyou.tscn")
+	get_tree().change_scene_to_file("res://entities/thank_you.tscn")

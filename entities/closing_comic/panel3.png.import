@@ -2,22 +2,24 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxe8k8o1aovp1"
-path="res://.godot/imported/Tutorial5-Sheet.png-253d7f2ae95e9df95a60227312c84ed3.ctex"
+uid="uid://b8vvcocc68srt"
+path="res://.godot/imported/panel3.png-acc94983c1661bc9f0f231d2dc7d2246.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/tutorial/Tutorial5-Sheet.png"
-dest_files=["res://.godot/imported/Tutorial5-Sheet.png-253d7f2ae95e9df95a60227312c84ed3.ctex"]
+source_file="res://entities/closing_comic/panel3.png"
+dest_files=["res://.godot/imported/panel3.png-acc94983c1661bc9f0f231d2dc7d2246.ctex"]
 
 [params]
 
 compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
@@ -25,6 +27,10 @@ mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

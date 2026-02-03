@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=4 uid="uid://delaxhx1j17tb"]
+[gd_scene format=4 uid="uid://delaxhx1j17tb"]
 
 [ext_resource type="TileSet" uid="uid://ibgnx2ymucbq" path="res://levels/tileset.tres" id="1_80vhd"]
 [ext_resource type="Script" uid="uid://do2or4ovxyerg" path="res://levels/level.gd" id="1_gjl0y"]
@@ -290,87 +290,87 @@ animations = [{
 "speed": 18.0
 }]
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" unique_id=349563626]
 script = ExtResource("1_gjl0y")
 
-[node name="Parallax" type="CanvasLayer" parent="."]
+[node name="Parallax" type="CanvasLayer" parent="." unique_id=828582581]
 layer = -10
 
-[node name="Parallax" parent="Parallax" instance=ExtResource("2_vnv7o")]
+[node name="Parallax" parent="Parallax" unique_id=1248977184 instance=ExtResource("2_vnv7o")]
 material = null
 metadata/_edit_lock_ = true
 
-[node name="Background" type="TileMapLayer" parent="."]
+[node name="Background" type="TileMapLayer" parent="." unique_id=1167429806]
 z_index = -9
 tile_set = ExtResource("1_80vhd")
 collision_enabled = false
 metadata/_edit_lock_ = true
 
-[node name="BackgroundOver" type="TileMapLayer" parent="."]
+[node name="BackgroundOver" type="TileMapLayer" parent="." unique_id=1596124034]
 z_index = -9
 tile_set = ExtResource("1_80vhd")
 collision_enabled = false
 metadata/_edit_lock_ = true
 
-[node name="Objects" type="Node2D" parent="."]
+[node name="Objects" type="Node2D" parent="." unique_id=751271631]
 metadata/_edit_lock_ = true
 
-[node name="ExitDoor" parent="Objects" instance=ExtResource("2_safpt")]
+[node name="ExitDoor" parent="Objects" unique_id=1386707718 instance=ExtResource("2_safpt")]
 position = Vector2(471, 64)
 
-[node name="Button" parent="Objects" node_paths=PackedStringArray("door") instance=ExtResource("3_gjl0y")]
+[node name="Button" parent="Objects" unique_id=863652831 node_paths=PackedStringArray("door") instance=ExtResource("3_gjl0y")]
 position = Vector2(240, 248)
 door = NodePath("../ExitDoor")
 
-[node name="Orb" parent="Objects" instance=ExtResource("4_vnv7o")]
+[node name="Orb" parent="Objects" unique_id=612294298 instance=ExtResource("4_vnv7o")]
 position = Vector2(240, 144)
 freeze = true
 
-[node name="Map" type="TileMapLayer" parent="."]
+[node name="Map" type="TileMapLayer" parent="." unique_id=151676]
 tile_map_data = PackedByteArray("AAABABAAAgAWAAUAAAACABAAAgAWAAUAAAADABAAAgAWAAUAAAAEABAAAgAWAAUAAAAFABAAAgAWAAUAAAAGABAAAgAWAAUAAAAHABAAAgAWAAUAAAAIABAAAgAWAAUAAAAJABAAAgAWAAUAAAAKABAAAgAWAAUAAAALABAAAgAWAAUAAAAMABAAAgAWAAUAAAANABAAAgAWAAUAAAAOABAAAgAWAAUAAAAPABAAAgAWAAUAAAAQABAAAgAWAAUAAAARABAAAgAWAAUAAAASABAAAgAWAAUAAAATABAAAgAWAAUAAAAUABAAAgAWAAUAAAAVABAAAgAWAAUAAAAWABAAAgAWAAUAAAAXABAAAgAWAAUAAAAYABAAAgAWAAUAAAAZABAAAgAWAAUAAAAaABAAAgAWAAUAAAAbABAAAgAWAAUAAAAcABAAAgAWAAUAAAAAAAkAAgAXAAcAAAAAAAgAAgAXAAYAAAAAAAcAAgAXAAYAAAAAAAYAAgAXAAYAAAAAAAUAAgAXAAYAAAAAAAQAAgAXAAYAAAAAAAMAAgAXAAYAAAAAAAIAAgAXAAYAAAAAAAEAAgAXAAYAAAABAAAAAgAWAAcAAAACAAAAAgAWAAcAAAADAAAAAgAWAAcAAAAEAAAAAgAWAAcAAAAFAAAAAgAWAAcAAAAGAAAAAgAWAAcAAAAHAAAAAgAWAAcAAAAIAAAAAgAWAAcAAAAJAAAAAgAWAAcAAAAdAA8AAgAVAAYAAAAdAA4AAgAVAAYAAAAdAA0AAgAVAAYAAAAdAAwAAgAVAAYAAAAdAAsAAgAVAAYAAAAdAAoAAgAVAAYAAAAdAAkAAgAVAAYAAAAdAAgAAgAVAAYAAAAdAAcAAgAVAAUAAAAdAAAAAgAWAAcAAAAKAAAAAgAbAAUAAAALAAAAAgAbAAUAAAAMAAAAAgAbAAUAAAANAAAAAgAbAAUAAAAOAAAAAgAbAAUAAAAPAAAAAgAbAAUAAAAQAAAAAgAbAAUAAAARAAAAAgAbAAUAAAASAAAAAgAbAAUAAAATAAAAAgAbAAUAAAAUAAAAAgAbAAUAAAAVAAAAAgAbAAUAAAAWAAAAAgAbAAUAAAAXAAAAAgAbAAUAAAAYAAAAAgAbAAUAAAAZAAAAAgAbAAUAAAAaAAAAAgAbAAUAAAAbAAAAAgAbAAUAAAAcAAAAAgAbAAUAAAAdABAAAgAcAAcAAAAAAAAAAgAaAAUAAAAAABAAAgAbAAcAAAABAAIAAgAQAAEAAAABAAMAAgAQAAEAAAABAAQAAgAQAAEAAAABAAUAAgAQAAEAAAABAAYAAgAQAAEAAAABAAcAAgAQAAEAAAABAAgAAgAQAAEAAAA=")
 tile_set = ExtResource("1_80vhd")
 metadata/_edit_lock_ = true
 
-[node name="EntranceDoor" parent="." instance=ExtResource("2_safpt")]
+[node name="EntranceDoor" parent="." unique_id=669754427 instance=ExtResource("2_safpt")]
 position = Vector2(9, 208)
 
-[node name="Timer" type="Timer" parent="EntranceDoor"]
+[node name="Timer" type="Timer" parent="EntranceDoor" unique_id=1248582167]
 wait_time = 3.0
 one_shot = true
 
-[node name="PlayerSpawn" type="Marker2D" parent="."]
+[node name="PlayerSpawn" type="Marker2D" parent="." unique_id=1486322401]
 position = Vector2(-52, 210)
 
-[node name="Timer" type="Timer" parent="PlayerSpawn"]
+[node name="Timer" type="Timer" parent="PlayerSpawn" unique_id=1509969653]
 one_shot = true
 
-[node name="Camera" parent="PlayerSpawn" instance=ExtResource("2_hjsbj")]
+[node name="Camera" parent="PlayerSpawn" unique_id=404896124 instance=ExtResource("2_hjsbj")]
 metadata/_edit_lock_ = true
 
-[node name="Velocity" type="Marker2D" parent="PlayerSpawn"]
+[node name="Velocity" type="Marker2D" parent="PlayerSpawn" unique_id=344356292]
 position = Vector2(142, 0)
 
-[node name="FinishArea" type="Area2D" parent="."]
+[node name="FinishArea" type="Area2D" parent="." unique_id=753895989]
 position = Vector2(528, 64)
 
-[node name="CollisionShape" type="CollisionShape2D" parent="FinishArea"]
+[node name="CollisionShape" type="CollisionShape2D" parent="FinishArea" unique_id=262367061]
 shape = SubResource("RectangleShape2D_hjsbj")
 debug_color = Color(0.680476, 1, 0.652914, 0.419608)
 metadata/_edit_lock_ = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=289348644]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="CanvasLayer"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="CanvasLayer" unique_id=689969791]
 environment = SubResource("Environment_vnv7o")
 
-[node name="LevelIndicator" type="AnimatedSprite2D" parent="CanvasLayer"]
+[node name="LevelIndicator" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=1027565216]
 position = Vector2(439, 23)
 sprite_frames = SubResource("SpriteFrames_werwd")
 animation = &"8"
 autoplay = "0"
 metadata/_edit_lock_ = true
 
-[node name="LupinCounter" type="Label" parent="CanvasLayer"]
+[node name="LupinCounter" type="Label" parent="CanvasLayer" unique_id=1235713653]
 offset_left = 48.0
 offset_top = 14.0
 offset_right = 405.0
@@ -381,25 +381,25 @@ theme_override_font_sizes/font_size = 16
 text = "Lupin #..."
 horizontal_alignment = 2
 
-[node name="LoopButton" type="Area2D" parent="CanvasLayer"]
+[node name="LoopButton" type="Area2D" parent="CanvasLayer" unique_id=792753312]
 position = Vector2(29, 23)
 metadata/_edit_lock_ = true
 
-[node name="Sprite" type="AnimatedSprite2D" parent="CanvasLayer/LoopButton"]
+[node name="Sprite" type="AnimatedSprite2D" parent="CanvasLayer/LoopButton" unique_id=46554460]
 sprite_frames = SubResource("SpriteFrames_0qmeg")
 metadata/_edit_lock_ = true
 
-[node name="CollisionShape" type="CollisionShape2D" parent="CanvasLayer/LoopButton"]
+[node name="CollisionShape" type="CollisionShape2D" parent="CanvasLayer/LoopButton" unique_id=74320521]
 shape = SubResource("RectangleShape2D_ta7ci")
 metadata/_edit_lock_ = true
 
-[node name="Dialogs" type="Node2D" parent="CanvasLayer"]
+[node name="Dialogs" type="Node2D" parent="CanvasLayer" unique_id=1995827025]
 material = SubResource("ShaderMaterial_hy0rb")
 position = Vector2(0, 270)
 script = ExtResource("10_ukwr8")
 metadata/_edit_lock_ = true
 
-[node name="DialogA" type="MarginContainer" parent="CanvasLayer/Dialogs"]
+[node name="DialogA" type="MarginContainer" parent="CanvasLayer/Dialogs" unique_id=1470556106]
 visible = false
 offset_left = 13.0
 offset_top = -45.0
@@ -407,7 +407,7 @@ offset_right = 45.0
 offset_bottom = -13.0
 metadata/_edit_lock_ = true
 
-[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Dialogs/DialogA"]
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Dialogs/DialogA" unique_id=882270551]
 modulate = Color(0.75, 0.995833, 1, 0.752941)
 layout_mode = 2
 texture = ExtResource("13_0qmeg")
@@ -418,7 +418,7 @@ patch_margin_right = 16
 patch_margin_bottom = 16
 metadata/_edit_lock_ = true
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Dialogs/DialogA"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Dialogs/DialogA" unique_id=1613221998]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 1
@@ -426,7 +426,7 @@ theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 metadata/_edit_lock_ = true
 
-[node name="Label" type="Label" parent="CanvasLayer/Dialogs/DialogA/MarginContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/Dialogs/DialogA/MarginContainer" unique_id=702434071]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.501407, 0.501406, 0.501406, 1)
@@ -434,7 +434,7 @@ theme_override_fonts/font = ExtResource("11_pb8y7")
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="DialogB" type="MarginContainer" parent="CanvasLayer/Dialogs"]
+[node name="DialogB" type="MarginContainer" parent="CanvasLayer/Dialogs" unique_id=400295924]
 visible = false
 anchors_preset = 3
 anchor_left = 1.0
@@ -449,7 +449,7 @@ grow_horizontal = 0
 grow_vertical = 0
 metadata/_edit_lock_ = true
 
-[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Dialogs/DialogB"]
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Dialogs/DialogB" unique_id=1091913029]
 modulate = Color(1, 0.8, 0.8, 0.752941)
 layout_mode = 2
 texture = ExtResource("13_0qmeg")
@@ -460,7 +460,7 @@ patch_margin_right = 16
 patch_margin_bottom = 16
 metadata/_edit_lock_ = true
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Dialogs/DialogB"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Dialogs/DialogB" unique_id=12107536]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 1
@@ -468,7 +468,7 @@ theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 metadata/_edit_lock_ = true
 
-[node name="Label" type="Label" parent="CanvasLayer/Dialogs/DialogB/MarginContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/Dialogs/DialogB/MarginContainer" unique_id=769041109]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.501961, 0.501961, 0.501961, 1)
@@ -476,25 +476,25 @@ theme_override_fonts/font = ExtResource("11_pb8y7")
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="LetterTimer" type="Timer" parent="CanvasLayer/Dialogs"]
+[node name="LetterTimer" type="Timer" parent="CanvasLayer/Dialogs" unique_id=785712483]
 wait_time = 0.035
 one_shot = true
 
-[node name="LetterRetractTimer" type="Timer" parent="CanvasLayer/Dialogs"]
+[node name="LetterRetractTimer" type="Timer" parent="CanvasLayer/Dialogs" unique_id=1095254399]
 wait_time = 0.025
 one_shot = true
 
-[node name="DialogRetractTimer" type="Timer" parent="CanvasLayer/Dialogs"]
+[node name="DialogRetractTimer" type="Timer" parent="CanvasLayer/Dialogs" unique_id=872897181]
 one_shot = true
 
-[node name="Cutout" type="Polygon2D" parent="CanvasLayer"]
+[node name="Cutout" type="Polygon2D" parent="CanvasLayer" unique_id=761515993]
 material = SubResource("ShaderMaterial_rtcij")
 color = Color(0, 0, 0, 1)
 texture = SubResource("PlaceholderTexture2D_d5x7l")
 polygon = PackedVector2Array(0, 0, 480, 0, 480, 270, 0, 270)
 metadata/_edit_lock_ = true
 
-[node name="Transition" type="AnimatedSprite2D" parent="CanvasLayer"]
+[node name="Transition" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=316926277]
 position = Vector2(240, 135)
 sprite_frames = SubResource("SpriteFrames_dcgl2")
 animation = &"open"
